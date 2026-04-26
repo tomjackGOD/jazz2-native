@@ -1,7 +1,26 @@
 #pragma once
 
-#include <Common.h>
-#include <Containers/Tags.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Common.h")
+#		include "Shared/Common.h"
+#		include "Shared/Containers/Tags.h"
+#	elif __has_include("../Shared/Common.h")
+#		include "../Shared/Common.h"
+#		include "../Shared/Containers/Tags.h"
+#	elif __has_include("../../Shared/Common.h")
+#		include "../../Shared/Common.h"
+#		include "../../Shared/Containers/Tags.h"
+#	elif __has_include("../../../Shared/Common.h")
+#		include "../../../Shared/Common.h"
+#		include "../../../Shared/Containers/Tags.h"
+#	else
+#		include <Common.h>
+#		include <Containers/Tags.h>
+#	endif
+#else
+#	include <Common.h>
+#	include <Containers/Tags.h>
+#endif
 
 namespace nCine
 {

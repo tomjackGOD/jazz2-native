@@ -6,7 +6,19 @@
 #include "../AppConfiguration.h"
 #include "../../Main.h"
 
-#include <Containers/SmallVector.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/SmallVector.h")
+#		include "Shared/Containers/SmallVector.h"
+#	elif __has_include("../Shared/Containers/SmallVector.h")
+#		include "../Shared/Containers/SmallVector.h"
+#	elif __has_include("../../Shared/Containers/SmallVector.h")
+#		include "../../Shared/Containers/SmallVector.h"
+#	else
+#		include <Containers/SmallVector.h>
+#	endif
+#else
+#	include <Containers/SmallVector.h>
+#endif
 
 using namespace Death::Containers;
 

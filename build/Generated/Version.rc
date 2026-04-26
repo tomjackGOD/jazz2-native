@@ -1,0 +1,38 @@
+#include <winres.h>
+
+1 VERSIONINFO
+ FILEVERSION 3, 5, 0, 1493
+ PRODUCTVERSION 3, 5, 0, 1493
+ FILEFLAGSMASK VS_FFI_FILEFLAGSMASK
+#ifdef DEATH_DEBUG
+ FILEFLAGS VS_FF_DEBUG
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS VOS_NT_WINDOWS32
+ FILETYPE VFT_APP
+ FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Dan R."
+            VALUE "FileDescription", "Jazz2: Open-source reimplementation of Jazz Jackrabbit 2"
+            VALUE "FileVersion", "3.5.0.1493"
+            VALUE "InternalName", "Jazz2"
+            VALUE "LegalCopyright", "(C) 2016-2026 Dan R."
+#ifdef DEATH_DEBUG
+            VALUE "OriginalFilename", "Jazz2d.exe"
+#else
+            VALUE "OriginalFilename", "Jazz2.exe"
+#endif
+            VALUE "ProductName", "Jazz2"
+            VALUE "ProductVersion", "3.5.r1493-1896057"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END

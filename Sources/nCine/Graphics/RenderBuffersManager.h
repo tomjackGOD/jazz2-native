@@ -1,6 +1,10 @@
 #pragma once
 
+#include "Backend/BackendTypes.h"
+
+#if !defined(DEATH_TARGET_IOS)
 #include "GL/GLBufferObject.h"
+#endif
 
 #include <memory>
 
@@ -31,11 +35,11 @@ namespace nCine
 		struct BufferSpecifications
 		{
 			BufferTypes type;
-			GLenum target;
-			GLenum mapFlags;
-			GLenum usageFlags;
+			std::uint32_t target;
+			std::uint32_t mapFlags;
+			std::uint32_t usageFlags;
 			std::uint32_t maxSize;
-			GLuint alignment;
+			std::uint32_t alignment;
 		};
 
 		struct Parameters
@@ -43,10 +47,10 @@ namespace nCine
 			Parameters()
 				: object(nullptr), size(0), offset(0), mapBase(nullptr) {}
 
-			GLBufferObject* object;
+			BackendBufferObject* object;
 			std::uint32_t size;
 			std::uint32_t offset;
-			GLubyte* mapBase;
+			std::uint8_t* mapBase;
 		};
 
 		RenderBuffersManager(bool useBufferMapping, std::uint32_t vboMaxSize, std::uint32_t iboMaxSize);
@@ -73,11 +77,11 @@ namespace nCine
 				: type(BufferTypes::Array), size(0), freeSpace(0), object(nullptr), mapBase(nullptr), hostBuffer(nullptr) {}
 
 			BufferTypes type;
-			std::unique_ptr<GLBufferObject> object;
+			std::unique_ptr<BackendBufferObject> object;
 			std::uint32_t size;
 			std::uint32_t freeSpace;
-			GLubyte* mapBase;
-			std::unique_ptr<GLubyte[]> hostBuffer;
+			std::uint8_t* mapBase;
+			std::unique_ptr<std::uint8_t[]> hostBuffer;
 		};
 #endif
 

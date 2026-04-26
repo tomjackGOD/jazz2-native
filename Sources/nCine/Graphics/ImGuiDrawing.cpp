@@ -4,16 +4,16 @@
 #include "RenderQueue.h"
 #include "RenderCommandPool.h"
 #include "RenderResources.h"
-#include "GL/GLTexture.h"
-#include "GL/GLShaderProgram.h"
-#include "GL/GLScissorTest.h"
-#include "GL/GLBlending.h"
-#include "GL/GLDepthTest.h"
-#include "GL/GLCullFace.h"
+#include "Backend/BackendTypes.h"
+#include "Backend/BackendRenderState.h"
 #include "../Application.h"
 #include "../Input/IInputManager.h"
 
 #include <IO/FileSystem.h>
+
+#if defined(DEATH_TARGET_IOS)
+#import <Metal/Metal.h>
+#endif
 
 #if defined(WITH_GLFW)
 #	include "../Backends/ImGuiGlfwInput.h"
@@ -23,6 +23,8 @@
 #	include "../Backends/ImGuiQt5Input.h"
 #elif defined(DEATH_TARGET_ANDROID)
 #	include "../Backends/Android/ImGuiAndroidInput.h"
+#elif defined(DEATH_TARGET_IOS)
+#	include "../Backends/iOS/ImGuiIosInput.h"
 #endif
 
 #if defined(WITH_EMBEDDED_SHADERS)
@@ -33,7 +35,7 @@ using namespace Death::Containers::Literals;
 using namespace Death::IO;
 using namespace nCine::Backends;
 
-#if defined(DEATH_TRACE_VERBOSE_GL)
+#if !defined(DEATH_TARGET_IOS) && defined(DEATH_TRACE_VERBOSE_GL)
 #	define GL_CALL(op)													\
 		do {															\
 			op;															\
@@ -62,7 +64,9 @@ namespace nCine
 #endif
 
 		io.BackendRendererUserData = this;
-#if defined(WITH_OPENGLES) || defined(DEATH_TARGET_EMSCRIPTEN)
+#if defined(DEATH_TARGET_IOS)
+		io.BackendRendererName = "nCine_Metal";
+#elif defined(WITH_OPENGLES) || defined(DEATH_TARGET_EMSCRIPTEN)
 		io.BackendRendererName = "nCine_OpenGL_ES";
 #else
 		io.BackendRendererName = "nCine_OpenGL";
@@ -74,21 +78,33 @@ namespace nCine
 		io.IniFilename = iniFilename;
 #endif*/
 
-#if !(defined(WITH_OPENGLES) && !GL_ES_VERSION_3_2) && !defined(DEATH_TARGET_EMSCRIPTEN)
+#if !defined(DEATH_TARGET_IOS) && !(defined(WITH_OPENGLES) && !GL_ES_VERSION_3_2) && !defined(DEATH_TARGET_EMSCRIPTEN)
 		io.BackendFlags |= ImGuiBackendFlags_RendererHasVtxOffset;	// We can honor the ImDrawCmd::VtxOffset field, allowing for large meshes.
 #endif
 		io.BackendFlags |= ImGuiBackendFlags_RendererHasTextures;	// We can honor ImGuiPlatformIO::Textures[] requests during render.
 
-		imguiShaderProgram_ = std::make_unique<GLShaderProgram>(GLShaderProgram::QueryPhase::Immediate);
+		imguiShaderProgram_ = std::make_unique<BackendShaderProgram>(BackendShaderProgram::QueryPhase::Immediate);
 #if !defined(WITH_EMBEDDED_SHADERS)
-		imguiShaderProgram_->AttachShaderFromFile(GL_VERTEX_SHADER, fs::CombinePath({ theApplication().GetDataPath(), "Shaders"_s, "imgui_vs.glsl"_s }));
-		imguiShaderProgram_->AttachShaderFromFile(GL_FRAGMENT_SHADER, fs::CombinePath({ theApplication().GetDataPath(), "Shaders"_s, "imgui_fs.glsl"_s }));
+		imguiShaderProgram_->AttachShaderFromFile(0x8B31, fs::CombinePath({ theApplication().GetDataPath(), "Shaders"_s, "imgui_vs.glsl"_s }));
+		imguiShaderProgram_->AttachShaderFromFile(0x8B30, fs::CombinePath({ theApplication().GetDataPath(), "Shaders"_s, "imgui_fs.glsl"_s }));
 #else
-		imguiShaderProgram_->AttachShaderFromString(GL_VERTEX_SHADER, ShaderStrings::imgui_vs);
-		imguiShaderProgram_->AttachShaderFromString(GL_FRAGMENT_SHADER, ShaderStrings::imgui_fs);
+#if defined(DEATH_TARGET_IOS)
+		imguiShaderProgram_->AttachShaderFromString(0x8B31, ShaderStrings::imgui_vs_metal);
+		imguiShaderProgram_->AttachShaderFromString(0x8B30, ShaderStrings::imgui_fs_metal);
+#else
+		imguiShaderProgram_->AttachShaderFromString(0x8B31, ShaderStrings::imgui_vs);
+		imguiShaderProgram_->AttachShaderFromString(0x8B30, ShaderStrings::imgui_fs);
 #endif
-		imguiShaderProgram_->Link(GLShaderProgram::Introspection::Enabled);
-		FATAL_ASSERT(imguiShaderProgram_->GetStatus() != GLShaderProgram::Status::LinkingFailed);
+#endif
+
+#if defined(DEATH_TARGET_IOS)
+		// Define ImGui vertex format for Metal pipeline creation
+		imguiShaderProgram_->DefineAttribute(Material::PositionAttributeName, sizeof(ImDrawVert), reinterpret_cast<void*>(offsetof(ImDrawVert, pos)));
+		imguiShaderProgram_->DefineAttribute(Material::TexCoordsAttributeName, sizeof(ImDrawVert), reinterpret_cast<void*>(offsetof(ImDrawVert, uv)));
+		imguiShaderProgram_->DefineAttribute(Material::ColorAttributeName, sizeof(ImDrawVert), reinterpret_cast<void*>(offsetof(ImDrawVert, col)));
+#endif
+		imguiShaderProgram_->Link(BackendShaderProgram::Introspection::Enabled);
+		FATAL_ASSERT(imguiShaderProgram_->IsLinked());
 
 		if (!withSceneGraph) {
 			SetupBuffersAndShader();
@@ -283,7 +299,11 @@ namespace nCine
 
 	void ImGuiDrawing::DestroyTexture(ImTextureData* tex)
 	{
+#if defined(DEATH_TARGET_IOS)
+		BackendTexture* texturePtr = (BackendTexture*)(intptr_t)tex->TexID;
+#else
 		GLTexture* texturePtr = (GLTexture*)(intptr_t)tex->TexID;
+#endif
 		textures_.erase(texturePtr);
 
 		// Clear identifiers and mark as destroyed (in order to allow e.g. calling InvalidateDeviceObjects while running)
@@ -293,6 +313,35 @@ namespace nCine
 
 	void ImGuiDrawing::UpdateTexture(ImTextureData* tex)
 	{
+#if defined(DEATH_TARGET_IOS)
+		// Metal texture upload path
+		if (tex->Status == ImTextureStatus_WantCreate) {
+			IM_ASSERT(tex->TexID == 0 && tex->BackendUserData == nullptr);
+			IM_ASSERT(tex->Format == ImTextureFormat_RGBA32);
+			const void* pixels = tex->GetPixels();
+
+			std::unique_ptr<BackendTexture> texture = std::make_unique<BackendTexture>(0);
+			texture->TexParameteri(0x2801, 0x2601); // GL_TEXTURE_MIN_FILTER, GL_LINEAR
+			texture->TexParameteri(0x2800, 0x2601); // GL_TEXTURE_MAG_FILTER, GL_LINEAR
+			texture->TexParameteri(0x2802, 0x812F); // GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE
+			texture->TexParameteri(0x2803, 0x812F); // GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE
+			texture->TexImage2D(0, 0x8058 /*GL_RGBA8*/, tex->Width, tex->Height, 0x1908 /*GL_RGBA*/, 0x1401 /*GL_UNSIGNED_BYTE*/, pixels);
+
+			BackendTexture* texturePtr = texture.get();
+			textures_.emplace(texturePtr, std::move(texture));
+			tex->SetTexID((ImTextureID)(intptr_t)texturePtr);
+			tex->SetStatus(ImTextureStatus_OK);
+		} else if (tex->Status == ImTextureStatus_WantUpdates) {
+			BackendTexture* texturePtr = (BackendTexture*)(intptr_t)tex->TexID;
+			for (ImTextureRect& r : tex->Updates) {
+				texturePtr->TexSubImage2D(0, r.x, r.y, r.w, r.h, 0x1908 /*GL_RGBA*/, 0x1401 /*GL_UNSIGNED_BYTE*/, tex->GetPixelsAt(r.x, r.y));
+			}
+			tex->SetStatus(ImTextureStatus_OK);
+		} else if (tex->Status == ImTextureStatus_WantDestroy && tex->UnusedFrames > 0) {
+			DestroyTexture(tex);
+		}
+		return;
+#endif
 		// FIXME: Consider backing up and restoring
 		if (tex->Status == ImTextureStatus_WantCreate || tex->Status == ImTextureStatus_WantUpdates) {
 #ifdef GL_UNPACK_ROW_LENGTH // Not on WebGL/ES
@@ -395,8 +444,6 @@ namespace nCine
 	{
 		ImDrawData* drawData = ImGui::GetDrawData();
 
-		const std::uint32_t numElements = sizeof(ImDrawVert) / sizeof(GLfloat);
-
 		ImGuiIO& io = ImGui::GetIO();
 		const std::int32_t fbWidth = std::int32_t(drawData->DisplaySize.x * drawData->FramebufferScale.x);
 		const std::int32_t fbHeight = std::int32_t(drawData->DisplaySize.y * drawData->FramebufferScale.y);
@@ -413,6 +460,113 @@ namespace nCine
 				}
 			}
 		}
+
+#if defined(DEATH_TARGET_IOS)
+		id<MTLRenderCommandEncoder> encoder = (__bridge id<MTLRenderCommandEncoder>)MetalRenderState::currentEncoder();
+		if (encoder == nil) {
+			return;
+		}
+
+		// Pipeline state (alpha blending)
+		id<MTLRenderPipelineState> pipelineState = (__bridge id<MTLRenderPipelineState>)imguiShaderProgram_->GetPipelineState(
+			true, BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
+		if (pipelineState != nil) {
+			[encoder setRenderPipelineState:pipelineState];
+		}
+
+		// Disable depth for ImGui
+		MetalRenderState::setDepthTest(false);
+		MetalRenderState::setDepthMask(false);
+		id<MTLDepthStencilState> depthStencilState = (__bridge id<MTLDepthStencilState>)MetalRenderState::getDepthStencilState();
+		if (depthStencilState != nil) {
+			[encoder setDepthStencilState:depthStencilState];
+		}
+
+		// Setup viewport to framebuffer size
+		MTLViewport mtlViewport = { 0.0, 0.0, double(fbWidth), double(fbHeight), 0.0, 1.0 };
+		[encoder setViewport:mtlViewport];
+
+		// Projection + depth constants
+		const float depth = RenderCommand::CalculateDepth(theApplication().GetGuiSettings().imguiLayer, -1.0f, 1.0f);
+		struct alignas(16) GuiConstants {
+			float proj[16];
+			float depth;
+			float pad[3];
+		} constants;
+		std::memcpy(constants.proj, projectionMatrix_.Data(), sizeof(constants.proj));
+		constants.depth = depth;
+
+		// Bind GUI constants at buffer index 1 (see default Metal shader conventions)
+		[encoder setVertexBytes:&constants length:sizeof(constants) atIndex:1];
+
+		for (std::int32_t n = 0; n < drawData->CmdListsCount; n++) {
+			const ImDrawList* imCmdList = drawData->CmdLists[n];
+
+			// Upload vertices
+			std::uint32_t vtxOffsetBytes = 0;
+			id<MTLBuffer> vtxBuffer = (__bridge id<MTLBuffer>)MetalRenderState::acquireTransientBuffer(
+				(std::uint32_t)imCmdList->VtxBuffer.Size * (std::uint32_t)sizeof(ImDrawVert), vtxOffsetBytes);
+			if (vtxBuffer == nil) {
+				continue;
+			}
+			std::memcpy((std::uint8_t*)[vtxBuffer contents] + vtxOffsetBytes, imCmdList->VtxBuffer.Data,
+				imCmdList->VtxBuffer.Size * sizeof(ImDrawVert));
+			[encoder setVertexBuffer:vtxBuffer offset:vtxOffsetBytes atIndex:0];
+
+			// Upload indices
+			std::uint32_t idxOffsetBytes = 0;
+			id<MTLBuffer> idxBuffer = (__bridge id<MTLBuffer>)MetalRenderState::acquireTransientBuffer(
+				(std::uint32_t)imCmdList->IdxBuffer.Size * (std::uint32_t)sizeof(ImDrawIdx), idxOffsetBytes);
+			if (idxBuffer == nil) {
+				continue;
+			}
+			std::memcpy((std::uint8_t*)[idxBuffer contents] + idxOffsetBytes, imCmdList->IdxBuffer.Data,
+				imCmdList->IdxBuffer.Size * sizeof(ImDrawIdx));
+
+			for (std::int32_t cmdIdx = 0; cmdIdx < imCmdList->CmdBuffer.Size; cmdIdx++) {
+				const ImDrawCmd* imCmd = &imCmdList->CmdBuffer[cmdIdx];
+
+				// Project scissor/clipping rectangles into framebuffer space
+				ImVec2 clipMin((imCmd->ClipRect.x - clipOff.x) * clipScale.x, (imCmd->ClipRect.y - clipOff.y) * clipScale.y);
+				ImVec2 clipMax((imCmd->ClipRect.z - clipOff.x) * clipScale.x, (imCmd->ClipRect.w - clipOff.y) * clipScale.y);
+				if (clipMax.x <= clipMin.x || clipMax.y <= clipMin.y) {
+					continue;
+				}
+
+				MTLScissorRect scissor = {
+					(NSUInteger)clipMin.x,
+					(NSUInteger)clipMin.y,
+					(NSUInteger)(clipMax.x - clipMin.x),
+					(NSUInteger)(clipMax.y - clipMin.y)
+				};
+				[encoder setScissorRect:scissor];
+
+				BackendTexture* texture = reinterpret_cast<BackendTexture*>(imCmd->GetTexID());
+				if (texture != nullptr) {
+					[encoder setFragmentTexture:(__bridge id<MTLTexture>)texture->GetMetalHandle() atIndex:0];
+					[encoder setFragmentSamplerState:(__bridge id<MTLSamplerState>)texture->GetSamplerHandle() atIndex:0];
+				}
+
+				const MTLIndexType indexType = (sizeof(ImDrawIdx) == 2) ? MTLIndexTypeUInt16 : MTLIndexTypeUInt32;
+				const NSUInteger indexOffset = idxOffsetBytes + (NSUInteger)imCmd->IdxOffset * sizeof(ImDrawIdx);
+				[encoder drawIndexedPrimitives:MTLPrimitiveTypeTriangle
+									indexCount:(NSUInteger)imCmd->ElemCount
+									 indexType:indexType
+								   indexBuffer:idxBuffer
+							 indexBufferOffset:indexOffset
+								 instanceCount:1
+									baseVertex:(NSInteger)imCmd->VtxOffset
+								  baseInstance:0];
+			}
+		}
+
+		// Restore depth state defaults for following draws
+		MetalRenderState::setDepthTest(true);
+		MetalRenderState::setDepthMask(true);
+		return;
+#endif
+
+		const std::uint32_t numElements = sizeof(ImDrawVert) / sizeof(GLfloat);
 
 #if defined(IMGUI_HAS_VIEWPORT)
 		// projectionMatrix_ must be recaltulated when the main window moves if viewports are active

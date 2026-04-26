@@ -1,0 +1,2435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Environment.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Cpu.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Utf8.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Base\Format.cpp">
+      <Filter>Source Files\Shared\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Containers\DateTime.cpp">
+      <Filter>Source Files\Shared\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Containers\SmallVector.cpp">
+      <Filter>Source Files\Shared\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Containers\String.cpp">
+      <Filter>Source Files\Shared\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringUtils.cpp">
+      <Filter>Source Files\Shared\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringView.cpp">
+      <Filter>Source Files\Shared\Containers</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Core\Logger.cpp">
+      <Filter>Source Files\Shared\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Cryptography\xxHash.cpp">
+      <Filter>Source Files\Shared\Cryptography</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\AndroidAssetStream.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\BoundedFileStream.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\EmscriptenFileStream.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\FileStream.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\FileSystem.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\MemoryStream.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\PakFile.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\Stream.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\WebRequest.cpp">
+      <Filter>Source Files\Shared\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\Compression\DeflateStream.cpp">
+      <Filter>Source Files\Shared\IO\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\Compression\Lz4Stream.cpp">
+      <Filter>Source Files\Shared\IO\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\IO\Compression\ZstdStream.cpp">
+      <Filter>Source Files\Shared\IO\Compression</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Shared\Threading\Implementation\WaitOnAddress.cpp">
+      <Filter>Source Files\Shared\Threading\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\AppConfiguration.cpp">
+      <Filter>Source Files\nCine</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Application.cpp">
+      <Filter>Source Files\nCine</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\I18n.cpp">
+      <Filter>Source Files\nCine</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\ServiceLocator.cpp">
+      <Filter>Source Files\nCine</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioBuffer.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioStream.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\IAudioLoader.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\IAudioPlayer.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\Algorithms.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\BitArray.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\Clock.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\FrameTimer.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\HashFunctions.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\Object.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\Random.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\Timer.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Base\TimeStamp.cpp">
+      <Filter>Source Files\nCine\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\AnimatedSprite.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\BaseSprite.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\BinaryShaderCache.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Camera.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\DrawableNode.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Geometry.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GfxCapabilities.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLAttribute.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLBlending.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLBufferObject.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLClearColor.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLCullFace.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLDebug.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLDepthTest.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLFramebuffer.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLRenderbuffer.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLScissorTest.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShader.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShaderProgram.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShaderUniformBlocks.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShaderUniforms.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLTexture.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniform.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniformBlock.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniformBlockCache.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniformCache.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLVertexArrayObject.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLVertexFormat.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLViewport.cpp">
+      <Filter>Source Files\nCine\Graphics\GL</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\IGfxDevice.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ITextureLoader.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Material.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\MeshSprite.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Particle.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ParticleAffectors.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ParticleInitializer.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ParticleSystem.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RectAnimation.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderBatcher.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderBuffersManager.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderCommand.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderCommandPool.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderQueue.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderResources.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderStatistics.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderVaoPool.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\SceneNode.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ScreenViewport.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Shader.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ShaderState.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Sprite.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Texture.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureFormat.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderDds.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderKtx.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderPvr.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderRaw.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderPng.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderQoi.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Viewport.cpp">
+      <Filter>Source Files\nCine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Input\IInputManager.cpp">
+      <Filter>Source Files\nCine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Input\JoyMapping.cpp">
+      <Filter>Source Files\nCine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Color.cpp">
+      <Filter>Source Files\nCine\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Colorf.cpp">
+      <Filter>Source Files\nCine\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Half.cpp">
+      <Filter>Source Files\nCine\Primitives</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Threading\Thread.cpp">
+      <Filter>Source Files\nCine\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\jsoncpp\reader.cpp">
+      <Filter>Source Files\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\jsoncpp\value.cpp">
+      <Filter>Source Files\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\jsoncpp\writer.cpp">
+      <Filter>Source Files\jsoncpp</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\ContentResolver.cpp">
+      <Filter>Source Files\Jazz2</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\LevelHandler.cpp">
+      <Filter>Source Files\Jazz2</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\LevelInitialization.cpp">
+      <Filter>Source Files\Jazz2</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\PreferencesCache.cpp">
+      <Filter>Source Files\Jazz2</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Resources.cpp">
+      <Filter>Source Files\Jazz2</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\ActorBase.cpp">
+      <Filter>Source Files\Jazz2\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Player.cpp">
+      <Filter>Source Files\Jazz2\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\PlayerCorpse.cpp">
+      <Filter>Source Files\Jazz2\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\SolidObjectBase.cpp">
+      <Filter>Source Files\Jazz2\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\AmmoCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CarrotCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CarrotFlyCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CarrotInvincibleCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CoinCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CollectibleBase.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\FastFireCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\FoodCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\GemCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\GemGiant.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\GemRing.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\OneUpCollectible.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\Stopwatch.cpp">
+      <Filter>Source Files\Jazz2\Actors\Collectibles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bat.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bee.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Caterpillar.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Crab.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Demon.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Doggy.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Dragon.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Dragonfly.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\FatChick.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Fencer.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Fish.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\EnemyBase.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Helmut.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\LabRat.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Lizard.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\LizardFloat.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\MadderHatter.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Monkey.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Rapier.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Raven.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Skeleton.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Sparks.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Sucker.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\SuckerFloat.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Turtle.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\TurtleShell.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\TurtleTough.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\TurtleTube.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Witch.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\BossBase.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Bilsy.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Bolly.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Bubba.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Devan.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\DevanRemote.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Queen.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Robot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\TurtleBoss.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Uterus.cpp">
+      <Filter>Source Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\AirboardGenerator.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\AmbientBubbles.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\AmbientSound.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Bird.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\BirdCage.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Bomb.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\BonusWarp.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Checkpoint.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Copter.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\EndOfLevel.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Eva.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\IceBlock.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Moth.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\RollingRock.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Spring.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\SteamNote.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\SwingingVine.cpp">
+      <Filter>Source Files\Jazz2\Actors\Environment</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Explosion.cpp">
+      <Filter>Source Files\Jazz2\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Lighting\FlickerLight.cpp">
+      <Filter>Source Files\Jazz2\Actors\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Lighting\PulsatingRadialLight.cpp">
+      <Filter>Source Files\Jazz2\Actors\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Lighting\StaticRadialLight.cpp">
+      <Filter>Source Files\Jazz2\Actors\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\AmmoBarrel.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\AmmoCrate.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\BarrelContainer.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\Bridge.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\CrateContainer.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\GenericContainer.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\GemBarrel.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\GemCrate.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\MovingPlatform.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PinballBumper.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PinballPaddle.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\Pole.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PowerUpMorphMonitor.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PowerUpShieldMonitor.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PowerUpWeaponMonitor.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PushableBox.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\SpikeBall.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\TriggerCrate.cpp">
+      <Filter>Source Files\Jazz2\Actors\Solid</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\BlasterShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\BouncerShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ElectroShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\FreezerShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\PepperShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\RFShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\SeekerShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShieldFireShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShieldLightningShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShieldWaterShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShotBase.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\Thunderbolt.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ToasterShot.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\TNT.cpp">
+      <Filter>Source Files\Jazz2\Actors\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Collisions\DynamicTree.cpp">
+      <Filter>Source Files\Jazz2\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Collisions\DynamicTreeBroadPhase.cpp">
+      <Filter>Source Files\Jazz2\Collisions</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\AnimSetMapping.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\EventConverter.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Anims.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Block.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Data.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Episode.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Level.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Strings.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Tileset.cpp">
+      <Filter>Source Files\Jazz2\Compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Events\EventMap.cpp">
+      <Filter>Source Files\Jazz2\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Events\EventSpawner.cpp">
+      <Filter>Source Files\Jazz2\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\ControlScheme.cpp">
+      <Filter>Source Files\Jazz2\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\RgbLights.cpp">
+      <Filter>Source Files\Jazz2\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\RumbleProcessor.cpp">
+      <Filter>Source Files\Jazz2\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\BlurRenderPass.cpp">
+      <Filter>Source Files\Jazz2\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\CombineRenderer.cpp">
+      <Filter>Source Files\Jazz2\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\LightingRenderer.cpp">
+      <Filter>Source Files\Jazz2\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\PlayerViewport.cpp">
+      <Filter>Source Files\Jazz2\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\UpscaleRenderPass.cpp">
+      <Filter>Source Files\Jazz2\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\JJ2PlusDefinitions.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\LevelScriptLoader.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterArray.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterDictionary.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterImGuiBindings.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterMath.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterRef.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterString.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\ScriptActorWrapper.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\ScriptLoader.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\ScriptPlayerWrapper.cpp">
+      <Filter>Source Files\Jazz2\Scripting</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\TileMap.cpp">
+      <Filter>Source Files\Jazz2\Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\TileSet.cpp">
+      <Filter>Source Files\Jazz2\Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Canvas.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Cinematics.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\DiscordRpcClient.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Font.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\FormattedTextBlock.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\HUD.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\InGameConsole.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\LoadingHandler.cpp">
+      <Filter>Source Files\Jazz2\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\AboutSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\BeginSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\ControlsOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\CustomLevelSelectSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\EpisodeSelectSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\FirstRunSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\GameplayEnhancementsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\GameplayOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\GraphicsOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\HighscoresSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\ImportSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\InGameMenu.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\InputDiagnosticsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\LanguageSelectSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\MainMenu.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\MenuSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\OptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\PauseSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\RefreshCacheSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\RemapControlsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\RescaleModeSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\SimpleMessageSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\SoundsOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\StartGameOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\TouchControlsOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\UserProfileOptionsSection.cpp">
+      <Filter>Source Files\Jazz2\UI\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Backends\GlfwInputManager.cpp">
+      <Filter>Source Files\nCine\Backends</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Backends\GlfwKeys.cpp">
+      <Filter>Source Files\nCine\Backends</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Backends\GlfwGfxDevice.cpp">
+      <Filter>Source Files\nCine\Backends</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\ALAudioDevice.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioBufferPlayer.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioStreamPlayer.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioLoaderWav.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioReaderWav.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioLoaderOgg.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioReaderOgg.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioLoaderMpt.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioReaderMpt.cpp">
+      <Filter>Source Files\nCine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Threading\WindowsThreadSync.cpp">
+      <Filter>Source Files\nCine\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\Threading\ThreadPool.cpp">
+      <Filter>Source Files\nCine\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\Sources\nCine\MainApplication.cpp">
+      <Filter>Source Files\nCine</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\gitt\jazz2-native\build\Generated\shader_strings.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Asserts.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Common.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\CommonBase.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\CommonWindows.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Environment.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Cpu.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IntrinsicsAvx.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IntrinsicsSse2.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IntrinsicsSse3.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IntrinsicsSse4.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IntrinsicsSsse3.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Utf8.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Base\Format.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Base\IDisposable.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Base\Memory.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Base\Move.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Base\TypeInfo.h">
+      <Filter>Header Files\Shared\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\Array.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\ArrayView.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\Containers.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\DateTime.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\Function.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\GrowableArray.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\Pair.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\Reference.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\SequenceHelpers.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\SmallVector.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StaticArray.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\String.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringConcatenable.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringStl.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringStlView.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringUtils.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\StringView.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Containers\Tags.h">
+      <Filter>Header Files\Shared\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Core\ITraceSink.h">
+      <Filter>Header Files\Shared\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Core\Logger.h">
+      <Filter>Header Files\Shared\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Cryptography\xxHash.h">
+      <Filter>Header Files\Shared\Cryptography</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\AndroidAssetStream.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\BoundedFileStream.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\EmscriptenFileStream.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\FileAccess.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\FileStream.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\FileSystem.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\MemoryStream.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\PakFile.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\Stream.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\WebRequest.h">
+      <Filter>Header Files\Shared\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\Compression\DeflateStream.h">
+      <Filter>Header Files\Shared\IO\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\Compression\Lz4Stream.h">
+      <Filter>Header Files\Shared\IO\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\IO\Compression\ZstdStream.h">
+      <Filter>Header Files\Shared\IO\Compression</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Threading\Event.h">
+      <Filter>Header Files\Shared\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Threading\Spinlock.h">
+      <Filter>Header Files\Shared\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Threading\Implementation\WaitOnAddress.h">
+      <Filter>Header Files\Shared\Threading\Implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\AppConfiguration.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Application.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\CommonConstants.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\CommonHeaders.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\I18n.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\IAppEventHandler.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\ServiceLocator.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioBuffer.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioStream.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\IAudioDevice.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\IAudioLoader.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\IAudioPlayer.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\IAudioReader.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Algorithms.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\BitArray.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\BitSet.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Clock.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\FrameTimer.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\HashFunctions.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\HashMap.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Iterator.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Object.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Random.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ReverseIterator.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\StaticHashMap.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\StaticHashMapIterator.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Task.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\Timer.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\TimeStamp.h">
+      <Filter>Header Files\nCine\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ParallelHashMap\phmap.h">
+      <Filter>Header Files\nCine\Base\ParallelHashMap</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ParallelHashMap\phmap_base.h">
+      <Filter>Header Files\nCine\Base\ParallelHashMap</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ParallelHashMap\phmap_bits.h">
+      <Filter>Header Files\nCine\Base\ParallelHashMap</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ParallelHashMap\phmap_config.h">
+      <Filter>Header Files\nCine\Base\ParallelHashMap</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ParallelHashMap\phmap_fwd_decl.h">
+      <Filter>Header Files\nCine\Base\ParallelHashMap</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\ParallelHashMap\phmap_utils.h">
+      <Filter>Header Files\nCine\Base\ParallelHashMap</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Base\pdqsort\pdqsort.h">
+      <Filter>Header Files\nCine\Base\pdqsort</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\AnimatedSprite.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\BaseSprite.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\BinaryShaderCache.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Camera.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\DisplayMode.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\DrawableNode.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Geometry.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GfxCapabilities.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\IDebugOverlay.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\IGfxCapabilities.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\IGfxDevice.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ITextureLoader.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Material.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\MeshSprite.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Particle.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ParticleAffectors.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ParticleInitializer.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ParticleSystem.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RectAnimation.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderBatcher.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderBuffersManager.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderCommand.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderCommandPool.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderQueue.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderResources.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderStatistics.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\RenderVaoPool.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\SceneNode.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ScreenViewport.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Shader.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\ShaderState.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Sprite.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Texture.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureFormat.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderDds.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderKtx.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderPng.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderPvr.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderQoi.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\TextureLoaderRaw.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\Viewport.h">
+      <Filter>Header Files\nCine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLAttribute.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLBlending.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLBufferObject.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLClearColor.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLCullFace.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLDebug.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLDepthTest.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLFramebuffer.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLHashMap.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLRenderbuffer.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLScissorTest.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShader.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShaderProgram.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShaderUniformBlocks.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLShaderUniforms.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLTexture.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniform.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniformBlock.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniformBlockCache.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLUniformCache.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLVertexArrayObject.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLVertexFormat.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Graphics\GL\GLViewport.h">
+      <Filter>Header Files\nCine\Graphics\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Input\IInputEventHandler.h">
+      <Filter>Header Files\nCine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Input\IInputManager.h">
+      <Filter>Header Files\nCine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Input\InputEvents.h">
+      <Filter>Header Files\nCine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Input\JoyMapping.h">
+      <Filter>Header Files\nCine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Input\JoyMappingDb.h">
+      <Filter>Header Files\nCine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Input\Keys.h">
+      <Filter>Header Files\nCine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\AABB.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Color.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Colorf.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Half.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Matrix4x4.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Quaternion.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Rect.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Vector2.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Vector3.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Primitives\Vector4.h">
+      <Filter>Header Files\nCine\Primitives</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Threading\IThreadCommand.h">
+      <Filter>Header Files\nCine\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Threading\IThreadPool.h">
+      <Filter>Header Files\nCine\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Threading\LockedPtr.h">
+      <Filter>Header Files\nCine\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Threading\Thread.h">
+      <Filter>Header Files\nCine\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Threading\ThreadSync.h">
+      <Filter>Header Files\nCine\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\allocator.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\assertions.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\config.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\forwards.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\json.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\json_features.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\json_tool.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\json_valueiterator.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\reader.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\value.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\version.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\jsoncpp\writer.h">
+      <Filter>Header Files\jsoncpp</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\TermLogo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\AnimationLoopMode.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\AnimState.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\ContentResolver.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\ContentResolver.Shaders.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Direction.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\EventType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\ExitType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\GameDifficulty.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\ILevelHandler.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\IResumable.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\IRootController.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\IStateHandler.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\LevelDescriptor.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\LevelFlags.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\LevelHandler.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\LevelInitialization.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\LightEmitter.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\PitType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\PlayerAction.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\PlayerType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\PreferencesCache.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Resources.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\ShieldType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\SuspendType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\WarpFlags.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\WeaponType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\WeatherType.h">
+      <Filter>Header Files\Jazz2</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\ActorBase.h">
+      <Filter>Header Files\Jazz2\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Player.h">
+      <Filter>Header Files\Jazz2\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\PlayerCorpse.h">
+      <Filter>Header Files\Jazz2\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\SolidObjectBase.h">
+      <Filter>Header Files\Jazz2\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\AmmoCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CarrotCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CarrotFlyCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CarrotInvincibleCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CoinCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\CollectibleBase.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\FastFireCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\FoodCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\GemCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\GemGiant.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\GemRing.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\OneUpCollectible.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Collectibles\Stopwatch.h">
+      <Filter>Header Files\Jazz2\Actors\Collectibles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bat.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bee.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Caterpillar.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Crab.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Demon.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Doggy.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Dragon.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Dragonfly.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\FatChick.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Fencer.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Fish.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\EnemyBase.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Helmut.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\LabRat.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Lizard.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\LizardFloat.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\MadderHatter.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Monkey.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Rapier.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Raven.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Skeleton.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Sparks.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Sucker.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\SuckerFloat.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Turtle.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\TurtleShell.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\TurtleTough.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\TurtleTube.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Witch.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\BossBase.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Bilsy.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Bolly.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Bubba.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Devan.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\DevanRemote.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Queen.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Robot.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\TurtleBoss.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Enemies\Bosses\Uterus.h">
+      <Filter>Header Files\Jazz2\Actors\Enemies\Bosses</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\AirboardGenerator.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\AmbientBubbles.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\AmbientSound.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Bird.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\BirdCage.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Bomb.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\BonusWarp.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Checkpoint.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Copter.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\EndOfLevel.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Eva.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\IceBlock.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Moth.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\RollingRock.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\Spring.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\SteamNote.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Environment\SwingingVine.h">
+      <Filter>Header Files\Jazz2\Actors\Environment</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Explosion.h">
+      <Filter>Header Files\Jazz2\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Lighting\FlickerLight.h">
+      <Filter>Header Files\Jazz2\Actors\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Lighting\PulsatingRadialLight.h">
+      <Filter>Header Files\Jazz2\Actors\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Lighting\StaticRadialLight.h">
+      <Filter>Header Files\Jazz2\Actors\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\AmmoBarrel.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\AmmoCrate.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\BarrelContainer.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\Bridge.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\CrateContainer.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\GenericContainer.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\GemBarrel.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\GemCrate.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\MovingPlatform.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PinballBumper.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PinballPaddle.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\Pole.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PowerUpMorphMonitor.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PowerUpShieldMonitor.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PowerUpWeaponMonitor.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\PushableBox.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\SpikeBall.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Solid\TriggerCrate.h">
+      <Filter>Header Files\Jazz2\Actors\Solid</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\BlasterShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\BouncerShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ElectroShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\FreezerShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\PepperShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\RFShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\SeekerShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShieldFireShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShieldLightningShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShieldWaterShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ShotBase.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\Thunderbolt.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\ToasterShot.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Actors\Weapons\TNT.h">
+      <Filter>Header Files\Jazz2\Actors\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Collisions\DynamicTree.h">
+      <Filter>Header Files\Jazz2\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Collisions\DynamicTreeBroadPhase.h">
+      <Filter>Header Files\Jazz2\Collisions</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\AnimSetMapping.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\EventConverter.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Anims.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Anims.Palettes.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Block.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Data.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Episode.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Event.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Level.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Strings.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Tileset.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Compatibility\JJ2Version.h">
+      <Filter>Header Files\Jazz2\Compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Events\EventMap.h">
+      <Filter>Header Files\Jazz2\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Events\EventSpawner.h">
+      <Filter>Header Files\Jazz2\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\ControlScheme.h">
+      <Filter>Header Files\Jazz2\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\RgbLights.h">
+      <Filter>Header Files\Jazz2\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\RumbleDescription.h">
+      <Filter>Header Files\Jazz2\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Input\RumbleProcessor.h">
+      <Filter>Header Files\Jazz2\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\BlurRenderPass.h">
+      <Filter>Header Files\Jazz2\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\CombineRenderer.h">
+      <Filter>Header Files\Jazz2\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\LightingRenderer.h">
+      <Filter>Header Files\Jazz2\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\PlayerViewport.h">
+      <Filter>Header Files\Jazz2\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Rendering\UpscaleRenderPass.h">
+      <Filter>Header Files\Jazz2\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\JJ2PlusDefinitions.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\LevelScriptLoader.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterArray.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterDictionary.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterImGuiBindings.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterMath.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterRef.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\RegisterString.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\ScriptActorWrapper.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\ScriptLoader.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Scripting\ScriptPlayerWrapper.h">
+      <Filter>Header Files\Jazz2\Scripting</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\ITileMapOwner.h">
+      <Filter>Header Files\Jazz2\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\TileCollisionParams.h">
+      <Filter>Header Files\Jazz2\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\TileDestructType.h">
+      <Filter>Header Files\Jazz2\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\TileMap.h">
+      <Filter>Header Files\Jazz2\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\Tiles\TileSet.h">
+      <Filter>Header Files\Jazz2\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Canvas.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Cinematics.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\DiscordRpcClient.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Font.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\FormattedTextBlock.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\HUD.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\InGameConsole.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\LoadingHandler.h">
+      <Filter>Header Files\Jazz2\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\AboutSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\BeginSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\ControlsOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\CustomLevelSelectSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\EpisodeSelectSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\FirstRunSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\GameplayEnhancementsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\GameplayOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\GraphicsOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\HighscoresSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\IMenuContainer.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\ImportSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\InGameMenu.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\InputDiagnosticsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\LanguageSelectSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\MainMenu.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\MenuResources.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\OptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\PauseSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\RefreshCacheSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\RemapControlsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\RescaleModeSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\ScrollableMenuSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\SimpleMessageSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\SoundsOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\StartGameOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\TouchControlsOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Jazz2\UI\Menu\UserProfileOptionsSection.h">
+      <Filter>Header Files\Jazz2\UI\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Backends\GlfwInputManager.h">
+      <Filter>Header Files\nCine\Backends</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Backends\GlfwGfxDevice.h">
+      <Filter>Header Files\nCine\Backends</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioBufferPlayer.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioStreamPlayer.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\ALAudioDevice.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioLoaderWav.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioReaderWav.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioLoaderOgg.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioReaderOgg.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioLoaderMpt.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Audio\AudioReaderMpt.h">
+      <Filter>Header Files\nCine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\Threading\ThreadPool.h">
+      <Filter>Header Files\nCine\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\nCine\MainApplication.h">
+      <Filter>Header Files\nCine</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\build\Generated\shader_strings.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="F:\gitt\jazz2-native\Sources\Shared\Core\Backward.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\gitt\jazz2-native\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="F:\gitt\jazz2-native\build\Generated\Resources.rc">
+      <Filter>Generated Files</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="F:\gitt\jazz2-native\build\Generated\Version.rc">
+      <Filter>Generated Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{2F1FBAD9-3F94-33C4-8184-7EEB9A1FE1E5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{FDB6BC50-0F48-337F-BFEC-C941E639C013}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2">
+      <UniqueIdentifier>{EADD1C81-D1F8-3D3D-A43A-74D5D6116F33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors">
+      <UniqueIdentifier>{7BAF6114-38AD-3A03-8E20-0EFD174E80DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Collectibles">
+      <UniqueIdentifier>{9C8B4B65-C3AA-36B6-B007-885CC80846BE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Enemies">
+      <UniqueIdentifier>{5CC4CAF0-6E82-38AF-A6B5-F527F5133248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Enemies\Bosses">
+      <UniqueIdentifier>{D490D63D-84F8-3A43-99BF-7B540B7E819C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Environment">
+      <UniqueIdentifier>{BF6C2BF9-6CA4-3CE3-B6A9-58A8887B9925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Lighting">
+      <UniqueIdentifier>{0AAC95E1-AB84-3ED4-B01A-58F3A9C6E6FA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Solid">
+      <UniqueIdentifier>{1AC3F51C-64E2-3DD3-8495-0F8954762816}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Actors\Weapons">
+      <UniqueIdentifier>{75CCD1D8-CFED-3AA9-A848-39D11610EEB2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Collisions">
+      <UniqueIdentifier>{65B1D12A-67D0-344E-916E-94EB7C326E16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Compatibility">
+      <UniqueIdentifier>{B9DAC4DA-8617-379A-9609-D710A27AF0CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Events">
+      <UniqueIdentifier>{C884A1D1-EB74-32A2-B871-E9C2BEE79B61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Input">
+      <UniqueIdentifier>{B0FC1762-7431-3884-A857-1FA4BC373D47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Rendering">
+      <UniqueIdentifier>{C2AA4C89-BDD3-3A16-8F5F-9497F11F54D9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Scripting">
+      <UniqueIdentifier>{646864C6-7756-371E-8D0B-46EE97BD6114}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\Tiles">
+      <UniqueIdentifier>{D227EE86-138B-3F63-B76C-90C550FD6B76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\UI">
+      <UniqueIdentifier>{ECF16328-C827-35F1-864D-2117205FA946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Jazz2\UI\Menu">
+      <UniqueIdentifier>{AA4B9623-2E48-357C-A720-2C985B713E4F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared">
+      <UniqueIdentifier>{63F90A9C-25C3-36B2-8F4A-7EF06BD4ACA8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Base">
+      <UniqueIdentifier>{37C2E130-77E8-32EB-8326-2ED7A923A0DF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Containers">
+      <UniqueIdentifier>{ED48B90A-4991-3128-9954-B4E9B4EFCB67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Core">
+      <UniqueIdentifier>{3657690C-F33A-3477-AC6B-183206AF9705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Cryptography">
+      <UniqueIdentifier>{F53FFDA9-7AE8-3985-99B7-DC055F4A5865}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\IO">
+      <UniqueIdentifier>{017ED877-4222-3D37-81F4-CFD086B54085}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\IO\Compression">
+      <UniqueIdentifier>{13D7069D-86B4-3989-83AF-6DCDE6E18B35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Threading">
+      <UniqueIdentifier>{C2047B33-2A84-35D1-AE78-228B819584E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shared\Threading\Implementation">
+      <UniqueIdentifier>{66CBD26F-120A-3C14-B513-2CF1C0266930}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\jsoncpp">
+      <UniqueIdentifier>{E0954EE8-71F4-37E5-AAA9-B251BEA41305}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine">
+      <UniqueIdentifier>{F841FDB8-7769-37B7-BECE-A3962AF038C1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Audio">
+      <UniqueIdentifier>{E9E5ED9C-F557-34A3-94D6-DFE06CC4607D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Backends">
+      <UniqueIdentifier>{70C0D909-6CA4-362D-9A9E-02EE9E69812B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Base">
+      <UniqueIdentifier>{AE9720FD-061A-381B-AA9D-2EA587C2485A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Base\ParallelHashMap">
+      <UniqueIdentifier>{1F9C61CF-2F95-3100-AA5E-A53B28C15192}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Base\pdqsort">
+      <UniqueIdentifier>{1E08D7A2-B81C-3E12-A936-0258A3DA2775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Graphics">
+      <UniqueIdentifier>{0C3C28C5-F8A1-3BCD-B57B-C9617205C2F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Graphics\GL">
+      <UniqueIdentifier>{8E9A02ED-131E-34CF-A608-60FE59C16D92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Input">
+      <UniqueIdentifier>{667E451E-8CF0-3715-8468-A4AA876B6C87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Primitives">
+      <UniqueIdentifier>{0D8E4344-8154-3C39-9EA7-C6AFB7416402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\nCine\Threading">
+      <UniqueIdentifier>{D7A5AADE-33D3-329D-9CC4-E1770484E91C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D16CFAA6-4F05-34A7-A4DF-23139474AA70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2">
+      <UniqueIdentifier>{6966FE40-4AD3-3929-8A12-D35A8B74757A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors">
+      <UniqueIdentifier>{31BB2F70-7497-36A0-9A59-BEAC7A6A4A90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Collectibles">
+      <UniqueIdentifier>{8851AD98-E402-34E0-92AF-C8AC8C2BE91E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Enemies">
+      <UniqueIdentifier>{D1D5A50F-8ACC-3988-A69D-C3CA0456A0D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Enemies\Bosses">
+      <UniqueIdentifier>{777C834F-5C01-38C3-B629-0382849AEA57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Environment">
+      <UniqueIdentifier>{7D44CD6A-F2B4-3C98-B998-7AC0A84FB1A7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Lighting">
+      <UniqueIdentifier>{F015C4FD-356A-3D81-9443-E7E4DE293648}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Solid">
+      <UniqueIdentifier>{612C14E5-62D3-3C5E-A520-6ADFBE6E725D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Actors\Weapons">
+      <UniqueIdentifier>{6A352122-3B30-3AB5-9440-46442E4F37DA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Collisions">
+      <UniqueIdentifier>{7AC1041C-0156-38AD-A4CD-5BF2AB68C36C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Compatibility">
+      <UniqueIdentifier>{0C20EF83-E8A5-3A57-89AB-4F24D318255A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Events">
+      <UniqueIdentifier>{BDFEE131-3232-35F4-A1B3-4D2B8E3B5084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Input">
+      <UniqueIdentifier>{47F4DAB3-1242-3BD8-85A7-49A7F67F0498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Rendering">
+      <UniqueIdentifier>{EC072D96-137A-30EB-88E3-04ECE18D5BA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Scripting">
+      <UniqueIdentifier>{55C01311-A572-3E16-AEFB-35D2E846C9E9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\Tiles">
+      <UniqueIdentifier>{928E2065-07A1-39F1-B395-BFE0E7EE484E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\UI">
+      <UniqueIdentifier>{BBC12888-4CE8-366D-B935-FDFFD3946D7C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Jazz2\UI\Menu">
+      <UniqueIdentifier>{FBECBB4C-1F7D-31EB-88FD-6A9E9513FA7B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared">
+      <UniqueIdentifier>{58ECE532-E5BF-3528-8D68-F0A10B5D6489}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Base">
+      <UniqueIdentifier>{09E8F09C-BA28-3DF8-A1D0-B74203CE791B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Containers">
+      <UniqueIdentifier>{7DE86A70-3C1D-3DDC-88D1-F3D659626338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Core">
+      <UniqueIdentifier>{DE2B716F-F07B-390E-A5F3-8481FCCEDB33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Cryptography">
+      <UniqueIdentifier>{3C9DA245-DC98-3E5A-8F36-4F6B172F26D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\IO">
+      <UniqueIdentifier>{891E09E6-5AA0-39FE-BFF4-6B05A248422E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\IO\Compression">
+      <UniqueIdentifier>{231C0C62-9B50-39BC-AFBD-7857F9767004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Threading">
+      <UniqueIdentifier>{89968972-17BF-32FE-9D99-5175BA88CF90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shared\Threading\Implementation">
+      <UniqueIdentifier>{23026140-35D7-371E-80FB-80CA8B410184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\jsoncpp">
+      <UniqueIdentifier>{F06A5EEE-CE2E-3378-A3AE-1247DAC12CDB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine">
+      <UniqueIdentifier>{4CA33B53-BE10-3467-BE7E-58A3C429A48D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Audio">
+      <UniqueIdentifier>{E538FDBF-16F7-32D0-AACD-085814428770}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Backends">
+      <UniqueIdentifier>{E4C79830-8995-388F-A74C-7C163B0B680D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Base">
+      <UniqueIdentifier>{F5BAD646-ADF9-3132-B4E5-C67CE77C16AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Graphics">
+      <UniqueIdentifier>{6A1F5FE9-3D04-3432-8056-24A72FA65B41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Graphics\GL">
+      <UniqueIdentifier>{3C9E959A-6656-3405-AE11-BB7E8890238B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Input">
+      <UniqueIdentifier>{94677D74-0978-34FF-8F6F-922F695F4A34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Primitives">
+      <UniqueIdentifier>{35C8DEB3-BDFA-3737-A3EB-F2CA99E93B4F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nCine\Threading">
+      <UniqueIdentifier>{EB825B50-7C2D-3BF0-AB8C-69A215CE9CAD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

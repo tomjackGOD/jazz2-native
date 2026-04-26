@@ -31,10 +31,10 @@ namespace nCine
 
 		struct ShaderLoad
 		{
-			std::unique_ptr<GLShaderProgram>& shaderProgram;
+			std::unique_ptr<BackendShaderProgram>& shaderProgram;
 			const char* vertexShader;
 			const char* fragmentShader;
-			GLShaderProgram::Introspection introspection;
+			BackendShaderProgram::Introspection introspection;
 			const char* shaderName;
 		};
 	}
@@ -45,28 +45,28 @@ namespace nCine
 	std::unique_ptr<RenderCommandPool> RenderResources::renderCommandPool_;
 	std::unique_ptr<RenderBatcher> RenderResources::renderBatcher_;
 
-	std::unique_ptr<GLShaderProgram> RenderResources::defaultShaderPrograms_[DefaultShaderProgramsCount];
-	HashMap<const GLShaderProgram*, GLShaderProgram*> RenderResources::batchedShaders_(32);
+	std::unique_ptr<BackendShaderProgram> RenderResources::defaultShaderPrograms_[DefaultShaderProgramsCount];
+	HashMap<const BackendShaderProgram*, BackendShaderProgram*> RenderResources::batchedShaders_(32);
 
 	std::uint8_t RenderResources::cameraUniformsBuffer_[UniformsBufferSize];
-	HashMap<GLShaderProgram*, RenderResources::CameraUniformData> RenderResources::cameraUniformDataMap_(32);
+	HashMap<BackendShaderProgram*, RenderResources::CameraUniformData> RenderResources::cameraUniformDataMap_(32);
 
 	Camera* RenderResources::currentCamera_ = nullptr;
 	std::unique_ptr<Camera> RenderResources::defaultCamera_;
 	Viewport* RenderResources::currentViewport_ = nullptr;
 
-	GLShaderProgram* RenderResources::GetShaderProgram(Material::ShaderProgramType shaderProgramType)
+	BackendShaderProgram* RenderResources::GetShaderProgram(Material::ShaderProgramType shaderProgramType)
 	{
 		return (shaderProgramType != Material::ShaderProgramType::Custom ? defaultShaderPrograms_[std::int32_t(shaderProgramType)].get() : nullptr);
 	}
 
-	GLShaderProgram* RenderResources::GetBatchedShader(const GLShaderProgram* shader)
+	BackendShaderProgram* RenderResources::GetBatchedShader(const BackendShaderProgram* shader)
 	{
 		auto it = batchedShaders_.find(shader);
 		return (it != batchedShaders_.end() ? it->second : nullptr);
 	}
 
-	bool RenderResources::RegisterBatchedShader(const GLShaderProgram* shader, GLShaderProgram* batchedShader)
+	bool RenderResources::RegisterBatchedShader(const BackendShaderProgram* shader, BackendShaderProgram* batchedShader)
 	{
 		FATAL_ASSERT(shader != nullptr);
 		FATAL_ASSERT(batchedShader != nullptr);
@@ -75,19 +75,19 @@ namespace nCine
 		return batchedShaders_.emplace(shader, batchedShader).second;
 	}
 
-	bool RenderResources::UnregisterBatchedShader(const GLShaderProgram* shader)
+	bool RenderResources::UnregisterBatchedShader(const BackendShaderProgram* shader)
 	{
 		DEATH_ASSERT(shader != nullptr);
 		return (batchedShaders_.erase(shader) > 0);
 	}
 
-	RenderResources::CameraUniformData* RenderResources::FindCameraUniformData(GLShaderProgram* shaderProgram)
+	RenderResources::CameraUniformData* RenderResources::FindCameraUniformData(BackendShaderProgram* shaderProgram)
 	{
 		auto it = cameraUniformDataMap_.find(shaderProgram);
 		return (it != cameraUniformDataMap_.end() ? &it->second : nullptr);
 	}
 
-	void RenderResources::InsertCameraUniformData(GLShaderProgram* shaderProgram, CameraUniformData&& cameraUniformData)
+	void RenderResources::InsertCameraUniformData(BackendShaderProgram* shaderProgram, CameraUniformData&& cameraUniformData)
 	{
 		FATAL_ASSERT(shaderProgram != nullptr);
 
@@ -97,52 +97,95 @@ namespace nCine
 		cameraUniformDataMap_.emplace(shaderProgram, std::move(cameraUniformData));
 	}
 
-	bool RenderResources::RemoveCameraUniformData(GLShaderProgram* shaderProgram)
+	bool RenderResources::RemoveCameraUniformData(BackendShaderProgram* shaderProgram)
 	{
 		return cameraUniformDataMap_.erase(shaderProgram);
 	}
 
-	void RenderResources::SetDefaultAttributesParameters(GLShaderProgram& shaderProgram)
+	void RenderResources::SetDefaultAttributesParameters(BackendShaderProgram& shaderProgram)
 	{
 		if (shaderProgram.GetAttributeCount() <= 0) {
 			return;
 		}
 
-		GLVertexFormat::Attribute* positionAttribute = shaderProgram.GetAttribute(Material::PositionAttributeName);
-		GLVertexFormat::Attribute* texCoordsAttribute = shaderProgram.GetAttribute(Material::TexCoordsAttributeName);
-		GLVertexFormat::Attribute* meshIndexAttribute = shaderProgram.GetAttribute(Material::MeshIndexAttributeName);
-
-		// The stride check avoid overwriting VBO parameters for custom mesh shaders attributes
-		if (positionAttribute != nullptr && texCoordsAttribute != nullptr && meshIndexAttribute != nullptr) {
-			if (positionAttribute->GetStride() == 0) {
-				positionAttribute->SetVboParameters(sizeof(VertexFormatPos2Tex2Index), reinterpret_cast<void*>(offsetof(VertexFormatPos2Tex2Index, position)));
-			}
-			if (texCoordsAttribute->GetStride() == 0) {
-				texCoordsAttribute->SetVboParameters(sizeof(VertexFormatPos2Tex2Index), reinterpret_cast<void*>(offsetof(VertexFormatPos2Tex2Index, texcoords)));
-			}
-			if (meshIndexAttribute->GetStride() == 0) {
-				meshIndexAttribute->SetVboParameters(sizeof(VertexFormatPos2Tex2Index), reinterpret_cast<void*>(offsetof(VertexFormatPos2Tex2Index, drawindex)));
-			}
-		} else if (positionAttribute != nullptr && texCoordsAttribute == nullptr && meshIndexAttribute != nullptr) {
-			if (positionAttribute->GetStride() == 0) {
-				positionAttribute->SetVboParameters(sizeof(VertexFormatPos2Index), reinterpret_cast<void*>(offsetof(VertexFormatPos2Index, position)));
-			}
-			if (meshIndexAttribute->GetStride() == 0) {
-				meshIndexAttribute->SetVboParameters(sizeof(VertexFormatPos2Index), reinterpret_cast<void*>(offsetof(VertexFormatPos2Index, drawindex)));
-			}
-		} else if (positionAttribute != nullptr && texCoordsAttribute != nullptr && meshIndexAttribute == nullptr) {
-			if (positionAttribute->GetStride() == 0) {
-				positionAttribute->SetVboParameters(sizeof(VertexFormatPos2Tex2), reinterpret_cast<void*>(offsetof(VertexFormatPos2Tex2, position)));
-			}
-			if (texCoordsAttribute->GetStride() == 0) {
-				texCoordsAttribute->SetVboParameters(sizeof(VertexFormatPos2Tex2), reinterpret_cast<void*>(offsetof(VertexFormatPos2Tex2, texcoords)));
-			}
-		} else if (positionAttribute != nullptr && texCoordsAttribute == nullptr && meshIndexAttribute == nullptr) {
-			if (positionAttribute->GetStride() == 0) {
-				positionAttribute->SetVboParameters(sizeof(VertexFormatPos2), reinterpret_cast<void*>(offsetof(VertexFormatPos2, position)));
-			}
-		}
+		shaderProgram.DefineDefaultAttributes(Material::PositionAttributeName, Material::TexCoordsAttributeName, Material::MeshIndexAttributeName);
 	}
+
+	const char* RenderResources::GetDefaultVertexShaderSource(Shader::DefaultVertex vertex)
+	{
+#if defined(WITH_EMBEDDED_SHADERS)
+#if defined(DEATH_TARGET_IOS)
+		return GetDefaultVertexShaderSourceMetal(vertex);
+#else
+		switch (vertex) {
+			case Shader::DefaultVertex::SPRITE: return ShaderStrings::sprite_vs + 1;
+			case Shader::DefaultVertex::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_vs + 1;
+			case Shader::DefaultVertex::MESHSPRITE: return ShaderStrings::meshsprite_vs + 1;
+			case Shader::DefaultVertex::MESHSPRITE_NOTEXTURE: return ShaderStrings::meshsprite_notexture_vs + 1;
+			case Shader::DefaultVertex::BATCHED_SPRITES: return ShaderStrings::batched_sprites_vs + 1;
+			case Shader::DefaultVertex::BATCHED_SPRITES_NOTEXTURE: return ShaderStrings::batched_sprites_notexture_vs + 1;
+			case Shader::DefaultVertex::BATCHED_MESHSPRITES: return ShaderStrings::batched_meshsprites_vs + 1;
+			case Shader::DefaultVertex::BATCHED_MESHSPRITES_NOTEXTURE: return ShaderStrings::batched_meshsprites_notexture_vs + 1;
+			default: return nullptr;
+		}
+#endif
+#else
+		// Logic for loading from file is handled in Shader::LoadFromFile
+		return nullptr;
+#endif
+	}
+
+	const char* RenderResources::GetDefaultFragmentShaderSource(Shader::DefaultFragment fragment)
+	{
+#if defined(WITH_EMBEDDED_SHADERS)
+#if defined(DEATH_TARGET_IOS)
+		return GetDefaultFragmentShaderSourceMetal(fragment);
+#else
+		switch (fragment) {
+			case Shader::DefaultFragment::SPRITE: return ShaderStrings::sprite_fs + 1;
+			case Shader::DefaultFragment::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_fs + 1;
+			default: return nullptr;
+		}
+#endif
+#else
+		// Logic for loading from file is handled in Shader::LoadFromFile
+		return nullptr;
+#endif
+	}
+
+#if defined(DEATH_TARGET_IOS)
+	const char* RenderResources::GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex vertex)
+	{
+#if defined(WITH_EMBEDDED_SHADERS)
+		switch (vertex) {
+			case Shader::DefaultVertex::SPRITE: return ShaderStrings::sprite_vs_metal + 1;
+			case Shader::DefaultVertex::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_vs_metal + 1;
+			case Shader::DefaultVertex::MESHSPRITE: return ShaderStrings::meshsprite_vs_metal + 1;
+			case Shader::DefaultVertex::MESHSPRITE_NOTEXTURE: return ShaderStrings::meshsprite_notexture_vs_metal + 1;
+			case Shader::DefaultVertex::BATCHED_SPRITES: return ShaderStrings::batched_sprites_vs_metal + 1;
+			case Shader::DefaultVertex::BATCHED_SPRITES_NOTEXTURE: return ShaderStrings::batched_sprites_notexture_vs_metal + 1;
+			case Shader::DefaultVertex::BATCHED_MESHSPRITES: return ShaderStrings::batched_meshsprites_vs_metal + 1;
+			case Shader::DefaultVertex::BATCHED_MESHSPRITES_NOTEXTURE: return ShaderStrings::batched_meshsprites_notexture_vs_metal + 1;
+			default: return nullptr;
+		}
+#else
+		return nullptr;
+#endif
+	}
+
+	const char* RenderResources::GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment fragment)
+	{
+#if defined(WITH_EMBEDDED_SHADERS)
+		switch (fragment) {
+			case Shader::DefaultFragment::SPRITE: return ShaderStrings::sprite_fs_metal + 1;
+			case Shader::DefaultFragment::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_fs_metal + 1;
+			default: return nullptr;
+		}
+#else
+		return nullptr;
+#endif
+	}
+#endif
 
 	void RenderResources::SetCurrentCamera(Camera* camera)
 	{
@@ -189,8 +232,10 @@ namespace nCine
 	
 		const AppConfiguration& appCfg = theApplication().GetAppConfiguration();
 		binaryShaderCache_ = std::make_unique<BinaryShaderCache>(appCfg.shaderCachePath);
+#if !defined(DEATH_TARGET_IOS)
 		buffersManager_ = std::make_unique<RenderBuffersManager>(appCfg.useBufferMapping, appCfg.vboSize, appCfg.iboSize);
 		vaoPool_ = std::make_unique<RenderVaoPool>(appCfg.vaoPoolSize);
+#endif
 	}
 	
 	void RenderResources::Create()
@@ -201,17 +246,51 @@ namespace nCine
 		if (binaryShaderCache_ == nullptr) {
 			binaryShaderCache_ = std::make_unique<BinaryShaderCache>(appCfg.shaderCachePath);
 		}
+#if !defined(DEATH_TARGET_IOS)
 		if (buffersManager_ == nullptr) {
 			buffersManager_ = std::make_unique<RenderBuffersManager>(appCfg.useBufferMapping, appCfg.vboSize, appCfg.iboSize);
 		}
 		if (vaoPool_ == nullptr) {
 			vaoPool_ = std::make_unique<RenderVaoPool>(appCfg.vaoPoolSize);
 		}
+#endif
 		renderCommandPool_ = std::make_unique<RenderCommandPool>(appCfg.renderCommandPoolSize);
 		renderBatcher_ = std::make_unique<RenderBatcher>();
 		defaultCamera_ = std::make_unique<Camera>();
 		currentCamera_ = defaultCamera_.get();
 
+#if defined(DEATH_TARGET_IOS)
+		ShaderLoad shadersToLoad[] = {
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::Sprite)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::SPRITE), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE), BackendShaderProgram::Introspection::Enabled, "Sprite" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::SpriteNoTexture)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::SPRITE_NOTEXTURE), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE_NOTEXTURE), BackendShaderProgram::Introspection::Enabled, "Sprite_NoTexture" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::MeshSprite)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::MESHSPRITE), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE), BackendShaderProgram::Introspection::Enabled, "MeshSprite" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::MeshSpriteNoTexture)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::MESHSPRITE_NOTEXTURE), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE_NOTEXTURE), BackendShaderProgram::Introspection::Enabled, "MeshSprite_NoTexture" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::BatchedSprites)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::BATCHED_SPRITES), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE), BackendShaderProgram::Introspection::NoUniformsInBlocks, "Batched_Sprites" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::BatchedSpritesNoTexture)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::BATCHED_SPRITES_NOTEXTURE), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE_NOTEXTURE), BackendShaderProgram::Introspection::NoUniformsInBlocks, "Batched_Sprites_NoTexture" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::BatchedMeshSprites)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::BATCHED_MESHSPRITES), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE), BackendShaderProgram::Introspection::NoUniformsInBlocks, "Batched_MeshSprites" },
+			{ RenderResources::defaultShaderPrograms_[std::int32_t(Material::ShaderProgramType::BatchedMeshSpritesNoTexture)], GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex::BATCHED_MESHSPRITES_NOTEXTURE), GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment::SPRITE_NOTEXTURE), BackendShaderProgram::Introspection::NoUniformsInBlocks, "Batched_MeshSprites_NoTexture" },
+		};
+
+		for (std::uint32_t i = 0; i < std::uint32_t(arraySize(shadersToLoad)); i++) {
+			const ShaderLoad& shaderToLoad = shadersToLoad[i];
+			shaderToLoad.shaderProgram = std::make_unique<BackendShaderProgram>(BackendShaderProgram::QueryPhase::Immediate);
+			
+			// Set batch size for batched shaders
+			if (shaderToLoad.introspection == BackendShaderProgram::Introspection::NoUniformsInBlocks) {
+				// Use a default batch size for Metal (64KB / 112 bytes ~= 585)
+				shaderToLoad.shaderProgram->SetBatchSize(585);
+			}
+
+			shaderToLoad.shaderProgram->AttachShaderFromString(0x8B31, shaderToLoad.vertexShader); // Vertex
+			shaderToLoad.shaderProgram->AttachShaderFromString(0x8B30, shaderToLoad.fragmentShader); // Fragment
+			
+			SetDefaultAttributesParameters(*shaderToLoad.shaderProgram);
+			shaderToLoad.shaderProgram->Link(shaderToLoad.introspection);
+			shaderToLoad.shaderProgram->SetObjectLabel(shaderToLoad.shaderName);
+		}
+
+		RegisterDefaultBatchedShaders();
+#else
 		ShaderLoad shadersToLoad[] = {
 #if defined(WITH_EMBEDDED_SHADERS)
 			// Skipping the initial new line character of the raw string literal
@@ -361,6 +440,7 @@ namespace nCine
 		}
 
 		RegisterDefaultBatchedShaders();
+#endif
 
 		// Calculating a default projection matrix for all shader programs
 		auto res = theApplication().GetResolution();

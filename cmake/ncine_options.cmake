@@ -2,6 +2,7 @@ include(CMakeDependentOption)
 
 # nCine options
 cmake_dependent_option(NCINE_BUILD_ANDROID "Build Android version of the game" OFF "NOT EMSCRIPTEN;NOT NINTENDO_SWITCH" OFF)
+cmake_dependent_option(NCINE_BUILD_IOS "Build iOS version of the game" OFF "APPLE;NOT NCINE_BUILD_ANDROID" OFF)
 option(NCINE_PROFILING "Enable runtime profiling" OFF)
 option(NCINE_DOWNLOAD_DEPENDENCIES "Download all build dependencies" ON)
 option(NCINE_LINKTIME_OPTIMIZATION "Compile the game with link time optimization when in release" ON)

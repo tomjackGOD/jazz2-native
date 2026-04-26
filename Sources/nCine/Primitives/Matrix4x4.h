@@ -5,7 +5,21 @@
 #include "../CommonConstants.h"
 #include "../../Main.h"
 
-#include <Containers/Tags.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/Tags.h")
+#		include "Shared/Containers/Tags.h"
+#	elif __has_include("../Shared/Containers/Tags.h")
+#		include "../Shared/Containers/Tags.h"
+#	elif __has_include("../../Shared/Containers/Tags.h")
+#		include "../../Shared/Containers/Tags.h"
+#	elif __has_include("../../../Shared/Containers/Tags.h")
+#		include "../../../Shared/Containers/Tags.h"
+#	else
+#		include <Containers/Tags.h>
+#	endif
+#else
+#	include <Containers/Tags.h>
+#endif
 
 namespace nCine
 {
@@ -498,7 +512,7 @@ namespace nCine
 		template<class T>
 		inline Matrix4x4<T>& Matrix4x4<T>::Translate(const Vector3<T>& v)
 		{
-			return translate(v.X, v.Y, v.Z);
+			return Translate(v.X, v.Y, v.Z);
 		}
 
 		template<class T>
@@ -611,13 +625,13 @@ namespace nCine
 		template<class T>
 		inline Matrix4x4<T>& Matrix4x4<T>::Scale(const Vector3<T>& v)
 		{
-			return scale(v.X, v.Y, v.Z);
+			return Scale(v.X, v.Y, v.Z);
 		}
 
 		template<class T>
 		inline Matrix4x4<T>& Matrix4x4<T>::Scale(T s)
 		{
-			return scale(s, s, s);
+			return Scale(s, s, s);
 		}
 
 		template<class T>
@@ -632,7 +646,7 @@ namespace nCine
 		template<class T>
 		inline Matrix4x4<T> Matrix4x4<T>::Translation(const Vector3<T>& v)
 		{
-			return translation(v.X, v.Y, v.Z);
+			return Translation(v.X, v.Y, v.Z);
 		}
 
 		template<class T>
@@ -683,13 +697,13 @@ namespace nCine
 		template<class T>
 		inline Matrix4x4<T> Matrix4x4<T>::Scaling(const Vector3<T>& v)
 		{
-			return scaling(v.X, v.Y, v.Z);
+			return Scaling(v.X, v.Y, v.Z);
 		}
 
 		template<class T>
 		inline Matrix4x4<T> Matrix4x4<T>::Scaling(T s)
 		{
-			return scaling(s, s, s);
+			return Scaling(s, s, s);
 		}
 
 		template<class T>
@@ -722,7 +736,7 @@ namespace nCine
 			const T xMin = yMin * aspect;
 			const T xMax = yMax * aspect;
 
-			return frustum(xMin, xMax, yMin, yMax, near, far);
+			return Frustum(xMin, xMax, yMin, yMax, near, far);
 		}
 
 		template<class T>

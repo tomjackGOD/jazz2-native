@@ -5,12 +5,15 @@
 #include "../IAppEventHandler.h"
 #include "DrawableNode.h"
 #include "Camera.h"
-#include "GL/GLFramebuffer.h"
 #include "Texture.h"
-#include "GL/GLClearColor.h"
-#include "GL/GLViewport.h"
-#include "GL/GLScissorTest.h"
-#include "GL/GLDebug.h"
+#if !defined(DEATH_TARGET_IOS)
+#	include "GL/GLFramebuffer.h"
+#	include "GL/GLClearColor.h"
+#	include "GL/GLViewport.h"
+#	include "GL/GLScissorTest.h"
+#	include "GL/GLDebug.h"
+#endif
+#include "Backend/BackendRenderState.h"
 #include "../ServiceLocator.h"
 #include "../tracy.h"
 #include "../../Main.h"
@@ -21,6 +24,7 @@
 
 namespace nCine
 {
+#if !defined(DEATH_TARGET_IOS)
 	static GLenum DepthStencilFormatToGLFormat(Viewport::DepthStencilFormat format)
 	{
 		switch (format) {
@@ -45,6 +49,7 @@ namespace nCine
 				return GL_DEPTH_STENCIL_ATTACHMENT;
 		}
 	}
+#endif
 
 	SmallVector<Viewport*> Viewport::chain_;
 
@@ -97,6 +102,12 @@ namespace nCine
 	/*! \note Adding more textures enables the use of multiple render targets (MRTs) */
 	bool Viewport::SetTexture(std::uint32_t index, Texture* texture)
 	{
+#if defined(DEATH_TARGET_IOS)
+		// TODO(Metal): render-to-texture path (MRT/FBO equivalents).
+		(void)index;
+		(void)texture;
+		return false;
+#else
 		if (type_ == Type::Screen) {
 			return false;
 		}
@@ -117,7 +128,7 @@ namespace nCine
 				fbo_ = std::make_unique<GLFramebuffer>();
 			}
 
-			fbo_->AttachTexture(*texture->glTexture_, GL_COLOR_ATTACHMENT0 + index);
+			fbo_->AttachTexture(*texture->backendTexture_, GL_COLOR_ATTACHMENT0 + index);
 			const bool isStatusComplete = fbo_->IsStatusComplete();
 			if (isStatusComplete) {
 				type_ = Type::WithTexture;
@@ -154,11 +165,16 @@ namespace nCine
 		}
 
 		return result;
+#endif
 	}
 
 	/*! \note It can remove the depth and stencil render buffer of the viewport's FBO by specifying `DepthStencilFormat::NONE` */
 	bool Viewport::SetDepthStencilFormat(DepthStencilFormat depthStencilFormat)
 	{
+#if defined(DEATH_TARGET_IOS)
+		(void)depthStencilFormat;
+		return false;
+#else
 		if (depthStencilFormat_ == depthStencilFormat || type_ == Type::NoTexture)
 			return false;
 
@@ -189,10 +205,14 @@ namespace nCine
 		}
 
 		return result;
+#endif
 	}
 
 	bool Viewport::RemoveAllTextures()
 	{
+#if defined(DEATH_TARGET_IOS)
+		return false;
+#else
 		if (type_ == Type::Screen) {
 			return false;
 		}
@@ -216,6 +236,7 @@ namespace nCine
 		width_ = 0;
 		height_ = 0;
 		return true;
+#endif
 	}
 
 	Texture* Viewport::GetTexture(std::uint32_t index)
@@ -232,9 +253,13 @@ namespace nCine
 
 	void Viewport::SetGLFramebufferLabel(const char* label)
 	{
+#if defined(DEATH_TARGET_IOS)
+		(void)label;
+#else
 		if (fbo_ != nullptr) {
 			fbo_->SetObjectLabel(label);
 		}
+#endif
 	}
 
 	void Viewport::CalculateCullingRect()
@@ -380,33 +405,37 @@ namespace nCine
 		}
 
 		if (type_ == Type::WithTexture) {
+#if !defined(DEATH_TARGET_IOS)
 			fbo_->Bind(GL_DRAW_FRAMEBUFFER);
 			fbo_->DrawBuffers(numColorAttachments_);
+#endif
 		}
 
 		if (type_ == Type::Screen || type_ == Type::WithTexture) {
 			const unsigned long int numFrames = theApplication().GetFrameCount();
 			if ((lastFrameCleared_ < numFrames && (clearMode_ == ClearMode::EveryFrame || clearMode_ == ClearMode::ThisFrameOnly)) ||
 				 clearMode_ == ClearMode::EveryDraw) {
-				const GLClearColor::State clearColorState = GLClearColor::GetState();
-				GLClearColor::SetColor(clearColor_);
+#if !defined(DEATH_TARGET_IOS)
+				const Backend::ClearColorState clearColorState = Backend::GetClearColorState();
+				Backend::SetClearColor(clearColor_);
 
 				switch (depthStencilFormat_) {
 					default:
 					case DepthStencilFormat::Depth24_Stencil8:
-						glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+						Backend::Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 						break;
 					case DepthStencilFormat::Depth24:
 					case DepthStencilFormat::Depth16:
-						glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+						Backend::Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 						break;
 					case DepthStencilFormat::None:
-						glClear(GL_COLOR_BUFFER_BIT);
+						Backend::Clear(GL_COLOR_BUFFER_BIT);
 						break;
 				}
 				lastFrameCleared_ = numFrames;
 
-				GLClearColor::SetState(clearColorState);
+				Backend::SetClearColorState(clearColorState);
+#endif
 			}
 		}
 
@@ -425,24 +454,24 @@ namespace nCine
 
 		if (!renderQueue_.IsEmpty()) {
 			const bool viewportRectNonZeroArea = (viewportRect_.W > 0 && viewportRect_.H > 0);
-			const GLViewport::State viewportState = GLViewport::GetState();
+			const Backend::ViewportState viewportState = Backend::GetViewportState();
 			if (viewportRectNonZeroArea) {
-				GLViewport::SetRect(viewportRect_.X, viewportRect_.Y, viewportRect_.W, viewportRect_.H);
+				Backend::SetViewportRect(viewportRect_.X, viewportRect_.Y, viewportRect_.W, viewportRect_.H);
 			}
 
 			const bool scissorRectNonZeroArea = (scissorRect_.W > 0 && scissorRect_.H > 0);
-			GLScissorTest::State scissorTestState = GLScissorTest::GetState();
+			Backend::ScissorState scissorTestState = Backend::GetScissorState();
 			if (scissorRectNonZeroArea) {
-				GLScissorTest::Enable(scissorRect_.X, scissorRect_.Y, scissorRect_.W, scissorRect_.H);
+				Backend::EnableScissor(scissorRect_.X, scissorRect_.Y, scissorRect_.W, scissorRect_.H);
 			}
 
 			renderQueue_.Draw();
 
 			if (scissorRectNonZeroArea) {
-				GLScissorTest::SetState(scissorTestState);
+				Backend::SetScissorState(scissorTestState);
 			}
 			if (viewportRectNonZeroArea) {
-				GLViewport::SetState(viewportState);
+				Backend::SetViewportState(viewportState);
 			}
 		}
 

@@ -143,12 +143,12 @@ namespace nCine
 
 	DrawableNode::BlendingFactor DrawableNode::srcBlendingFactor() const
 	{
-		return fromGlBlendingFactor(renderCommand_.GetMaterial().GetSrcBlendingFactor());
+		return fromGlBlendingFactor(static_cast<GLenum>(renderCommand_.GetMaterial().GetSrcBlendingFactor()));
 	}
 
 	DrawableNode::BlendingFactor DrawableNode::destBlendingFactor() const
 	{
-		return fromGlBlendingFactor(renderCommand_.GetMaterial().GetDestBlendingFactor());
+		return fromGlBlendingFactor(static_cast<GLenum>(renderCommand_.GetMaterial().GetDestBlendingFactor()));
 	}
 
 	void DrawableNode::setBlendingPreset(BlendingPreset blendingPreset)

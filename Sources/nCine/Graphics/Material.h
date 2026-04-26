@@ -1,17 +1,17 @@
 #pragma once
 
-#include "GL/GLShaderUniforms.h"
-#include "GL/GLShaderUniformBlocks.h"
-#include "GL/GLTexture.h"
+#include "Backend/BackendEnums.h"
+#include "Backend/BackendTypes.h"
 #include "Shader.h"
+#if !defined(DEATH_TARGET_IOS)
+#	include "GL/GLShaderUniforms.h"
+#	include "GL/GLShaderUniformBlocks.h"
+#	include "GL/GLTexture.h"
+#endif
 
 namespace nCine
 {
-	class GLShaderProgram;
-	class GLTexture;
 	class Texture;
-	class GLUniformCache;
-	class GLAttribute;
 
 	/// Contains material data for a drawable node
 	class Material
@@ -86,7 +86,7 @@ namespace nCine
 
 		/// Default constructor
 		Material();
-		Material(GLShaderProgram* program, GLTexture* texture);
+		Material(BackendShaderProgram* program, BackendTexture* texture);
 
 		inline bool IsBlendingEnabled() const {
 			return isBlendingEnabled_;
@@ -95,27 +95,31 @@ namespace nCine
 			isBlendingEnabled_ = blendingEnabled;
 		}
 
-		inline GLenum GetSrcBlendingFactor() const {
+		inline BlendingFactor GetSrcBlendingFactor() const {
 			return srcBlendingFactor_;
 		}
-		inline GLenum GetDestBlendingFactor() const {
+		inline BlendingFactor GetDestBlendingFactor() const {
 			return destBlendingFactor_;
 		}
-		void SetBlendingFactors(GLenum srcBlendingFactor, GLenum destBlendingFactor);
+		void SetBlendingFactors(BlendingFactor srcBlendingFactor, BlendingFactor destBlendingFactor);
+		/// Convenience overload for callers still using OpenGL blending constants
+		inline void SetBlendingFactors(int srcBlendingFactor, int destBlendingFactor) {
+			SetBlendingFactors(static_cast<BlendingFactor>(srcBlendingFactor), static_cast<BlendingFactor>(destBlendingFactor));
+		}
 
 		inline ShaderProgramType GetShaderProgramType() const {
 			return shaderProgramType_;
 		}
 		bool SetShaderProgramType(ShaderProgramType shaderProgramType);
-		inline const GLShaderProgram* GetShaderProgram() const {
+		inline const BackendShaderProgram* GetShaderProgram() const {
 			return shaderProgram_;
 		}
-		void SetShaderProgram(GLShaderProgram* program);
+		void SetShaderProgram(BackendShaderProgram* program);
 		bool SetShader(Shader* shader);
 
 		void SetDefaultAttributesParameters();
 		void ReserveUniformsDataMemory();
-		void SetUniformsDataPointer(GLubyte* dataPointer);
+		void SetUniformsDataPointer(std::uint8_t* dataPointer);
 
 		/// Wrapper around `GLShaderUniforms::hasUniform()`
 		inline bool HasUniform(const char* name) const {
@@ -127,32 +131,32 @@ namespace nCine
 		}
 
 		/// Wrapper around `GLShaderUniforms::uniform()`
-		inline GLUniformCache* Uniform(const char* name) {
+		inline BackendUniformCache* Uniform(const char* name) {
 			return shaderUniforms_.GetUniform(name);
 		}
 		/// Wrapper around `GLShaderUniformBlocks::uniformBlock()`
-		inline GLUniformBlockCache* UniformBlock(const char* name) {
+		inline BackendUniformBlockCache* UniformBlock(const char* name) {
 			return shaderUniformBlocks_.GetUniformBlock(name);
 		}
 
 		/// Wrapper around `GLShaderUniforms::allUniforms()`
-		inline const GLShaderUniforms::UniformHashMapType GetAllUniforms() const {
+		inline const BackendShaderUniforms::UniformHashMapType GetAllUniforms() const {
 			return shaderUniforms_.GetAllUniforms();
 		}
 		/// Wrapper around `GLShaderUniformBlocks::allUniformBlocks()`
-		inline const GLShaderUniformBlocks::UniformHashMapType GetAllUniformBlocks() const {
+		inline const BackendShaderUniformBlocks::UniformHashMapType GetAllUniformBlocks() const {
 			return shaderUniformBlocks_.GetAllUniformBlocks();
 		}
 
-		const GLTexture* GetTexture(std::uint32_t unit) const;
-		bool SetTexture(std::uint32_t unit, const GLTexture* texture);
+		const BackendTexture* GetTexture(std::uint32_t unit) const;
+		bool SetTexture(std::uint32_t unit, const BackendTexture* texture);
 		bool SetTexture(std::uint32_t unit, const Texture& texture);
 		bool SetTexture(std::uint32_t unit, std::nullptr_t);
 
-		inline const GLTexture* GetTexture() const {
+		inline const BackendTexture* GetTexture() const {
 			return GetTexture(0);
 		}
-		inline bool SetTexture(const GLTexture* texture) {
+		inline bool SetTexture(const BackendTexture* texture) {
 			return SetTexture(0, texture);
 		}
 		inline bool SetTexture(const Texture& texture) {
@@ -161,19 +165,24 @@ namespace nCine
 
 	private:
 		bool isBlendingEnabled_;
-		GLenum srcBlendingFactor_;
-		GLenum destBlendingFactor_;
+		BlendingFactor srcBlendingFactor_;
+		BlendingFactor destBlendingFactor_;
 
 		ShaderProgramType shaderProgramType_;
-		GLShaderProgram* shaderProgram_;
-		GLShaderUniforms shaderUniforms_;
-		GLShaderUniformBlocks shaderUniformBlocks_;
-		const GLTexture* textures_[GLTexture::MaxTextureUnits];
+		BackendShaderProgram* shaderProgram_;
+		BackendShaderUniforms shaderUniforms_;
+		BackendShaderUniformBlocks shaderUniformBlocks_;
+		const BackendTexture* textures_[BackendTexture::MaxTextureUnits];
+
+		/// Pointer to current uniforms memory (owned or external)
+		std::uint8_t* uniformsDataPointer_;
+		/// Total size of current uniforms memory
+		std::uint32_t uniformsDataSize_;
 
 		/// The size of the memory buffer containing uniform values
 		std::uint32_t uniformsHostBufferSize_;
 		/// Memory buffer with uniform values to be sent to the GPU
-		std::unique_ptr<GLubyte[]> uniformsHostBuffer_;
+		std::unique_ptr<std::uint8_t[]> uniformsHostBuffer_;
 
 		void Bind();
 		/// Wrapper around `GLShaderUniforms::commitUniforms()`
@@ -185,7 +194,7 @@ namespace nCine
 			shaderUniformBlocks_.CommitUniformBlocks();
 		}
 		/// Wrapper around `GLShaderProgram::defineVertexFormat()`
-		void DefineVertexFormat(const GLBufferObject* vbo, const GLBufferObject* ibo, std::uint32_t vboOffset);
+		void DefineVertexFormat(const BackendBufferObject* vbo, const BackendBufferObject* ibo, std::uint32_t vboOffset);
 		std::uint32_t GetSortKey();
 	};
 

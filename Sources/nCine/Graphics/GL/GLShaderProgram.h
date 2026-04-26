@@ -116,6 +116,8 @@ namespace nCine
 			return (attributeLocations_.find(String::nullTerminatedView(name)) != nullptr);
 		}
 		GLVertexFormat::Attribute* GetAttribute(const char* name);
+		bool DefineAttribute(const char* name, std::int32_t stride, void* pointer);
+		void DefineDefaultAttributes(const char* posName, const char* texName, const char* indexName);
 
 		inline void DefineVertexFormat(const GLBufferObject* vbo) {
 			DefineVertexFormat(vbo, nullptr, 0);

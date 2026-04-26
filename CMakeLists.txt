@@ -41,6 +41,10 @@ project(Jazz2
 	HOMEPAGE_URL "https://deat.tk/jazz2/"
 	LANGUAGES CXX C)
 
+if(NCINE_BUILD_IOS)
+	enable_language(Swift ObjC ObjCXX)
+endif()
+
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_SOURCE_DIR}/cmake)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 

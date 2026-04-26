@@ -2,8 +2,24 @@
 
 #include "GL/GLShaderProgram.h"
 
-#include <Containers/String.h>
-#include <Containers/StringView.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/String.h")
+#		include "Shared/Containers/String.h"
+#		include "Shared/Containers/StringView.h"
+#	elif __has_include("../Shared/Containers/String.h")
+#		include "../Shared/Containers/String.h"
+#		include "../Shared/Containers/StringView.h"
+#	elif __has_include("../../Shared/Containers/String.h")
+#		include "../../Shared/Containers/String.h"
+#		include "../../Shared/Containers/StringView.h"
+#	else
+#		include <Containers/String.h>
+#		include <Containers/StringView.h>
+#	endif
+#else
+#	include <Containers/String.h>
+#	include <Containers/StringView.h>
+#endif
 
 using namespace Death::Containers;
 

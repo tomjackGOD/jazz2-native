@@ -8,6 +8,7 @@
 #include "GL/GLClearColor.h"
 #include "GL/GLViewport.h"
 #include "GL/GLDebug.h"
+#include "Backend/BackendRenderState.h"
 #include "Camera.h"
 
 namespace nCine
@@ -100,6 +101,6 @@ namespace nCine
 
 		RenderResources::GetBuffersManager().Remap();
 		RenderResources::GetRenderCommandPool().Reset();
-		GLDebug::Reset();
+		Backend::DebugReset();
 	}
 }

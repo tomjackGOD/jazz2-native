@@ -1,4 +1,4 @@
-﻿#include "Application.h"
+#include "Application.h"
 
 #if defined(DEATH_TARGET_WINDOWS)
 extern "C"
@@ -46,6 +46,9 @@ extern "C"
 #include "Base/Random.h"
 #include "IAppEventHandler.h"
 #include "Graphics/GfxCapabilities.h"
+#if defined(DEATH_TARGET_IOS)
+#	include "Backends/iOS/MetalGfxCapabilities.h"
+#endif
 #include "Graphics/RenderResources.h"
 #include "Graphics/RenderQueue.h"
 #include "Graphics/ScreenViewport.h"
@@ -745,9 +748,15 @@ namespace nCine
 #endif
 
 		if (appCfg_.withGraphics) {
+#if defined(DEATH_TARGET_IOS)
+			theServiceLocator().RegisterGfxCapabilities(std::make_unique<Backends::MetalGfxCapabilities>());
+#else
 			theServiceLocator().RegisterGfxCapabilities(std::make_unique<GfxCapabilities>());
+#endif
 			const auto& gfxCapabilities = theServiceLocator().GetGfxCapabilities();
+#if !defined(DEATH_TARGET_IOS)
 			GLDebug::Init(gfxCapabilities);
+#endif
 
 #if !defined(WITH_ANGLE) && !defined(DEATH_TARGET_EMSCRIPTEN) && !defined(DEATH_TARGET_WINDOWS_RT)
 			if (appCfg_.fixedBatchSize > 0) {
@@ -780,8 +789,10 @@ namespace nCine
 			RenderResources::CreateMinimal(); // they are required for rendering even without a scenegraph
 
 			if (appCfg_.withScenegraph) {
+#if !defined(DEATH_TARGET_IOS)
 				gfxDevice_->setupGL();
 				RenderResources::Create();
+#endif
 				rootNode_ = std::make_unique<SceneNode>();
 				screenViewport_ = std::make_unique<ScreenViewport>();
 				screenViewport_->SetRootNode(rootNode_.get());
@@ -828,9 +839,13 @@ namespace nCine
 		}
 	}
 
-	void Application::Step()
+	void Application::Step(float deltaTime)
 	{
-		frameTimer_->AddFrame();
+		if (deltaTime > 0.0f) {
+			frameTimer_->AddFrame(deltaTime);
+		} else {
+			frameTimer_->AddFrame();
+		}
 
 #if defined(WITH_IMGUI)
 		if (appCfg_.withGraphics) {

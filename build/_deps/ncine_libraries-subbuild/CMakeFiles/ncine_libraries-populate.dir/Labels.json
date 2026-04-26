@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/ncine_libraries-populate"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7823ee005aa2f26add6ef81408b6571a/ncine_libraries-populate.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/c593dbe866b5906cac7521a30dad0113/ncine_libraries-populate-complete.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-build.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-configure.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-download.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-install.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-mkdir.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-patch.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-test.rule"
+		},
+		{
+			"file" : "F:/gitt/jazz2-native/build/_deps/ncine_libraries-subbuild/CMakeFiles/7d963f77de7201d8b3c7ee3b20dd6a28/ncine_libraries-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ncine_libraries-populate"
+		],
+		"name" : "ncine_libraries-populate"
+	}
+}

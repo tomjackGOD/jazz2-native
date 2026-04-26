@@ -6,7 +6,21 @@
 
 #include <cmath>
 
-#include <Containers/Tags.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/Tags.h")
+#		include "Shared/Containers/Tags.h"
+#	elif __has_include("../Shared/Containers/Tags.h")
+#		include "../Shared/Containers/Tags.h"
+#	elif __has_include("../../Shared/Containers/Tags.h")
+#		include "../../Shared/Containers/Tags.h"
+#	elif __has_include("../../../Shared/Containers/Tags.h")
+#		include "../../../Shared/Containers/Tags.h"
+#	else
+#		include <Containers/Tags.h>
+#	endif
+#else
+#	include <Containers/Tags.h>
+#endif
 
 namespace nCine
 {

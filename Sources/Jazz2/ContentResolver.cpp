@@ -1692,7 +1692,7 @@ namespace Jazz2
 			// The first compilation of a batched shader needs a `BATCH_SIZE` defined as 1
 			batchSize = 1;
 		} else {
-			batchSize = GLShaderProgram::DefaultBatchSize;
+			batchSize = -1;
 		}
 
 		shader->LoadFromMemory(shaderName, compileTwice ? Shader::Introspection::Enabled : introspection, vertex, fragment, batchSize, arrayView(defines));
@@ -1750,7 +1750,7 @@ namespace Jazz2
 			// The first compilation of a batched shader needs a `BATCH_SIZE` defined as 1
 			batchSize = 1;
 		} else {
-			batchSize = GLShaderProgram::DefaultBatchSize;
+			batchSize = -1;
 		}
 
 		shader->LoadFromMemory(shaderName, compileTwice ? Shader::Introspection::Enabled : introspection, vertex, fragment, batchSize, arrayView(defines));

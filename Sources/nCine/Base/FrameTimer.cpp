@@ -13,7 +13,12 @@ namespace nCine
 
 	void FrameTimer::AddFrame()
 	{
-		_frameDuration = _frameStart.secondsSince();
+		AddFrame(_frameStart.secondsSince());
+	}
+
+	void FrameTimer::AddFrame(float deltaTime)
+	{
+		_frameDuration = deltaTime;
 
 		// Start counting for the next frame interval
 		_frameStart = TimeStamp::now();

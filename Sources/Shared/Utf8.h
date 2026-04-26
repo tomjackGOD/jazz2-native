@@ -4,10 +4,29 @@
 	@brief Namespace @ref Death::Utf8
 */
 
-#include "Containers/Array.h"
-#include "Containers/Pair.h"
-#include "Containers/StaticArray.h"
-#include "Containers/String.h"
+#if defined(__has_include)
+#	if __has_include("Containers/Array.h")
+#		include "Containers/Array.h"
+#		include "Containers/Pair.h"
+#		include "Containers/StaticArray.h"
+#		include "Containers/String.h"
+#	elif __has_include("Shared/Containers/Array.h")
+#		include "Shared/Containers/Array.h"
+#		include "Shared/Containers/Pair.h"
+#		include "Shared/Containers/StaticArray.h"
+#		include "Shared/Containers/String.h"
+#	else
+#		include <Containers/Array.h>
+#		include <Containers/Pair.h>
+#		include <Containers/StaticArray.h>
+#		include <Containers/String.h>
+#	endif
+#else
+#	include "Containers/Array.h"
+#	include "Containers/Pair.h"
+#	include "Containers/StaticArray.h"
+#	include "Containers/String.h"
+#endif
 
 namespace Death { namespace Utf8 {
 //###==##====#=====--==~--~=~- --- -- -  -  -   -

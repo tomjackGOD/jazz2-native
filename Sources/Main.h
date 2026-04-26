@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 // Set default name and version if not provided by CMake
 /** @brief Application name */
@@ -23,18 +23,61 @@
 #endif
 
 // Prefer local version of shared libraries in CMake build
-#if defined(CMAKE_BUILD) && defined(__has_include)
-#	if __has_include("../Shared/Common.h")
-#		define __HAS_LOCAL_COMMON
+#if defined(__has_include)
+#	if __has_include("Shared/Common.h")
+#		include "Shared/Common.h"
+#		include "Shared/Asserts.h"
+#		include "Shared/Containers/Array.h"
+#		include "Shared/Containers/ArrayView.h"
+#		include "Shared/Containers/Function.h"
+#		include "Shared/Containers/Pair.h"
+#		include "Shared/Containers/SmallVector.h"
+#		include "Shared/Containers/String.h"
+#		include "Shared/Containers/StringView.h"
+#		include "Shared/IO/Stream.h"
+#		define __HAS_COMMON
+#	elif __has_include("../Shared/Common.h")
+#		include "../Shared/Common.h"
+#		include "../Shared/Asserts.h"
+#		include "../Shared/Containers/Array.h"
+#		include "../Shared/Containers/ArrayView.h"
+#		include "../Shared/Containers/Function.h"
+#		include "../Shared/Containers/Pair.h"
+#		include "../Shared/Containers/SmallVector.h"
+#		include "../Shared/Containers/String.h"
+#		include "../Shared/Containers/StringView.h"
+#		include "../Shared/IO/Stream.h"
+#		define __HAS_COMMON
+#	elif __has_include("../../Shared/Common.h")
+#		include "../../Shared/Common.h"
+#		include "../../Shared/Asserts.h"
+#		include "../../Shared/Containers/Array.h"
+#		include "../../Shared/Containers/ArrayView.h"
+#		include "../../Shared/Containers/Function.h"
+#		include "../../Shared/Containers/Pair.h"
+#		include "../../Shared/Containers/SmallVector.h"
+#		include "../../Shared/Containers/String.h"
+#		include "../../Shared/Containers/StringView.h"
+#		include "../../Shared/IO/Stream.h"
+#		define __HAS_COMMON
 #	endif
 #endif
-#ifdef __HAS_LOCAL_COMMON
-#	include "../Shared/Common.h"
-#	include "../Shared/Asserts.h"
-#else
-#	include <Common.h>
-#	include <Asserts.h>
+
+#ifndef __HAS_COMMON
+#	include <Shared/Common.h>
+#	include <Shared/Asserts.h>
+#	include <Shared/Containers/Array.h>
+#	include <Shared/Containers/ArrayView.h>
+#	include <Shared/Containers/Function.h>
+#	include <Shared/Containers/Pair.h>
+#	include <Shared/Containers/SmallVector.h>
+#	include <Shared/Containers/String.h>
+#	include <Shared/Containers/StringView.h>
+#	include <Shared/IO/Stream.h>
 #endif
+
+#include <memory>
+#include <optional>
 
 #include <stdlib.h>
 

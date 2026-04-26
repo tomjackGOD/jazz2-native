@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "../Main.h"
 #include "Graphics/IGfxDevice.h"
@@ -8,9 +8,25 @@
 
 #include <memory>
 
-#include <Containers/StringView.h>
-#include <Core/ITraceSink.h>
-#include <IO/Stream.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/StringView.h")
+#		include "Shared/Containers/StringView.h"
+#		include "Shared/Core/ITraceSink.h"
+#		include "Shared/IO/Stream.h"
+#	elif __has_include("../Shared/Containers/StringView.h")
+#		include "../Shared/Containers/StringView.h"
+#		include "../Shared/Core/ITraceSink.h"
+#		include "../Shared/IO/Stream.h"
+#	else
+#		include <Containers/StringView.h>
+#		include <Core/ITraceSink.h>
+#		include <IO/Stream.h>
+#	endif
+#else
+#	include <Containers/StringView.h>
+#	include <Core/ITraceSink.h>
+#	include <IO/Stream.h>
+#endif
 
 #if defined(DEATH_TARGET_WINDOWS)
 #	include <CommonWindows.h>
@@ -231,7 +247,7 @@ namespace nCine
 		/** @brief Must be called before giving control to the application */
 		void InitCommon();
 		/** @brief Processes a single step of the game loop and renders a frame */
-		void Step();
+		void Step(float deltaTime = 0.0f);
 		/** @brief Must be called before exiting to shut down the application */
 		void ShutdownCommon();
 
@@ -256,6 +272,9 @@ namespace nCine
 		friend class MainApplication;
 #if defined(DEATH_TARGET_ANDROID)
 		friend class AndroidApplication;
+#endif
+#if defined(DEATH_TARGET_IOS)
+		friend class IosApplication;
 #endif
 #if defined(DEATH_TARGET_EMSCRIPTEN)
 		friend class IGfxDevice;

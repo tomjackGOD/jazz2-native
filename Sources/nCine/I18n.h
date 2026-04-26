@@ -4,11 +4,33 @@
 
 #include <optional>
 
-#include <Containers/Array.h>
-#include <Containers/SmallVector.h>
-#include <Containers/String.h>
-#include <Containers/StringView.h>
-#include <IO/Stream.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/Array.h")
+#		include "Shared/Containers/Array.h"
+#		include "Shared/Containers/SmallVector.h"
+#		include "Shared/Containers/String.h"
+#		include "Shared/Containers/StringView.h"
+#		include "Shared/IO/Stream.h"
+#	elif __has_include("../Shared/Containers/Array.h")
+#		include "../Shared/Containers/Array.h"
+#		include "../Shared/Containers/SmallVector.h"
+#		include "../Shared/Containers/String.h"
+#		include "../Shared/Containers/StringView.h"
+#		include "../Shared/IO/Stream.h"
+#	else
+#		include <Containers/Array.h>
+#		include <Containers/SmallVector.h>
+#		include <Containers/String.h>
+#		include <Containers/StringView.h>
+#		include <IO/Stream.h>
+#	endif
+#else
+#	include <Containers/Array.h>
+#	include <Containers/SmallVector.h>
+#	include <Containers/String.h>
+#	include <Containers/StringView.h>
+#	include <IO/Stream.h>
+#endif
 
 using namespace Death::Containers;
 using namespace Death::IO;

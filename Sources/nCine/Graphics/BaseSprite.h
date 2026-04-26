@@ -1,12 +1,12 @@
 #pragma once
 
 #include "DrawableNode.h"
+#include "Backend/BackendTypes.h"
 #include "../Primitives/Rect.h"
 
 namespace nCine
 {
 	class Texture;
-	class GLUniformBlockCache;
 
 	/// Base class for sprites
 	/*! \note Users cannot create instances of this class */
@@ -66,7 +66,7 @@ namespace nCine
 		/// A flag indicating if the sprite texture is vertically flipped
 		bool flippedY_;
 
-		GLUniformBlockCache* instanceBlock_;
+		BackendUniformBlockCache* instanceBlock_;
 #endif
 
 		/// Protected constructor accessible only by derived sprite classes

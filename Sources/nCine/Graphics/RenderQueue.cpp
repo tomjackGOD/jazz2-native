@@ -2,13 +2,10 @@
 #include "RenderBatcher.h"
 #include "RenderResources.h"
 #include "RenderStatistics.h"
-#include "GL/GLDebug.h"
 #include "../Application.h"
-#include "GL/GLScissorTest.h"
-#include "GL/GLDepthTest.h"
-#include "GL/GLBlending.h"
 #include "../Base/Algorithms.h"
 #include "../tracy_opengl.h"
+#include "Backend/BackendRenderState.h"
 
 namespace nCine
 {
@@ -98,8 +95,8 @@ namespace nCine
 		if (!opaques->empty()) {
 			ZoneScopedNC("Commit opaques", 0x81A861);
 #if defined(DEATH_DEBUG)
-			std::size_t length = formatInto(debugString, "Commit {} opaque command(s) for viewport 0x{:x}", opaques->size(), std::uintptr_t(RenderResources::GetCurrentViewport()));
-			GLDebug::ScopedGroup scoped({ debugString, length });
+			formatInto(debugString, "Commit {} opaque command(s) for viewport 0x{:x}", opaques->size(), std::uintptr_t(RenderResources::GetCurrentViewport()));
+			Backend::ScopedDebugGroup scoped(debugString);
 #endif
 			for (RenderCommand* opaqueRenderCommand : *opaques) {
 				opaqueRenderCommand->CommitAll();
@@ -109,8 +106,8 @@ namespace nCine
 		if (!transparents->empty()) {
 			ZoneScopedNC("Commit transparents", 0x81A861);
 #if defined(DEATH_DEBUG)
-			std::size_t length = formatInto(debugString, "Commit {} transparent command(s) for viewport 0x{:x}", transparents->size(), std::uintptr_t(RenderResources::GetCurrentViewport()));
-			GLDebug::ScopedGroup scoped({ debugString, length });
+			formatInto(debugString, "Commit {} transparent command(s) for viewport 0x{:x}", transparents->size(), std::uintptr_t(RenderResources::GetCurrentViewport()));
+			Backend::ScopedDebugGroup scoped(debugString);
 #endif
 			for (RenderCommand* transparentRenderCommand : *transparents) {
 				transparentRenderCommand->CommitAll();
@@ -139,18 +136,17 @@ namespace nCine
 			const std::uint16_t layer = opaqueRenderCommand->GetLayer();
 			const std::uint16_t visitOrder = opaqueRenderCommand->GetVisitOrder();
 
-			std::size_t length;
 			if (numInstances > 0) {
-				length = formatInto(debugString, "Opaque {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
+				formatInto(debugString, "Opaque {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
 								    commandIndex, numInstances, commandTypeString(*opaqueRenderCommand), layer, visitOrder, opaqueRenderCommand->GetMaterialSortKey());
 			} else if (batchSize > 0) {
-				length = formatInto(debugString, "Opaque {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
+				formatInto(debugString, "Opaque {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
 								    commandIndex, batchSize, commandTypeString(*opaqueRenderCommand), layer, visitOrder, opaqueRenderCommand->GetMaterialSortKey());
 			} else {
-				length = formatInto(debugString, "Opaque {} ({} {} layer {}, visit order {}, sort key 0x{:x})",
+				formatInto(debugString, "Opaque {} ({} {} layer {}, visit order {}, sort key 0x{:x})",
 								    commandIndex, commandTypeString(*opaqueRenderCommand), layer, visitOrder, opaqueRenderCommand->GetMaterialSortKey());
 			}
-			GLDebug::ScopedGroup scoped({ debugString, length });
+			Backend::ScopedDebugGroup scoped(debugString);
 			commandIndex++;
 #endif
 
@@ -161,8 +157,8 @@ namespace nCine
 			opaqueRenderCommand->Issue();
 		}
 
-		GLBlending::Enable();
-		GLDepthTest::DisableDepthMask();
+		Backend::EnableBlending();
+		Backend::DisableDepthMask();
 		// Rendering transparent nodes back to front
 		for (RenderCommand* transparentRenderCommand : *transparents) {
 			TracyGpuZone("Transparent");
@@ -172,33 +168,32 @@ namespace nCine
 			const std::uint16_t layer = transparentRenderCommand->GetLayer();
 			const std::uint16_t visitOrder = transparentRenderCommand->GetVisitOrder();
 
-			std::size_t length;
 			if (numInstances > 0) {
-				length = formatInto(debugString, "Transparent {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
+				formatInto(debugString, "Transparent {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
 								    commandIndex, numInstances, commandTypeString(*transparentRenderCommand), layer, visitOrder, transparentRenderCommand->GetMaterialSortKey());
 			} else if (batchSize > 0) {
-				length = formatInto(debugString, "Transparent {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
+				formatInto(debugString, "Transparent {} ({} {} on layer {}, visit order {}, sort key 0x{:x})",
 								    commandIndex, batchSize, commandTypeString(*transparentRenderCommand), layer, visitOrder, transparentRenderCommand->GetMaterialSortKey());
 			} else {
-				length = formatInto(debugString, "Transparent {} ({} on layer {}, visit order {}, sort key 0x{:x})",
+				formatInto(debugString, "Transparent {} ({} on layer {}, visit order {}, sort key 0x{:x})",
 								    commandIndex, commandTypeString(*transparentRenderCommand), layer, visitOrder, transparentRenderCommand->GetMaterialSortKey());
 			}
-			GLDebug::ScopedGroup scoped({ debugString, length });
+			Backend::ScopedDebugGroup scoped(debugString);
 			commandIndex++;
 #endif
 
 #if defined(NCINE_PROFILING)
 			RenderStatistics::GatherStatistics(*transparentRenderCommand);
 #endif
-			GLBlending::SetBlendFunc(transparentRenderCommand->GetMaterial().GetSrcBlendingFactor(), transparentRenderCommand->GetMaterial().GetDestBlendingFactor());
+			Backend::SetBlendFunc(transparentRenderCommand->GetMaterial().GetSrcBlendingFactor(), transparentRenderCommand->GetMaterial().GetDestBlendingFactor());
 			transparentRenderCommand->CommitCameraTransformation();
 			transparentRenderCommand->Issue();
 		}
 		// Depth mask has to be enabled again before exiting this method or glClear(GL_DEPTH_BUFFER_BIT) won't have any effect
-		GLDepthTest::EnableDepthMask();
-		GLBlending::Disable();
+		Backend::EnableDepthMask();
+		Backend::DisableBlending();
 
-		GLScissorTest::Disable();
+		Backend::DisableScissor();
 	}
 
 	void RenderQueue::Clear()

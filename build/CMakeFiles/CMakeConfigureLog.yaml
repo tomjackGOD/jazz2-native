@@ -1,0 +1,2553 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      The system is: Windows - 10.0.19043 - AMD64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 2026. 04. 26. 8:09:26.
+      Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> F:\\gitt\\jazz2-native\\build\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:05.11
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        F:/gitt/jazz2-native/build/CMakeFiles/4.2.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/lld-link"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/lld-link.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/lld-link.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/lld-link"
+      - "C:/devkitPro/msys2/usr/bin/lld-link.com"
+      - "C:/devkitPro/msys2/usr/bin/lld-link.exe"
+      - "C:/devkitPro/msys2/usr/bin/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/lld-link.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/lld-link.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/lld-link"
+      - "C:/Program Files (x86)/ZeroTier/One/lld-link.com"
+      - "C:/Program Files (x86)/ZeroTier/One/lld-link.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/lld-link"
+      - "C:/Program Files/Tailscale/lld-link.com"
+      - "C:/Program Files/Tailscale/lld-link.exe"
+      - "C:/Program Files/Tailscale/lld-link"
+      - "C:/Program Files/WireGuard/lld-link.com"
+      - "C:/Program Files/WireGuard/lld-link.exe"
+      - "C:/Program Files/WireGuard/lld-link"
+      - "C:/Program Files/Sunshine/lld-link.com"
+      - "C:/Program Files/Sunshine/lld-link.exe"
+      - "C:/Program Files/Sunshine/lld-link"
+      - "C:/Program Files/Sunshine/tools/lld-link.com"
+      - "C:/Program Files/Sunshine/tools/lld-link.exe"
+      - "C:/Program Files/Sunshine/tools/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/Administrator/.dotnet/tools/lld-link.com"
+      - "C:/Users/Administrator/.dotnet/tools/lld-link.exe"
+      - "C:/Users/Administrator/.dotnet/tools/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "CMAKE_MT"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "mt"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/mt"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/mt.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/mt.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/mt"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/mt.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/mt.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/mt"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/mt.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/mt.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/mt"
+      - "C:/devkitPro/msys2/usr/bin/mt.com"
+      - "C:/devkitPro/msys2/usr/bin/mt.exe"
+      - "C:/devkitPro/msys2/usr/bin/mt"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/mt"
+      - "C:/Windows/System32/mt.com"
+      - "C:/Windows/System32/mt.exe"
+      - "C:/Windows/System32/mt"
+      - "C:/Windows/mt.com"
+      - "C:/Windows/mt.exe"
+      - "C:/Windows/mt"
+      - "C:/Windows/System32/wbem/mt.com"
+      - "C:/Windows/System32/wbem/mt.exe"
+      - "C:/Windows/System32/wbem/mt"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/mt"
+      - "C:/Windows/System32/OpenSSH/mt.com"
+      - "C:/Windows/System32/OpenSSH/mt.exe"
+      - "C:/Windows/System32/OpenSSH/mt"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/mt"
+      - "C:/Program Files/Git/cmd/mt.com"
+      - "C:/Program Files/Git/cmd/mt.exe"
+      - "C:/Program Files/Git/cmd/mt"
+      - "C:/Program Files/dotnet/mt.com"
+      - "C:/Program Files/dotnet/mt.exe"
+      - "C:/Program Files/dotnet/mt"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/mt.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/mt.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/mt"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/mt.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/mt.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/mt"
+      - "C:/Program Files (x86)/ZeroTier/One/mt.com"
+      - "C:/Program Files (x86)/ZeroTier/One/mt.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/mt"
+      - "C:/Program Files/Tailscale/mt.com"
+      - "C:/Program Files/Tailscale/mt.exe"
+      - "C:/Program Files/Tailscale/mt"
+      - "C:/Program Files/WireGuard/mt.com"
+      - "C:/Program Files/WireGuard/mt.exe"
+      - "C:/Program Files/WireGuard/mt"
+      - "C:/Program Files/Sunshine/mt.com"
+      - "C:/Program Files/Sunshine/mt.exe"
+      - "C:/Program Files/Sunshine/mt"
+      - "C:/Program Files/Sunshine/tools/mt.com"
+      - "C:/Program Files/Sunshine/tools/mt.exe"
+      - "C:/Program Files/Sunshine/tools/mt"
+      - "C:/Program Files/CMake/bin/mt.com"
+      - "C:/Program Files/CMake/bin/mt.exe"
+      - "C:/Program Files/CMake/bin/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/mt"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/mt"
+      - "C:/Users/Administrator/.dotnet/tools/mt.com"
+      - "C:/Users/Administrator/.dotnet/tools/mt.exe"
+      - "C:/Users/Administrator/.dotnet/tools/mt"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/mt.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/mt.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/mt"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lib"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.com"
+    found: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/"
+    found: "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 2026. 04. 26. 8:09:32.
+      Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> F:\\gitt\\jazz2-native\\build\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\4.2.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.73
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        F:/gitt/jazz2-native/build/CMakeFiles/4.2.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:37 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "_CMAKE_TOOL_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "lld-link"
+    candidate_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+    searched_directories:
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.com"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link.exe"
+      - "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/lld-link"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/lld-link"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/lld-link.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/lld-link.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/lld-link"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/lld-link.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/lld-link.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/lld-link"
+      - "C:/devkitPro/msys2/usr/bin/lld-link.com"
+      - "C:/devkitPro/msys2/usr/bin/lld-link.exe"
+      - "C:/devkitPro/msys2/usr/bin/lld-link"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/lld-link"
+      - "C:/Windows/System32/lld-link.com"
+      - "C:/Windows/System32/lld-link.exe"
+      - "C:/Windows/System32/lld-link"
+      - "C:/Windows/lld-link.com"
+      - "C:/Windows/lld-link.exe"
+      - "C:/Windows/lld-link"
+      - "C:/Windows/System32/wbem/lld-link.com"
+      - "C:/Windows/System32/wbem/lld-link.exe"
+      - "C:/Windows/System32/wbem/lld-link"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/lld-link"
+      - "C:/Windows/System32/OpenSSH/lld-link.com"
+      - "C:/Windows/System32/OpenSSH/lld-link.exe"
+      - "C:/Windows/System32/OpenSSH/lld-link"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/lld-link"
+      - "C:/Program Files/Git/cmd/lld-link.com"
+      - "C:/Program Files/Git/cmd/lld-link.exe"
+      - "C:/Program Files/Git/cmd/lld-link"
+      - "C:/Program Files/dotnet/lld-link.com"
+      - "C:/Program Files/dotnet/lld-link.exe"
+      - "C:/Program Files/dotnet/lld-link"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/lld-link.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/lld-link.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/lld-link"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/lld-link.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/lld-link.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/lld-link"
+      - "C:/Program Files (x86)/ZeroTier/One/lld-link.com"
+      - "C:/Program Files (x86)/ZeroTier/One/lld-link.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/lld-link"
+      - "C:/Program Files/Tailscale/lld-link.com"
+      - "C:/Program Files/Tailscale/lld-link.exe"
+      - "C:/Program Files/Tailscale/lld-link"
+      - "C:/Program Files/WireGuard/lld-link.com"
+      - "C:/Program Files/WireGuard/lld-link.exe"
+      - "C:/Program Files/WireGuard/lld-link"
+      - "C:/Program Files/Sunshine/lld-link.com"
+      - "C:/Program Files/Sunshine/lld-link.exe"
+      - "C:/Program Files/Sunshine/lld-link"
+      - "C:/Program Files/Sunshine/tools/lld-link.com"
+      - "C:/Program Files/Sunshine/tools/lld-link.exe"
+      - "C:/Program Files/Sunshine/tools/lld-link"
+      - "C:/Program Files/CMake/bin/lld-link.com"
+      - "C:/Program Files/CMake/bin/lld-link.exe"
+      - "C:/Program Files/CMake/bin/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/lld-link"
+      - "C:/Users/Administrator/.dotnet/tools/lld-link.com"
+      - "C:/Users/Administrator/.dotnet/tools/lld-link.exe"
+      - "C:/Users/Administrator/.dotnet/tools/lld-link"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/lld-link.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/lld-link.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/lld-link"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineRCCompiler.cmake:40 (find_program)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:580 (enable_language)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC.cmake:553 (__windows_compiler_msvc_enable_rc)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeCXXInformation.cmake:48 (include)"
+      - "CMakeLists.txt:38 (project)"
+    mode: "program"
+    variable: "CMAKE_RC_COMPILER"
+    description: "RC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "rc"
+    candidate_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/Jazz2/bin/"
+      - "C:/Program Files (x86)/Jazz2/sbin/"
+      - "C:/Program Files (x86)/Jazz2/"
+    searched_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/rc"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/rc.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/rc.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/rc"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/rc.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/rc.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/rc"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/rc.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/rc.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/rc"
+      - "C:/devkitPro/msys2/usr/bin/rc.com"
+      - "C:/devkitPro/msys2/usr/bin/rc.exe"
+      - "C:/devkitPro/msys2/usr/bin/rc"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/rc"
+      - "C:/Windows/System32/rc.com"
+      - "C:/Windows/System32/rc.exe"
+      - "C:/Windows/System32/rc"
+      - "C:/Windows/rc.com"
+      - "C:/Windows/rc.exe"
+      - "C:/Windows/rc"
+      - "C:/Windows/System32/wbem/rc.com"
+      - "C:/Windows/System32/wbem/rc.exe"
+      - "C:/Windows/System32/wbem/rc"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/rc"
+      - "C:/Windows/System32/OpenSSH/rc.com"
+      - "C:/Windows/System32/OpenSSH/rc.exe"
+      - "C:/Windows/System32/OpenSSH/rc"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/rc"
+      - "C:/Program Files/Git/cmd/rc.com"
+      - "C:/Program Files/Git/cmd/rc.exe"
+      - "C:/Program Files/Git/cmd/rc"
+      - "C:/Program Files/dotnet/rc.com"
+      - "C:/Program Files/dotnet/rc.exe"
+      - "C:/Program Files/dotnet/rc"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/rc.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/rc.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/rc"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/rc.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/rc.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/rc"
+      - "C:/Program Files (x86)/ZeroTier/One/rc.com"
+      - "C:/Program Files (x86)/ZeroTier/One/rc.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/rc"
+      - "C:/Program Files/Tailscale/rc.com"
+      - "C:/Program Files/Tailscale/rc.exe"
+      - "C:/Program Files/Tailscale/rc"
+      - "C:/Program Files/WireGuard/rc.com"
+      - "C:/Program Files/WireGuard/rc.exe"
+      - "C:/Program Files/WireGuard/rc"
+      - "C:/Program Files/Sunshine/rc.com"
+      - "C:/Program Files/Sunshine/rc.exe"
+      - "C:/Program Files/Sunshine/rc"
+      - "C:/Program Files/Sunshine/tools/rc.com"
+      - "C:/Program Files/Sunshine/tools/rc.exe"
+      - "C:/Program Files/Sunshine/tools/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/rc"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/rc"
+      - "C:/Users/Administrator/.dotnet/tools/rc.com"
+      - "C:/Users/Administrator/.dotnet/tools/rc.exe"
+      - "C:/Users/Administrator/.dotnet/tools/rc"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/rc.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/rc.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/rc"
+      - "C:/Program Files/bin/rc.com"
+      - "C:/Program Files/bin/rc.exe"
+      - "C:/Program Files/bin/rc"
+      - "C:/Program Files/sbin/rc.com"
+      - "C:/Program Files/sbin/rc.exe"
+      - "C:/Program Files/sbin/rc"
+      - "C:/Program Files/rc.com"
+      - "C:/Program Files/rc.exe"
+      - "C:/Program Files/rc"
+      - "C:/Program Files (x86)/bin/rc.com"
+      - "C:/Program Files (x86)/bin/rc.exe"
+      - "C:/Program Files (x86)/bin/rc"
+      - "C:/Program Files (x86)/sbin/rc.com"
+      - "C:/Program Files (x86)/sbin/rc.exe"
+      - "C:/Program Files (x86)/sbin/rc"
+      - "C:/Program Files (x86)/rc.com"
+      - "C:/Program Files (x86)/rc.exe"
+      - "C:/Program Files (x86)/rc"
+      - "C:/Program Files/CMake/bin/rc.com"
+      - "C:/Program Files/CMake/bin/rc.exe"
+      - "C:/Program Files/CMake/bin/rc"
+      - "C:/Program Files/CMake/sbin/rc.com"
+      - "C:/Program Files/CMake/sbin/rc.exe"
+      - "C:/Program Files/CMake/sbin/rc"
+      - "C:/Program Files/CMake/rc.com"
+      - "C:/Program Files/CMake/rc.exe"
+      - "C:/Program Files/CMake/rc"
+      - "C:/Program Files (x86)/Jazz2/bin/rc.com"
+      - "C:/Program Files (x86)/Jazz2/bin/rc.exe"
+      - "C:/Program Files (x86)/Jazz2/bin/rc"
+      - "C:/Program Files (x86)/Jazz2/sbin/rc.com"
+      - "C:/Program Files (x86)/Jazz2/sbin/rc.exe"
+      - "C:/Program Files (x86)/Jazz2/sbin/rc"
+      - "C:/Program Files (x86)/Jazz2/rc.com"
+      - "C:/Program Files (x86)/Jazz2/rc.exe"
+      - "C:/Program Files (x86)/Jazz2/rc"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Jazz2"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Jazz2"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:38 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-ipm2ku"
+      binary: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-ipm2ku"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-ipm2ku'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_d8089.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 2026. 04. 26. 8:09:34.
+        Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ipm2ku\\cmTC_d8089.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ipm2ku\\Debug\\".
+          Creating directory "cmTC_d8089.dir\\Debug\\cmTC_d8089.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_d8089.dir\\Debug\\cmTC_d8089.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_d8089.dir\\Debug\\\\" /Fd"cmTC_d8089.dir\\Debug\\vc142.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30140 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_d8089.dir\\Debug\\\\" /Fd"cmTC_d8089.dir\\Debug\\vc142.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ipm2ku\\Debug\\cmTC_d8089.exe" /INCREMENTAL /ILK:"cmTC_d8089.dir\\Debug\\cmTC_d8089.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-ipm2ku/Debug/cmTC_d8089.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-ipm2ku/Debug/cmTC_d8089.lib" /MACHINE:X64  /machine:x64 cmTC_d8089.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_d8089.vcxproj -> F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ipm2ku\\Debug\\cmTC_d8089.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_d8089.dir\\Debug\\cmTC_d8089.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d8089.dir\\Debug\\cmTC_d8089.tlog\\cmTC_d8089.lastbuildstate".
+        Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ipm2ku\\cmTC_d8089.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.83
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'CXX': C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      Running the CXX compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.29.30140.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:38 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-c9wqea"
+      binary: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-c9wqea"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-c9wqea'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_4d180.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 2026. 04. 26. 8:09:36.
+        Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c9wqea\\cmTC_4d180.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c9wqea\\Debug\\".
+          Creating directory "cmTC_4d180.dir\\Debug\\cmTC_4d180.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_4d180.dir\\Debug\\cmTC_4d180.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4d180.dir\\Debug\\\\" /Fd"cmTC_4d180.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30140 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CMakeCCompilerABI.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4d180.dir\\Debug\\\\" /Fd"cmTC_4d180.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c9wqea\\Debug\\cmTC_4d180.exe" /INCREMENTAL /ILK:"cmTC_4d180.dir\\Debug\\cmTC_4d180.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-c9wqea/Debug/cmTC_4d180.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-c9wqea/Debug/cmTC_4d180.lib" /MACHINE:X64  /machine:x64 cmTC_4d180.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_4d180.vcxproj -> F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c9wqea\\Debug\\cmTC_4d180.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_4d180.dir\\Debug\\cmTC_4d180.tlog\\unsuccessfulbuild".
+          Touching "cmTC_4d180.dir\\Debug\\cmTC_4d180.tlog\\cmTC_4d180.lastbuildstate".
+        Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-c9wqea\\cmTC_4d180.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.93
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?))("|,| |$)]
+        linker tool for 'C': C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:38 (project)"
+    message: |
+      Running the C compiler's linker: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.29.30133/bin/HostX64/x64/link.exe" "-v"
+      Microsoft (R) Incremental Linker Version 14.29.30140.0
+      Copyright (C) Microsoft Corporation.  All rights reserved.
+  -
+    kind: "find-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindGit.cmake:111 (find_program)"
+      - "cmake/ncine_get_version.cmake:6 (find_package)"
+      - "CMakeLists.txt:82 (include)"
+    mode: "program"
+    variable: "GIT_EXECUTABLE"
+    description: "Git command line client"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git.cmd"
+      - "git"
+    candidate_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/Jazz2/bin/"
+      - "C:/Program Files (x86)/Jazz2/sbin/"
+      - "C:/Program Files (x86)/Jazz2/"
+      - "C:/Users/Administrator/AppData/Local/Atlassian/SourceTree/git_local/bin/"
+    searched_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/git.cmd"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.cmd.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.cmd.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.cmd"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/git.cmd.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/git.cmd.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/git.cmd"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/git.cmd.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/git.cmd.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/git.cmd"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/git.cmd.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/git.cmd.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/git.cmd"
+      - "C:/devkitPro/msys2/usr/bin/git.cmd.com"
+      - "C:/devkitPro/msys2/usr/bin/git.cmd.exe"
+      - "C:/devkitPro/msys2/usr/bin/git.cmd"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.cmd.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.cmd.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.cmd"
+      - "C:/Windows/System32/git.cmd.com"
+      - "C:/Windows/System32/git.cmd.exe"
+      - "C:/Windows/System32/git.cmd"
+      - "C:/Windows/git.cmd.com"
+      - "C:/Windows/git.cmd.exe"
+      - "C:/Windows/git.cmd"
+      - "C:/Windows/System32/wbem/git.cmd.com"
+      - "C:/Windows/System32/wbem/git.cmd.exe"
+      - "C:/Windows/System32/wbem/git.cmd"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.cmd.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.cmd.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.cmd"
+      - "C:/Windows/System32/OpenSSH/git.cmd.com"
+      - "C:/Windows/System32/OpenSSH/git.cmd.exe"
+      - "C:/Windows/System32/OpenSSH/git.cmd"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.cmd.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.cmd.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.cmd"
+      - "C:/Program Files/Git/cmd/git.cmd.com"
+      - "C:/Program Files/Git/cmd/git.cmd.exe"
+      - "C:/Program Files/Git/cmd/git.cmd"
+      - "C:/Program Files/dotnet/git.cmd.com"
+      - "C:/Program Files/dotnet/git.cmd.exe"
+      - "C:/Program Files/dotnet/git.cmd"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/git.cmd.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/git.cmd.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/git.cmd"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/git.cmd.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/git.cmd.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/git.cmd"
+      - "C:/Program Files (x86)/ZeroTier/One/git.cmd.com"
+      - "C:/Program Files (x86)/ZeroTier/One/git.cmd.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/git.cmd"
+      - "C:/Program Files/Tailscale/git.cmd.com"
+      - "C:/Program Files/Tailscale/git.cmd.exe"
+      - "C:/Program Files/Tailscale/git.cmd"
+      - "C:/Program Files/WireGuard/git.cmd.com"
+      - "C:/Program Files/WireGuard/git.cmd.exe"
+      - "C:/Program Files/WireGuard/git.cmd"
+      - "C:/Program Files/Sunshine/git.cmd.com"
+      - "C:/Program Files/Sunshine/git.cmd.exe"
+      - "C:/Program Files/Sunshine/git.cmd"
+      - "C:/Program Files/Sunshine/tools/git.cmd.com"
+      - "C:/Program Files/Sunshine/tools/git.cmd.exe"
+      - "C:/Program Files/Sunshine/tools/git.cmd"
+      - "C:/Program Files/CMake/bin/git.cmd.com"
+      - "C:/Program Files/CMake/bin/git.cmd.exe"
+      - "C:/Program Files/CMake/bin/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/git.cmd"
+      - "C:/Users/Administrator/.dotnet/tools/git.cmd.com"
+      - "C:/Users/Administrator/.dotnet/tools/git.cmd.exe"
+      - "C:/Users/Administrator/.dotnet/tools/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/git.cmd"
+      - "C:/Program Files/bin/git.cmd.com"
+      - "C:/Program Files/bin/git.cmd.exe"
+      - "C:/Program Files/bin/git.cmd"
+      - "C:/Program Files/sbin/git.cmd.com"
+      - "C:/Program Files/sbin/git.cmd.exe"
+      - "C:/Program Files/sbin/git.cmd"
+      - "C:/Program Files/git.cmd.com"
+      - "C:/Program Files/git.cmd.exe"
+      - "C:/Program Files/git.cmd"
+      - "C:/Program Files (x86)/bin/git.cmd.com"
+      - "C:/Program Files (x86)/bin/git.cmd.exe"
+      - "C:/Program Files (x86)/bin/git.cmd"
+      - "C:/Program Files (x86)/sbin/git.cmd.com"
+      - "C:/Program Files (x86)/sbin/git.cmd.exe"
+      - "C:/Program Files (x86)/sbin/git.cmd"
+      - "C:/Program Files (x86)/git.cmd.com"
+      - "C:/Program Files (x86)/git.cmd.exe"
+      - "C:/Program Files (x86)/git.cmd"
+      - "C:/Program Files/CMake/bin/git.cmd.com"
+      - "C:/Program Files/CMake/bin/git.cmd.exe"
+      - "C:/Program Files/CMake/bin/git.cmd"
+      - "C:/Program Files/CMake/sbin/git.cmd.com"
+      - "C:/Program Files/CMake/sbin/git.cmd.exe"
+      - "C:/Program Files/CMake/sbin/git.cmd"
+      - "C:/Program Files/CMake/git.cmd.com"
+      - "C:/Program Files/CMake/git.cmd.exe"
+      - "C:/Program Files/CMake/git.cmd"
+      - "C:/Program Files (x86)/Jazz2/bin/git.cmd.com"
+      - "C:/Program Files (x86)/Jazz2/bin/git.cmd.exe"
+      - "C:/Program Files (x86)/Jazz2/bin/git.cmd"
+      - "C:/Program Files (x86)/Jazz2/sbin/git.cmd.com"
+      - "C:/Program Files (x86)/Jazz2/sbin/git.cmd.exe"
+      - "C:/Program Files (x86)/Jazz2/sbin/git.cmd"
+      - "C:/Program Files (x86)/Jazz2/git.cmd.com"
+      - "C:/Program Files (x86)/Jazz2/git.cmd.exe"
+      - "C:/Program Files (x86)/Jazz2/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.com"
+      - "C:/Users/Administrator/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd.exe"
+      - "C:/Users/Administrator/AppData/Local/Atlassian/SourceTree/git_local/bin/git.cmd"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/git.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/git.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/git"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/git"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/git.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/git.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/git"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/git.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/git.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/git"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/git.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/git.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/git"
+      - "C:/devkitPro/msys2/usr/bin/git.com"
+      - "C:/devkitPro/msys2/usr/bin/git.exe"
+      - "C:/devkitPro/msys2/usr/bin/git"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/git"
+      - "C:/Windows/System32/git.com"
+      - "C:/Windows/System32/git.exe"
+      - "C:/Windows/System32/git"
+      - "C:/Windows/git.com"
+      - "C:/Windows/git.exe"
+      - "C:/Windows/git"
+      - "C:/Windows/System32/wbem/git.com"
+      - "C:/Windows/System32/wbem/git.exe"
+      - "C:/Windows/System32/wbem/git"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/git"
+      - "C:/Windows/System32/OpenSSH/git.com"
+      - "C:/Windows/System32/OpenSSH/git.exe"
+      - "C:/Windows/System32/OpenSSH/git"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/git"
+      - "C:/Program Files/Git/cmd/git.com"
+    found: "C:/Program Files/Git/cmd/git.exe"
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Jazz2"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Jazz2"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckCSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:160 (check_c_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:226 (_threads_check_libc)"
+      - "cmake/ncine_imported_targets.cmake:205 (find_package)"
+      - "CMakeLists.txt:83 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-9txlbs"
+      binary: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-9txlbs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/gitt/jazz2-native/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-9txlbs'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_061cb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 2026. 04. 26. 8:09:48.
+        Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\cmTC_061cb.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\Debug\\".
+          Creating directory "cmTC_061cb.dir\\Debug\\cmTC_061cb.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_061cb.dir\\Debug\\cmTC_061cb.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_061cb.dir\\Debug\\\\" /Fd"cmTC_061cb.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30140 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          src.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_061cb.dir\\Debug\\\\" /Fd"cmTC_061cb.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\src.c"
+        F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\cmTC_061cb.vcxproj]
+        Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\cmTC_061cb.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\cmTC_061cb.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-9txlbs\\cmTC_061cb.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.55
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:175 (check_library_exists)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:238 (_threads_check_lib)"
+      - "cmake/ncine_imported_targets.cmake:205 (find_package)"
+      - "CMakeLists.txt:83 (include)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-semxwc"
+      binary: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-semxwc"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/gitt/jazz2-native/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-semxwc'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_818c0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 2026. 04. 26. 8:09:49.
+        Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\cmTC_818c0.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\Debug\\".
+          Creating directory "cmTC_818c0.dir\\Debug\\cmTC_818c0.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_818c0.dir\\Debug\\cmTC_818c0.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_818c0.dir\\Debug\\\\" /Fd"cmTC_818c0.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30140 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CheckFunctionExists.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_818c0.dir\\Debug\\\\" /Fd"cmTC_818c0.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\Debug\\cmTC_818c0.exe" /INCREMENTAL /ILK:"cmTC_818c0.dir\\Debug\\cmTC_818c0.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-semxwc/Debug/cmTC_818c0.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-semxwc/Debug/cmTC_818c0.lib" /MACHINE:X64  /machine:x64 cmTC_818c0.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\cmTC_818c0.vcxproj]
+        Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\cmTC_818c0.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\cmTC_818c0.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-semxwc\\cmTC_818c0.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.60
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:175 (check_library_exists)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/FindThreads.cmake:239 (_threads_check_lib)"
+      - "cmake/ncine_imported_targets.cmake:205 (find_package)"
+      - "CMakeLists.txt:83 (include)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-hkjawa"
+      binary: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-hkjawa"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/gitt/jazz2-native/cmake"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-hkjawa'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_4ee61.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 2026. 04. 26. 8:09:50.
+        Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\cmTC_4ee61.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\Debug\\".
+          Creating directory "cmTC_4ee61.dir\\Debug\\cmTC_4ee61.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_4ee61.dir\\Debug\\cmTC_4ee61.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4ee61.dir\\Debug\\\\" /Fd"cmTC_4ee61.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30140 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CheckFunctionExists.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_4ee61.dir\\Debug\\\\" /Fd"cmTC_4ee61.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /OUT:"F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\Debug\\cmTC_4ee61.exe" /INCREMENTAL /ILK:"cmTC_4ee61.dir\\Debug\\cmTC_4ee61.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-hkjawa/Debug/cmTC_4ee61.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-hkjawa/Debug/cmTC_4ee61.lib" /MACHINE:X64  /machine:x64 cmTC_4ee61.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\cmTC_4ee61.vcxproj]
+        Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\cmTC_4ee61.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\cmTC_4ee61.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-hkjawa\\cmTC_4ee61.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.64
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckSourceCompiles.cmake:205 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-4.2/Modules/CheckStructHasMember.cmake:161 (check_source_compiles)"
+      - "cmake/ncine_compiler_options.cmake:33 (check_struct_has_member)"
+      - "CMakeLists.txt:122 (include)"
+    directories:
+      source: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-l7bkf4"
+      binary: "F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-l7bkf4"
+    cmakeVariables:
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "F:/gitt/jazz2-native/cmake"
+    buildResult:
+      variable: "DEATH_USE_GMTOFF_IN_TM"
+      cached: true
+      stdout: |
+        Change Dir: 'F:/gitt/jazz2-native/build/CMakeFiles/CMakeScratch/TryCompile-l7bkf4'
+        
+        Run Build Command(s): "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" cmTC_58b30.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n
+        Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 2026. 04. 26. 8:09:51.
+        Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\cmTC_58b30.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\Debug\\".
+          Creating directory "cmTC_58b30.dir\\Debug\\cmTC_58b30.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_58b30.dir\\Debug\\cmTC_58b30.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D DEATH_USE_GMTOFF_IN_TM /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_58b30.dir\\Debug\\\\" /Fd"cmTC_58b30.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30140 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          src.c
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D DEATH_USE_GMTOFF_IN_TM /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /Fo"cmTC_58b30.dir\\Debug\\\\" /Fd"cmTC_58b30.dir\\Debug\\vc142.pdb" /external:W1 /TC /errorReport:queue "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\src.c"
+        F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\src.c(6,34): error C2039: 'tm_gmtoff': is not a member of 'tm' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\cmTC_58b30.vcxproj]
+        C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.19041.0\\ucrt\\corecrt_wtime.h(26): message : see declaration of 'tm' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\cmTC_58b30.vcxproj]
+        Done Building Project "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\cmTC_58b30.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\cmTC_58b30.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\src.c(6,34): error C2039: 'tm_gmtoff': is not a member of 'tm' [F:\\gitt\\jazz2-native\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l7bkf4\\cmTC_58b30.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.53
+        
+      exitCode: 1
+  -
+    kind: "find-v1"
+    backtrace:
+      - "cmake/ncine_generated_sources.cmake:20 (find_program)"
+      - "CMakeLists.txt:126 (include)"
+    mode: "program"
+    variable: "GLSLANG_VALIDATOR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "glslangValidator"
+    candidate_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/Jazz2/bin/"
+      - "C:/Program Files (x86)/Jazz2/sbin/"
+      - "C:/Program Files (x86)/Jazz2/"
+    searched_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/glslangValidator"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/glslangValidator.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/glslangValidator.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/glslangValidator"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/glslangValidator.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/glslangValidator.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/glslangValidator"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/glslangValidator.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/glslangValidator.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/glslangValidator"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/glslangValidator.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/glslangValidator.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/glslangValidator"
+      - "C:/devkitPro/msys2/usr/bin/glslangValidator.com"
+      - "C:/devkitPro/msys2/usr/bin/glslangValidator.exe"
+      - "C:/devkitPro/msys2/usr/bin/glslangValidator"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/glslangValidator.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/glslangValidator.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/glslangValidator"
+      - "C:/Windows/System32/glslangValidator.com"
+      - "C:/Windows/System32/glslangValidator.exe"
+      - "C:/Windows/System32/glslangValidator"
+      - "C:/Windows/glslangValidator.com"
+      - "C:/Windows/glslangValidator.exe"
+      - "C:/Windows/glslangValidator"
+      - "C:/Windows/System32/wbem/glslangValidator.com"
+      - "C:/Windows/System32/wbem/glslangValidator.exe"
+      - "C:/Windows/System32/wbem/glslangValidator"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/glslangValidator"
+      - "C:/Windows/System32/OpenSSH/glslangValidator.com"
+      - "C:/Windows/System32/OpenSSH/glslangValidator.exe"
+      - "C:/Windows/System32/OpenSSH/glslangValidator"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/glslangValidator"
+      - "C:/Program Files/Git/cmd/glslangValidator.com"
+      - "C:/Program Files/Git/cmd/glslangValidator.exe"
+      - "C:/Program Files/Git/cmd/glslangValidator"
+      - "C:/Program Files/dotnet/glslangValidator.com"
+      - "C:/Program Files/dotnet/glslangValidator.exe"
+      - "C:/Program Files/dotnet/glslangValidator"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/glslangValidator.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/glslangValidator.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/glslangValidator"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/glslangValidator.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/glslangValidator.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/glslangValidator"
+      - "C:/Program Files (x86)/ZeroTier/One/glslangValidator.com"
+      - "C:/Program Files (x86)/ZeroTier/One/glslangValidator.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/glslangValidator"
+      - "C:/Program Files/Tailscale/glslangValidator.com"
+      - "C:/Program Files/Tailscale/glslangValidator.exe"
+      - "C:/Program Files/Tailscale/glslangValidator"
+      - "C:/Program Files/WireGuard/glslangValidator.com"
+      - "C:/Program Files/WireGuard/glslangValidator.exe"
+      - "C:/Program Files/WireGuard/glslangValidator"
+      - "C:/Program Files/Sunshine/glslangValidator.com"
+      - "C:/Program Files/Sunshine/glslangValidator.exe"
+      - "C:/Program Files/Sunshine/glslangValidator"
+      - "C:/Program Files/Sunshine/tools/glslangValidator.com"
+      - "C:/Program Files/Sunshine/tools/glslangValidator.exe"
+      - "C:/Program Files/Sunshine/tools/glslangValidator"
+      - "C:/Program Files/CMake/bin/glslangValidator.com"
+      - "C:/Program Files/CMake/bin/glslangValidator.exe"
+      - "C:/Program Files/CMake/bin/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/glslangValidator"
+      - "C:/Users/Administrator/.dotnet/tools/glslangValidator.com"
+      - "C:/Users/Administrator/.dotnet/tools/glslangValidator.exe"
+      - "C:/Users/Administrator/.dotnet/tools/glslangValidator"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/glslangValidator.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/glslangValidator.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/glslangValidator"
+      - "C:/Program Files/bin/glslangValidator.com"
+      - "C:/Program Files/bin/glslangValidator.exe"
+      - "C:/Program Files/bin/glslangValidator"
+      - "C:/Program Files/sbin/glslangValidator.com"
+      - "C:/Program Files/sbin/glslangValidator.exe"
+      - "C:/Program Files/sbin/glslangValidator"
+      - "C:/Program Files/glslangValidator.com"
+      - "C:/Program Files/glslangValidator.exe"
+      - "C:/Program Files/glslangValidator"
+      - "C:/Program Files (x86)/bin/glslangValidator.com"
+      - "C:/Program Files (x86)/bin/glslangValidator.exe"
+      - "C:/Program Files (x86)/bin/glslangValidator"
+      - "C:/Program Files (x86)/sbin/glslangValidator.com"
+      - "C:/Program Files (x86)/sbin/glslangValidator.exe"
+      - "C:/Program Files (x86)/sbin/glslangValidator"
+      - "C:/Program Files (x86)/glslangValidator.com"
+      - "C:/Program Files (x86)/glslangValidator.exe"
+      - "C:/Program Files (x86)/glslangValidator"
+      - "C:/Program Files/CMake/bin/glslangValidator.com"
+      - "C:/Program Files/CMake/bin/glslangValidator.exe"
+      - "C:/Program Files/CMake/bin/glslangValidator"
+      - "C:/Program Files/CMake/sbin/glslangValidator.com"
+      - "C:/Program Files/CMake/sbin/glslangValidator.exe"
+      - "C:/Program Files/CMake/sbin/glslangValidator"
+      - "C:/Program Files/CMake/glslangValidator.com"
+      - "C:/Program Files/CMake/glslangValidator.exe"
+      - "C:/Program Files/CMake/glslangValidator"
+      - "C:/Program Files (x86)/Jazz2/bin/glslangValidator.com"
+      - "C:/Program Files (x86)/Jazz2/bin/glslangValidator.exe"
+      - "C:/Program Files (x86)/Jazz2/bin/glslangValidator"
+      - "C:/Program Files (x86)/Jazz2/sbin/glslangValidator.com"
+      - "C:/Program Files (x86)/Jazz2/sbin/glslangValidator.exe"
+      - "C:/Program Files (x86)/Jazz2/sbin/glslangValidator"
+      - "C:/Program Files (x86)/Jazz2/glslangValidator.com"
+      - "C:/Program Files (x86)/Jazz2/glslangValidator.exe"
+      - "C:/Program Files (x86)/Jazz2/glslangValidator"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Jazz2"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Jazz2"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "cmake/ncine_generated_sources.cmake:21 (find_program)"
+      - "CMakeLists.txt:126 (include)"
+    mode: "program"
+    variable: "SPIRV_CROSS"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "spirv-cross"
+    candidate_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/"
+      - "C:/devkitPro/msys2/usr/bin/"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/"
+      - "C:/Windows/System32/"
+      - "C:/Windows/"
+      - "C:/Windows/System32/wbem/"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/"
+      - "C:/Windows/System32/OpenSSH/"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/"
+      - "C:/Program Files/Git/cmd/"
+      - "C:/Program Files/dotnet/"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/"
+      - "C:/Program Files (x86)/ZeroTier/One/"
+      - "C:/Program Files/Tailscale/"
+      - "C:/Program Files/WireGuard/"
+      - "C:/Program Files/Sunshine/"
+      - "C:/Program Files/Sunshine/tools/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/"
+      - "C:/Users/Administrator/.dotnet/tools/"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/"
+      - "C:/Program Files/bin/"
+      - "C:/Program Files/sbin/"
+      - "C:/Program Files/"
+      - "C:/Program Files (x86)/bin/"
+      - "C:/Program Files (x86)/sbin/"
+      - "C:/Program Files (x86)/"
+      - "C:/Program Files/CMake/bin/"
+      - "C:/Program Files/CMake/sbin/"
+      - "C:/Program Files/CMake/"
+      - "C:/Program Files (x86)/Jazz2/bin/"
+      - "C:/Program Files (x86)/Jazz2/sbin/"
+      - "C:/Program Files (x86)/Jazz2/"
+    searched_directories:
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/resources/helpers/spirv-cross"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/spirv-cross.com"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/spirv-cross.exe"
+      - "C:/Program Files/Common Files/Oracle/Java/javapath/spirv-cross"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/spirv-cross.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/spirv-cross.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/bin/spirv-cross"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/spirv-cross.com"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/spirv-cross.exe"
+      - "C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v10.1/libnvvp/spirv-cross"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/spirv-cross.com"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/spirv-cross.exe"
+      - "C:/Program Files/Amazon Corretto/jdk17.0.4_8/bin/spirv-cross"
+      - "C:/devkitPro/msys2/usr/bin/spirv-cross.com"
+      - "C:/devkitPro/msys2/usr/bin/spirv-cross.exe"
+      - "C:/devkitPro/msys2/usr/bin/spirv-cross"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/spirv-cross.com"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/spirv-cross.exe"
+      - "C:/Program Files (x86)/Common Files/Oracle/Java/javapath/spirv-cross"
+      - "C:/Windows/System32/spirv-cross.com"
+      - "C:/Windows/System32/spirv-cross.exe"
+      - "C:/Windows/System32/spirv-cross"
+      - "C:/Windows/spirv-cross.com"
+      - "C:/Windows/spirv-cross.exe"
+      - "C:/Windows/spirv-cross"
+      - "C:/Windows/System32/wbem/spirv-cross.com"
+      - "C:/Windows/System32/wbem/spirv-cross.exe"
+      - "C:/Windows/System32/wbem/spirv-cross"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/spirv-cross.com"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/spirv-cross.exe"
+      - "C:/Windows/System32/WindowsPowerShell/v1.0/spirv-cross"
+      - "C:/Windows/System32/OpenSSH/spirv-cross.com"
+      - "C:/Windows/System32/OpenSSH/spirv-cross.exe"
+      - "C:/Windows/System32/OpenSSH/spirv-cross"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/spirv-cross.com"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/spirv-cross.exe"
+      - "C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common/spirv-cross"
+      - "C:/Program Files/Git/cmd/spirv-cross.com"
+      - "C:/Program Files/Git/cmd/spirv-cross.exe"
+      - "C:/Program Files/Git/cmd/spirv-cross"
+      - "C:/Program Files/dotnet/spirv-cross.com"
+      - "C:/Program Files/dotnet/spirv-cross.exe"
+      - "C:/Program Files/dotnet/spirv-cross"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/spirv-cross.com"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/spirv-cross.exe"
+      - "C:/Program Files/Nintendo/Nintendo Dev Interface/spirv-cross"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/spirv-cross.com"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/spirv-cross.exe"
+      - "C:/Program Files/NVIDIA Corporation/Nsight Compute 2019.4.0/spirv-cross"
+      - "C:/Program Files (x86)/ZeroTier/One/spirv-cross.com"
+      - "C:/Program Files (x86)/ZeroTier/One/spirv-cross.exe"
+      - "C:/Program Files (x86)/ZeroTier/One/spirv-cross"
+      - "C:/Program Files/Tailscale/spirv-cross.com"
+      - "C:/Program Files/Tailscale/spirv-cross.exe"
+      - "C:/Program Files/Tailscale/spirv-cross"
+      - "C:/Program Files/WireGuard/spirv-cross.com"
+      - "C:/Program Files/WireGuard/spirv-cross.exe"
+      - "C:/Program Files/WireGuard/spirv-cross"
+      - "C:/Program Files/Sunshine/spirv-cross.com"
+      - "C:/Program Files/Sunshine/spirv-cross.exe"
+      - "C:/Program Files/Sunshine/spirv-cross"
+      - "C:/Program Files/Sunshine/tools/spirv-cross.com"
+      - "C:/Program Files/Sunshine/tools/spirv-cross.exe"
+      - "C:/Program Files/Sunshine/tools/spirv-cross"
+      - "C:/Program Files/CMake/bin/spirv-cross.com"
+      - "C:/Program Files/CMake/bin/spirv-cross.exe"
+      - "C:/Program Files/CMake/bin/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/Scripts/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python313/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/Scripts/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python314/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/Scripts/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python312/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/Scripts/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/Python/Python310/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Microsoft/WindowsApps/spirv-cross"
+      - "C:/Users/Administrator/.dotnet/tools/spirv-cross.com"
+      - "C:/Users/Administrator/.dotnet/tools/spirv-cross.exe"
+      - "C:/Users/Administrator/.dotnet/tools/spirv-cross"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/spirv-cross.com"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/spirv-cross.exe"
+      - "C:/Users/Administrator/AppData/Local/Programs/cursor/resources/app/bin/spirv-cross"
+      - "C:/Program Files/bin/spirv-cross.com"
+      - "C:/Program Files/bin/spirv-cross.exe"
+      - "C:/Program Files/bin/spirv-cross"
+      - "C:/Program Files/sbin/spirv-cross.com"
+      - "C:/Program Files/sbin/spirv-cross.exe"
+      - "C:/Program Files/sbin/spirv-cross"
+      - "C:/Program Files/spirv-cross.com"
+      - "C:/Program Files/spirv-cross.exe"
+      - "C:/Program Files/spirv-cross"
+      - "C:/Program Files (x86)/bin/spirv-cross.com"
+      - "C:/Program Files (x86)/bin/spirv-cross.exe"
+      - "C:/Program Files (x86)/bin/spirv-cross"
+      - "C:/Program Files (x86)/sbin/spirv-cross.com"
+      - "C:/Program Files (x86)/sbin/spirv-cross.exe"
+      - "C:/Program Files (x86)/sbin/spirv-cross"
+      - "C:/Program Files (x86)/spirv-cross.com"
+      - "C:/Program Files (x86)/spirv-cross.exe"
+      - "C:/Program Files (x86)/spirv-cross"
+      - "C:/Program Files/CMake/bin/spirv-cross.com"
+      - "C:/Program Files/CMake/bin/spirv-cross.exe"
+      - "C:/Program Files/CMake/bin/spirv-cross"
+      - "C:/Program Files/CMake/sbin/spirv-cross.com"
+      - "C:/Program Files/CMake/sbin/spirv-cross.exe"
+      - "C:/Program Files/CMake/sbin/spirv-cross"
+      - "C:/Program Files/CMake/spirv-cross.com"
+      - "C:/Program Files/CMake/spirv-cross.exe"
+      - "C:/Program Files/CMake/spirv-cross"
+      - "C:/Program Files (x86)/Jazz2/bin/spirv-cross.com"
+      - "C:/Program Files (x86)/Jazz2/bin/spirv-cross.exe"
+      - "C:/Program Files (x86)/Jazz2/bin/spirv-cross"
+      - "C:/Program Files (x86)/Jazz2/sbin/spirv-cross.com"
+      - "C:/Program Files (x86)/Jazz2/sbin/spirv-cross.exe"
+      - "C:/Program Files (x86)/Jazz2/sbin/spirv-cross"
+      - "C:/Program Files (x86)/Jazz2/spirv-cross.com"
+      - "C:/Program Files (x86)/Jazz2/spirv-cross.exe"
+      - "C:/Program Files (x86)/Jazz2/spirv-cross"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "c:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\resources\\helpers"
+        - "C:\\Program Files\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\bin"
+        - "C:\\Program Files\\NVIDIA GPU Computing Toolkit\\CUDA\\v10.1\\libnvvp"
+        - "C:\\Program Files\\Amazon Corretto\\jdk17.0.4_8\\bin"
+        - "c:\\devkitPro\\msys2\\usr\\bin"
+        - "C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files\\Nintendo\\Nintendo Dev Interface"
+        - "C:\\Program Files\\NVIDIA Corporation\\Nsight Compute 2019.4.0\\"
+        - "C:\\Program Files (x86)\\ZeroTier\\One\\"
+        - "C:\\Program Files\\Tailscale\\"
+        - "C:\\Program Files\\WireGuard\\"
+        - "C:\\Program Files\\Sunshine"
+        - "C:\\Program Files\\Sunshine\\tools"
+        - "C:\\Program Files\\CMake\\bin"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python313\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python314\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python312\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python310\\"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\Administrator\\.dotnet\\tools"
+        - "C:\\Users\\Administrator\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/Jazz2"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/CMake"
+        - "C:/Program Files (x86)/Jazz2"
+...

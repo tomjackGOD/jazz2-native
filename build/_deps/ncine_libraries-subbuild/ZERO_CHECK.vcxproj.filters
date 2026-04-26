@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7823ee005aa2f26add6ef81408b6571a\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C14CD890-B78A-3968-9C60-AA5766DF690A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

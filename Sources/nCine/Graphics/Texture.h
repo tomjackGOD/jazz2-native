@@ -11,10 +11,11 @@
 
 using namespace Death::Containers;
 
+#include "Backend/BackendTypes.h"
+
 namespace nCine
 {
 	class ITextureLoader;
-	class GLTexture;
 
 	/// Texture filtering modes
 	enum class SamplerFilter
@@ -168,14 +169,23 @@ namespace nCine
 			return ObjectType::Texture;
 		}
 
+		/// Returns the backend texture object
+		inline const BackendTexture* GetBackendTexture() const {
+			return backendTexture_.get();
+		}
+		/// Returns the backend texture object
+		inline BackendTexture* GetBackendTexture() {
+			return backendTexture_.get();
+		}
+
 	private:
-		std::unique_ptr<GLTexture> glTexture_;
+		std::unique_ptr<BackendTexture> backendTexture_;
 		std::int32_t width_;
 		std::int32_t height_;
 		std::int32_t mipMapLevels_;
 		bool isCompressed_;
 		Format format_;
-		std::uint32_t dataSize_;
+		std::uint64_t dataSize_;
 
 		SamplerFilter minFiltering_;
 		SamplerFilter magFiltering_;

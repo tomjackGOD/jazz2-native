@@ -5,6 +5,7 @@
 #include "../../Main.h"
 #include "../Base/HashMap.h"
 #include "../Primitives/Matrix4x4.h"
+#include "Backend/BackendTypes.h"
 
 #include <memory>
 
@@ -14,10 +15,6 @@ struct ImTextureData;
 
 namespace nCine
 {
-	class GLTexture;
-	class GLShaderProgram;
-	class GLShaderUniforms;
-	class GLBufferObject;
 	class RenderCommand;
 	class RenderQueue;
 	class IInputEventHandler;
@@ -37,17 +34,20 @@ namespace nCine
 
 	private:
 		bool withSceneGraph_;
-		HashMap<GLTexture*, std::unique_ptr<GLTexture>> textures_;
+		HashMap<BackendTexture*, std::unique_ptr<BackendTexture>> textures_;
 #if defined(WITH_OPENGLES) || defined(DEATH_TARGET_EMSCRIPTEN)
 		SmallVector<char, 0> tempTexBuffer_;
 #endif
-		std::unique_ptr<GLShaderProgram> imguiShaderProgram_;
-		std::unique_ptr<GLBufferObject> vbo_;
-		std::unique_ptr<GLBufferObject> ibo_;
+		std::unique_ptr<BackendShaderProgram> imguiShaderProgram_;
+
+#if !defined(DEATH_TARGET_IOS)
+		std::unique_ptr<BackendBufferObject> vbo_;
+		std::unique_ptr<BackendBufferObject> ibo_;
 
 		static const std::int32_t UniformsBufferSize = 65;
 		std::uint8_t uniformsBuffer_[UniformsBufferSize];
-		std::unique_ptr<GLShaderUniforms> imguiShaderUniforms_;
+		std::unique_ptr<BackendShaderUniforms> imguiShaderUniforms_;
+#endif
 		IInputEventHandler* appInputHandler_;
 
 		std::int32_t lastFrameWidth_;

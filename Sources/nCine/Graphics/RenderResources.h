@@ -1,14 +1,8 @@
 #pragma once
 
-#ifndef DOXYGEN_GENERATING_OUTPUT
-#define NCINE_INCLUDE_OPENGL
-#include "../CommonHeaders.h"
-#endif
-
 #include "Material.h"
 #include "../Primitives/Matrix4x4.h"
-#include "GL/GLShaderUniforms.h"
-#include "GL/GLShaderProgram.h"
+#include "Backend/BackendTypes.h"
 #include "../Base/HashMap.h"
 
 #include <memory>
@@ -40,28 +34,28 @@ namespace nCine
 		/// Vertex format structure for vertices with positions only
 		struct VertexFormatPos2
 		{
-			GLfloat position[2];
+			float position[2];
 		};
 
 		/// Vertex format structure for vertices with positions and texture coordinates
 		struct VertexFormatPos2Tex2
 		{
-			GLfloat position[2];
-			GLfloat texcoords[2];
+			float position[2];
+			float texcoords[2];
 		};
 
 		/// Vertex format structure for vertices with positions and draw indices
 		struct VertexFormatPos2Index
 		{
-			GLfloat position[2];
+			float position[2];
 			std::int32_t drawindex;
 		};
 
 		/// Vertex format structure for vertices with positions, texture coordinates and draw indices
 		struct VertexFormatPos2Tex2Index
 		{
-			GLfloat position[2];
-			GLfloat texcoords[2];
+			float position[2];
+			float texcoords[2];
 			std::int32_t drawindex;
 		};
 
@@ -71,7 +65,7 @@ namespace nCine
 			CameraUniformData()
 				: camera(nullptr), updateFrameProjectionMatrix(0), updateFrameViewMatrix(0) {}
 
-			GLShaderUniforms shaderUniforms;
+			BackendShaderUniforms shaderUniforms;
 			Camera* camera;
 			std::uint32_t updateFrameProjectionMatrix;
 			std::uint32_t updateFrameViewMatrix;
@@ -93,18 +87,18 @@ namespace nCine
 			return *renderBatcher_;
 		}
 
-		static GLShaderProgram* GetShaderProgram(Material::ShaderProgramType shaderProgramType);
+		static BackendShaderProgram* GetShaderProgram(Material::ShaderProgramType shaderProgramType);
 
-		static GLShaderProgram* GetBatchedShader(const GLShaderProgram* shader);
-		static bool RegisterBatchedShader(const GLShaderProgram* shader, GLShaderProgram* batchedShader);
-		static bool UnregisterBatchedShader(const GLShaderProgram* shader);
+		static BackendShaderProgram* GetBatchedShader(const BackendShaderProgram* shader);
+		static bool RegisterBatchedShader(const BackendShaderProgram* shader, BackendShaderProgram* batchedShader);
+		static bool UnregisterBatchedShader(const BackendShaderProgram* shader);
 
 		static inline std::uint8_t* GetCameraUniformsBuffer() {
 			return cameraUniformsBuffer_;
 		}
-		static CameraUniformData* FindCameraUniformData(GLShaderProgram* shaderProgram);
-		static void InsertCameraUniformData(GLShaderProgram* shaderProgram, CameraUniformData&& cameraUniformData);
-		static bool RemoveCameraUniformData(GLShaderProgram* shaderProgram);
+		static CameraUniformData* FindCameraUniformData(BackendShaderProgram* shaderProgram);
+		static void InsertCameraUniformData(BackendShaderProgram* shaderProgram, CameraUniformData&& cameraUniformData);
+		static bool RemoveCameraUniformData(BackendShaderProgram* shaderProgram);
 
 		static inline const Camera* GetCurrentCamera() {
 			return currentCamera_;
@@ -113,7 +107,14 @@ namespace nCine
 			return currentViewport_;
 		}
 
-		static void SetDefaultAttributesParameters(GLShaderProgram& shaderProgram);
+		static void SetDefaultAttributesParameters(BackendShaderProgram& shaderProgram);
+
+		static const char* GetDefaultVertexShaderSource(Shader::DefaultVertex vertex);
+		static const char* GetDefaultFragmentShaderSource(Shader::DefaultFragment fragment);
+#if defined(DEATH_TARGET_IOS)
+		static const char* GetDefaultVertexShaderSourceMetal(Shader::DefaultVertex vertex);
+		static const char* GetDefaultFragmentShaderSourceMetal(Shader::DefaultFragment fragment);
+#endif
 
 	private:
 #if defined(WITH_EMBEDDED_SHADERS)
@@ -127,12 +128,12 @@ namespace nCine
 		static std::unique_ptr<RenderBatcher> renderBatcher_;
 
 		static constexpr std::uint32_t DefaultShaderProgramsCount = std::uint32_t(Material::ShaderProgramType::Custom);
-		static std::unique_ptr<GLShaderProgram> defaultShaderPrograms_[DefaultShaderProgramsCount];
-		static HashMap<const GLShaderProgram*, GLShaderProgram*> batchedShaders_;
+		static std::unique_ptr<BackendShaderProgram> defaultShaderPrograms_[DefaultShaderProgramsCount];
+		static HashMap<const BackendShaderProgram*, BackendShaderProgram*> batchedShaders_;
 
 		static constexpr std::uint32_t UniformsBufferSize = 128; // two 4x4 float matrices
 		static std::uint8_t cameraUniformsBuffer_[UniformsBufferSize];
-		static HashMap<GLShaderProgram*, CameraUniformData> cameraUniformDataMap_;
+		static HashMap<BackendShaderProgram*, CameraUniformData> cameraUniformDataMap_;
 
 		static Camera* currentCamera_;
 		static std::unique_ptr<Camera> defaultCamera_;
@@ -149,3 +150,4 @@ namespace nCine
 		static void RegisterDefaultBatchedShaders();
 	};
 }
+

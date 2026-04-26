@@ -1,0 +1,6 @@
+F:/gitt/jazz2-native/build/CMakeFiles/Backward.dir
+F:/gitt/jazz2-native/build/CMakeFiles/jazz2.dir
+F:/gitt/jazz2-native/build/CMakeFiles/PACKAGE.dir
+F:/gitt/jazz2-native/build/CMakeFiles/INSTALL.dir
+F:/gitt/jazz2-native/build/CMakeFiles/ALL_BUILD.dir
+F:/gitt/jazz2-native/build/CMakeFiles/ZERO_CHECK.dir

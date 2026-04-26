@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7d963f77de7201d8b3c7ee3b20dd6a28\ncine_libraries-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\c593dbe866b5906cac7521a30dad0113\ncine_libraries-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\7823ee005aa2f26add6ef81408b6571a\ncine_libraries-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\gitt\jazz2-native\build\_deps\ncine_libraries-subbuild\CMakeFiles\ncine_libraries-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C14CD890-B78A-3968-9C60-AA5766DF690A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

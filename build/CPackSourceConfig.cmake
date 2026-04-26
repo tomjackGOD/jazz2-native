@@ -1,0 +1,83 @@
+# This file will be configured to contain variables for CPack. These variables
+# should be set in the CMake list file of the project before CPack module is
+# included. The list of available CPACK_xxx variables and their associated
+# documentation may be obtained using
+#  cpack --help-variable-list
+#
+# Some variables are common to all generators (e.g. CPACK_PACKAGE_NAME)
+# and some are specific to a generator
+# (e.g. CPACK_NSIS_EXTRA_INSTALL_COMMANDS). The generator specific variables
+# usually begin with CPACK_<GENNAME>_xxxx.
+
+
+set(CPACK_BUILD_SOURCE_DIRS "F:/gitt/jazz2-native;F:/gitt/jazz2-native/build")
+set(CPACK_CMAKE_GENERATOR "Visual Studio 16 2019")
+set(CPACK_COMPONENTS_ALL "")
+set(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
+set(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "C:/Program Files/CMake/share/cmake-4.2/Templates/CPack.GenericDescription.txt")
+set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "Jazz2 built using CMake")
+set(CPACK_DMG_SLA_USE_RESOURCE_FILE_LICENSE "ON")
+set(CPACK_EXECUTABLE_NAME "Jazz2")
+set(CPACK_GENERATOR "7Z;ZIP")
+set(CPACK_IGNORE_FILES "/CVS/;/\\.svn/;/\\.bzr/;/\\.hg/;/\\.git/;\\.swp\$;\\.#;/#")
+set(CPACK_INNOSETUP_ARCHITECTURE "x64")
+set(CPACK_INSTALLED_DIRECTORIES "F:/gitt/jazz2-native;/")
+set(CPACK_INSTALL_CMAKE_PROJECTS "")
+set(CPACK_INSTALL_PREFIX "C:/Games/Jazz² Resurrection")
+set(CPACK_MODULE_PATH "F:/gitt/jazz2-native/cmake")
+set(CPACK_NSIS_COMPRESSOR "/SOLID lzma")
+set(CPACK_NSIS_CREATE_ICONS_EXTRA "CreateShortCut '$SMPROGRAMS\\$STARTMENU_FOLDER\\Jazz² Resurrection.lnk' '$INSTDIR\\Jazz2.exe'
+		CreateShortCut '$DESKTOP\\Jazz² Resurrection.lnk' '$INSTDIR\\Jazz2.exe'")
+set(CPACK_NSIS_DELETE_ICONS_EXTRA "Delete '$SMPROGRAMS\\$MUI_TEMP\\Jazz² Resurrection.lnk'
+		Delete '$DESKTOP\\Jazz² Resurrection.lnk'")
+set(CPACK_NSIS_DISPLAY_NAME "Jazz² Resurrection")
+set(CPACK_NSIS_INSTALLER_ICON_CODE "")
+set(CPACK_NSIS_INSTALLER_MUI_ICON_CODE "")
+set(CPACK_NSIS_INSTALL_ROOT "$PROGRAMFILES64")
+set(CPACK_NSIS_MANIFEST_DPI_AWARE "TRUE")
+set(CPACK_NSIS_MUI_ICON "F:/gitt/jazz2-native/Sources/Icons/Main.ico")
+set(CPACK_NSIS_PACKAGE_NAME "Jazz² Resurrection")
+set(CPACK_NSIS_UNINSTALL_NAME "Uninstall")
+set(CPACK_OUTPUT_CONFIG_FILE "F:/gitt/jazz2-native/build/CPackConfig.cmake")
+set(CPACK_PACKAGE_CHECKSUM "MD5")
+set(CPACK_PACKAGE_DEFAULT_LOCATION "/")
+set(CPACK_PACKAGE_DESCRIPTION_FILE "C:/Program Files/CMake/share/cmake-4.2/Templates/CPack.GenericDescription.txt")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Open-source reimplementation of Jazz Jackrabbit 2")
+set(CPACK_PACKAGE_FILE_NAME "Jazz2-3.5.r1493-1896057-Source")
+set(CPACK_PACKAGE_HOMEPAGE_URL "https://deat.tk/jazz2/")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "Jazz² Resurrection")
+set(CPACK_PACKAGE_INSTALL_REGISTRY_KEY "Jazz² Resurrection")
+set(CPACK_PACKAGE_NAME "Jazz2")
+set(CPACK_PACKAGE_RELOCATABLE "true")
+set(CPACK_PACKAGE_VENDOR "Dan R.")
+set(CPACK_PACKAGE_VERSION "3.5.r1493-1896057")
+set(CPACK_PACKAGE_VERSION_MAJOR "3")
+set(CPACK_PACKAGE_VERSION_MINOR "5")
+set(CPACK_PACKAGE_VERSION_PATCH "r1493-1896057")
+set(CPACK_RESOURCE_FILE_LICENSE "F:/gitt/jazz2-native/LICENSE")
+set(CPACK_RESOURCE_FILE_README "C:/Program Files/CMake/share/cmake-4.2/Templates/CPack.GenericDescription.txt")
+set(CPACK_RESOURCE_FILE_WELCOME "C:/Program Files/CMake/share/cmake-4.2/Templates/CPack.GenericWelcome.txt")
+set(CPACK_RPM_PACKAGE_SOURCES "ON")
+set(CPACK_SET_DESTDIR "OFF")
+set(CPACK_SOURCE_7Z "ON")
+set(CPACK_SOURCE_GENERATOR "7Z;ZIP")
+set(CPACK_SOURCE_IGNORE_FILES "/CVS/;/\\.svn/;/\\.bzr/;/\\.hg/;/\\.git/;\\.swp\$;\\.#;/#")
+set(CPACK_SOURCE_INSTALLED_DIRECTORIES "F:/gitt/jazz2-native;/")
+set(CPACK_SOURCE_OUTPUT_CONFIG_FILE "F:/gitt/jazz2-native/build/CPackSourceConfig.cmake")
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "Jazz2-3.5.r1493-1896057-Source")
+set(CPACK_SOURCE_TOPLEVEL_TAG "win64-Source")
+set(CPACK_SOURCE_ZIP "ON")
+set(CPACK_STRIP_FILES "")
+set(CPACK_SYSTEM_NAME "win64")
+set(CPACK_THREADS "1")
+set(CPACK_TOPLEVEL_TAG "win64-Source")
+set(CPACK_WIX_SIZEOF_VOID_P "8")
+
+if(NOT CPACK_PROPERTIES_FILE)
+  set(CPACK_PROPERTIES_FILE "F:/gitt/jazz2-native/build/CPackProperties.cmake")
+endif()
+
+if(EXISTS ${CPACK_PROPERTIES_FILE})
+  include(${CPACK_PROPERTIES_FILE})
+endif()

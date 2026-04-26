@@ -400,4 +400,51 @@ namespace nCine
 			vertexFormat_[location].Init(attribute.GetLocation(), attribute.GetComponentCount(), attribute.GetBasicType());
 		}
 	}
+
+	bool GLShaderProgram::DefineAttribute(const char* name, std::int32_t stride, void* pointer)
+	{
+		GLVertexFormat::Attribute* attribute = GetAttribute(name);
+		if (attribute != nullptr) {
+			attribute->SetVboParameters(stride, pointer);
+		}
+		return (attribute != nullptr);
+	}
+
+	void GLShaderProgram::DefineDefaultAttributes(const char* posName, const char* texName, const char* indexName)
+	{
+		GLVertexFormat::Attribute* positionAttribute = GetAttribute(posName);
+		GLVertexFormat::Attribute* texCoordsAttribute = GetAttribute(texName);
+		GLVertexFormat::Attribute* meshIndexAttribute = GetAttribute(indexName);
+
+		// The stride check avoid overwriting VBO parameters for custom mesh shaders attributes
+		if (positionAttribute != nullptr && texCoordsAttribute != nullptr && meshIndexAttribute != nullptr) {
+			if (positionAttribute->GetStride() == 0) {
+				positionAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Tex2Index), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Tex2Index, position)));
+			}
+			if (texCoordsAttribute->GetStride() == 0) {
+				texCoordsAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Tex2Index), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Tex2Index, texcoords)));
+			}
+			if (meshIndexAttribute->GetStride() == 0) {
+				meshIndexAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Tex2Index), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Tex2Index, drawindex)));
+			}
+		} else if (positionAttribute != nullptr && texCoordsAttribute == nullptr && meshIndexAttribute != nullptr) {
+			if (positionAttribute->GetStride() == 0) {
+				positionAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Index), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Index, position)));
+			}
+			if (meshIndexAttribute->GetStride() == 0) {
+				meshIndexAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Index), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Index, drawindex)));
+			}
+		} else if (positionAttribute != nullptr && texCoordsAttribute != nullptr && meshIndexAttribute == nullptr) {
+			if (positionAttribute->GetStride() == 0) {
+				positionAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Tex2), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Tex2, position)));
+			}
+			if (texCoordsAttribute->GetStride() == 0) {
+				texCoordsAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2Tex2), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2Tex2, texcoords)));
+			}
+		} else if (positionAttribute != nullptr && texCoordsAttribute == nullptr && meshIndexAttribute == nullptr) {
+			if (positionAttribute->GetStride() == 0) {
+				positionAttribute->SetVboParameters(sizeof(RenderResources::VertexFormatPos2), reinterpret_cast<void*>(offsetof(RenderResources::VertexFormatPos2, position)));
+			}
+		}
+	}
 }

@@ -1,6 +1,20 @@
 #pragma once
 
-#include <Common.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Common.h")
+#		include "Shared/Common.h"
+#	elif __has_include("../Shared/Common.h")
+#		include "../Shared/Common.h"
+#	elif __has_include("../../Shared/Common.h")
+#		include "../../Shared/Common.h"
+#	elif __has_include("../../../Shared/Common.h")
+#		include "../../../Shared/Common.h"
+#	else
+#		include <Common.h>
+#	endif
+#else
+#	include <Common.h>
+#endif
 
 namespace nCine
 {

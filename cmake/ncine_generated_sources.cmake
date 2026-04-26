@@ -17,12 +17,29 @@ if(NCINE_EMBED_SHADERS)
 		file(REMOVE ${SHADERS_CPP_FILE})
 	endif()
 
+	find_program(GLSLANG_VALIDATOR glslangValidator)
+	find_program(SPIRV_CROSS spirv-cross)
+
+	# On iOS we require MSL generation (GLSL -> SPIR-V -> MSL) for the Metal backend.
+	# The engine routes Metal shader loading to `ShaderStrings::*_metal` in RenderResources.
+	set(_NCINE_GENERATE_MSL OFF)
+	if(DEATH_TARGET_IOS)
+		set(_NCINE_GENERATE_MSL ON)
+	endif()
+	if(_NCINE_GENERATE_MSL AND (NOT GLSLANG_VALIDATOR OR NOT SPIRV_CROSS))
+		message(FATAL_ERROR "Metal shader generation requires 'glslangValidator' and 'spirv-cross' in PATH (needed for GLSL->SPIR-V->MSL).")
+	endif()
+
 	set(SHADER_STRUCT_NAME "ShaderStrings")
 	get_filename_component(SHADERS_H_FILENAME ${SHADERS_H_FILE} NAME)
 	file(APPEND ${SHADERS_H_FILE} "namespace nCine {\n\n")
 	file(APPEND ${SHADERS_H_FILE} "struct ${SHADER_STRUCT_NAME}\n{\n")
 	file(APPEND ${SHADERS_CPP_FILE} "#include \"${SHADERS_H_FILENAME}\"\n\n")
 	file(APPEND ${SHADERS_CPP_FILE} "namespace nCine {\n\n")
+
+	# Keep generated intermediate files in a stable directory (useful for debugging and for incremental builds).
+	set(_NCINE_MSL_GEN_DIR "${GENERATED_SOURCE_DIR}/MetalShaders")
+	file(MAKE_DIRECTORY "${_NCINE_MSL_GEN_DIR}")
 	foreach(SHADER_FILE ${SHADER_FILES})
 		get_filename_component(SHADER_CSTRING_NAME ${SHADER_FILE} NAME_WE)
 		file(STRINGS ${SHADER_FILE} SHADER_LINES NEWLINE_CONSUME)
@@ -34,6 +51,47 @@ if(NCINE_EMBED_SHADERS)
 		endforeach()
 		file(APPEND ${SHADERS_CPP_FILE} ")\"")
 		file(APPEND ${SHADERS_CPP_FILE} ";\n\n")
+
+		# Metal conversion
+		if(_NCINE_GENERATE_MSL)
+			set(SPIRV_FILE "${_NCINE_MSL_GEN_DIR}/${SHADER_CSTRING_NAME}.spv")
+			set(METAL_FILE "${_NCINE_MSL_GEN_DIR}/${SHADER_CSTRING_NAME}.metal")
+			set(SHADER_STAGE "vert")
+			if(SHADER_FILE MATCHES "_fs\\.glsl$")
+				set(SHADER_STAGE "frag")
+			endif()
+
+			execute_process(
+				COMMAND ${GLSLANG_VALIDATOR} -V -S ${SHADER_STAGE} -o "${SPIRV_FILE}" "${SHADER_FILE}"
+				RESULT_VARIABLE GLSLANG_RESULT
+				OUTPUT_VARIABLE GLSLANG_STDOUT
+				ERROR_VARIABLE  GLSLANG_STDERR
+			)
+			if(NOT GLSLANG_RESULT EQUAL 0)
+				message(FATAL_ERROR "glslangValidator failed for '${SHADER_FILE}' (stage: ${SHADER_STAGE})\n${GLSLANG_STDOUT}\n${GLSLANG_STDERR}")
+			endif()
+
+			execute_process(
+				COMMAND ${SPIRV_CROSS} --msl --output "${METAL_FILE}" "${SPIRV_FILE}"
+				RESULT_VARIABLE SPIRV_CROSS_RESULT
+				OUTPUT_VARIABLE SPIRV_CROSS_STDOUT
+				ERROR_VARIABLE  SPIRV_CROSS_STDERR
+			)
+			if(NOT SPIRV_CROSS_RESULT EQUAL 0)
+				message(FATAL_ERROR "spirv-cross failed for '${SHADER_FILE}'\n${SPIRV_CROSS_STDOUT}\n${SPIRV_CROSS_STDERR}")
+			endif()
+
+			file(STRINGS "${METAL_FILE}" METAL_LINES NEWLINE_CONSUME)
+			set(METAL_CSTRING_NAME "${SHADER_CSTRING_NAME}_metal")
+			file(APPEND ${SHADERS_H_FILE} "\tstatic char const * const ${METAL_CSTRING_NAME};\n")
+			file(APPEND ${SHADERS_CPP_FILE} "char const * const ${SHADER_STRUCT_NAME}::${METAL_CSTRING_NAME} = ")
+			file(APPEND ${SHADERS_CPP_FILE} "R\"(\n")
+			foreach(METAL_LINE ${METAL_LINES})
+				file(APPEND ${SHADERS_CPP_FILE} "${METAL_LINE}")
+			endforeach()
+			file(APPEND ${SHADERS_CPP_FILE} ")\"")
+			file(APPEND ${SHADERS_CPP_FILE} ";\n\n")
+		endif()
 	endforeach()
 	file(APPEND ${SHADERS_H_FILE} "};\n\n}\n")
 	file(APPEND ${SHADERS_CPP_FILE} "}\n")

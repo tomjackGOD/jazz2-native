@@ -70,6 +70,14 @@ namespace nCine
 		dataPath() = "Content"_s + fs::PathSeparator;
 #endif
 
+		// The iOS Metal backend is currently only responsible for presenting
+		// (clearing the drawable). The engine's scenegraph rendering pipeline
+		// uses OpenGL calls (see `IGfxDevice::setupGL()`), so enabling it allows
+		// game logic to run while the Metal backend handles final presentation.
+#if defined(DEATH_TARGET_IOS)
+		withScenegraph = true;
+#endif
+
 #if defined(DEATH_TARGET_UNIX) && defined(WITH_SDL)
 		// DPI queries do not seem to work reliably on X11 with SDL2
 		windowScaling = false;

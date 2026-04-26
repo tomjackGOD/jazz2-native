@@ -480,6 +480,10 @@ if(NCINE_BUILD_ANDROID)
 	list(APPEND HEADERS
 		${NCINE_SOURCE_DIR}/nCine/Backends/Android/AndroidApplication.h
 	)
+elseif(NCINE_BUILD_IOS)
+	list(APPEND HEADERS
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosApplication.h
+	)
 endif()
 
 if(ANDROID)
@@ -497,6 +501,35 @@ if(ANDROID)
 		${NCINE_SOURCE_DIR}/nCine/Backends/Android/EglGfxDevice.cpp
 		${NCINE_SOURCE_DIR}/nCine/Graphics/TextureLoaderPkm.cpp
 	)
+elseif(NCINE_BUILD_IOS)
+	list(APPEND HEADERS
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosInputManager.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalGfxDevice.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosBridge.h
+	)
+	list(APPEND SOURCES
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosApplication.cpp
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosInputManager.cpp
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalGfxDevice.mm
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosBridge.cpp
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosBridge.swift
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosAppDelegate.swift
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosViewController.swift
+	)
+
+	set(IOS_ASSETS
+		${NCINE_SOURCE_DIR}/Icons/1024px.png
+	)
+	list(APPEND SOURCES ${IOS_ASSETS})
+
+	# iOS-specific settings for Xcode
+	set_target_properties(${NCINE_APP} PROPERTIES
+		MACOSX_BUNDLE TRUE
+		MACOSX_BUNDLE_INFO_PLIST ${NCINE_SOURCE_DIR}/Info-iOS.plist.in
+		XCODE_ATTRIBUTE_TARGETED_DEVICE_FAMILY "1,2"
+		XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${NCINE_REVERSE_DNS}"
+	)
+	set_source_files_properties(${IOS_ASSETS} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 elseif(WINDOWS_PHONE OR WINDOWS_STORE)
 	list(APPEND HEADERS
 		${NCINE_SOURCE_DIR}/nCine/Backends/Uwp/UwpApplication.h

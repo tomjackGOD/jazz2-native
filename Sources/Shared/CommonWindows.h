@@ -44,7 +44,7 @@
 // Replace redirections with inline functions
 #if defined(CreateDialog)
 #	undef CreateDialog
-DEATH_ALWAYS_INLINE HWND WINAPI CreateDialog(HINSTANCE hInstance, LPCTSTR pTemplate, HWND hwndParent, DLGPROC lpDialogFunc) {
+DEATH_ALWAYS_INLINE HWND WINAPI CreateDialog(HINSTANCE hInstance, LPCWSTR pTemplate, HWND hwndParent, DLGPROC lpDialogFunc) {
 	return ::CreateDialogW(hInstance, pTemplate, hwndParent, lpDialogFunc);
 }
 #endif
@@ -72,7 +72,7 @@ DEATH_ALWAYS_INLINE HANDLE WINAPI CreateFile(LPCWSTR lpFileName, DWORD dwDesired
 
 #if defined(CreateFont)
 #	undef CreateFont
-DEATH_ALWAYS_INLINE HFONT WINAPI CreateFont(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCTSTR pszFaceName) {
+DEATH_ALWAYS_INLINE HFONT WINAPI CreateFont(int cHeight, int cWidth, int cEscapement, int cOrientation, int cWeight, DWORD bItalic, DWORD bUnderline, DWORD bStrikeOut, DWORD iCharSet, DWORD iOutPrecision, DWORD iClipPrecision, DWORD iQuality, DWORD iPitchAndFamily, LPCWSTR pszFaceName) {
 	return ::CreateFontW(cHeight, cWidth, cEscapement, cOrientation, cWeight, bItalic, bUnderline, bStrikeOut, iCharSet, iOutPrecision, iClipPrecision, iQuality, iPitchAndFamily, pszFaceName);
 }
 #endif
@@ -87,7 +87,7 @@ DEATH_ALWAYS_INLINE HANDLE WINAPI CreateNamedPipe(LPCWSTR lpName, DWORD dwOpenMo
 #if defined(CreateWindow)
 #	undef CreateWindow
 #	if !defined(DEATH_TARGET_WINDOWS_RT)
-DEATH_ALWAYS_INLINE HWND WINAPI CreateWindow(LPCTSTR lpClassName, LPCTSTR lpWndClass, DWORD dwStyle, int x, int y, int w, int h, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam) {
+DEATH_ALWAYS_INLINE HWND WINAPI CreateWindow(LPCWSTR lpClassName, LPCWSTR lpWndClass, DWORD dwStyle, int x, int y, int w, int h, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam) {
 	return ::CreateWindowW(lpClassName, lpWndClass, dwStyle, x, y, w, h, hWndParent, hMenu, hInstance, lpParam);
 }
 #	endif
@@ -125,7 +125,7 @@ DEATH_ALWAYS_INLINE HRSRC WINAPI FindResource(HMODULE hModule, LPCWSTR lpName, L
 
 #if defined(FindText)
 #	undef FindText
-DEATH_ALWAYS_INLINE HWND WINAPI FindText(LPFINDREPLACE lpFindReplace) {
+DEATH_ALWAYS_INLINE HWND WINAPI FindText(LPFINDREPLACEW lpFindReplace) {
 	return ::FindTextW(lpFindReplace);
 }
 #endif
@@ -139,7 +139,7 @@ DEATH_ALWAYS_INLINE HWND WINAPI FindWindow(LPCWSTR lpClassName, LPCWSTR lpWindow
 
 #if defined(FormatMessage)
 #	undef FormatMessage
-DEATH_ALWAYS_INLINE DWORD WINAPI FormatMessage(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPTSTR lpBuffer, DWORD nSize, va_list* Arguments) {
+DEATH_ALWAYS_INLINE DWORD WINAPI FormatMessage(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPWSTR lpBuffer, DWORD nSize, va_list* Arguments) {
 	return ::FormatMessageW(dwFlags, lpSource, dwMessageId, dwLanguageId, lpBuffer, nSize, Arguments);
 }
 #endif
@@ -209,14 +209,14 @@ DEATH_ALWAYS_INLINE HACCEL WINAPI LoadAccelerators(HINSTANCE hInstance, LPCWSTR 
 
 #if defined(LoadBitmap)
 #	undef LoadBitmap
-DEATH_ALWAYS_INLINE HBITMAP WINAPI LoadBitmap(HINSTANCE hInstance, LPCTSTR lpBitmapName) {
+DEATH_ALWAYS_INLINE HBITMAP WINAPI LoadBitmap(HINSTANCE hInstance, LPCWSTR lpBitmapName) {
 	return ::LoadBitmapW(hInstance, lpBitmapName);
 }
 #endif
 
 #if defined(LoadIcon)
 #	undef LoadIcon
-DEATH_ALWAYS_INLINE HICON WINAPI LoadIcon(HINSTANCE hInstance, LPCTSTR lpIconName) {
+DEATH_ALWAYS_INLINE HICON WINAPI LoadIcon(HINSTANCE hInstance, LPCWSTR lpIconName) {
 	return ::LoadIconW(hInstance, lpIconName);
 }
 #endif
@@ -237,7 +237,7 @@ DEATH_ALWAYS_INLINE HMODULE WINAPI LoadLibraryEx(LPCWSTR lpLibFileName, HANDLE h
 
 #if defined(LoadMenu)
 #	undef LoadMenu
-DEATH_ALWAYS_INLINE HMENU WINAPI LoadMenu(HINSTANCE hInstance, LPCTSTR lpMenuName) {
+DEATH_ALWAYS_INLINE HMENU WINAPI LoadMenu(HINSTANCE hInstance, LPCWSTR lpMenuName) {
 	return ::LoadMenuW(hInstance, lpMenuName);
 }
 #endif

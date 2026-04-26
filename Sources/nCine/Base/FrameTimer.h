@@ -18,6 +18,8 @@ namespace nCine
 
 		/// Adds a frame to the counter and calculates the interval since the previous one
 		void AddFrame();
+		/// Adds a frame to the counter with a specified interval
+		void AddFrame(float deltaTime);
 
 		/// Starts counting the suspension time
 		void Suspend();

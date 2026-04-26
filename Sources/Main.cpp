@@ -1,8 +1,10 @@
-﻿#include "Main.h"
+#include "Main.h"
 
 #if defined(DEATH_TARGET_ANDROID)
 #	include "nCine/Backends/Android/AndroidApplication.h"
 #	include "nCine/Backends/Android/AndroidJniHelper.h"
+#elif defined(DEATH_TARGET_IOS)
+#	include "nCine/Backends/iOS/IosApplication.h"
 #elif defined(DEATH_TARGET_WINDOWS_RT)
 #	include "nCine/Backends/Uwp/UwpApplication.h"
 #else
@@ -15,7 +17,6 @@
 #include "nCine/I18n.h"
 #include "nCine/IAppEventHandler.h"
 #include "nCine/tracy.h"
-#include "nCine/Base/Random.h"
 #include "nCine/Graphics/BinaryShaderCache.h"
 #include "nCine/Graphics/RenderResources.h"
 #include "nCine/Input/IInputEventHandler.h"
@@ -57,15 +58,12 @@ using namespace Jazz2::Multiplayer;
 #	include <cstdlib> // for `__argc` and `__argv`
 #endif
 
-#include <Containers/DateTime.h>
-#include <Containers/StringConcatenable.h>
-#include <Containers/StringUtils.h>
-#include <Environment.h>
-#include <IO/FileSystem.h>
-#include <IO/PakFile.h>
-#include <IO/Compression/DeflateStream.h>
-#include <IO/WebRequest.h>
-#include <Utf8.h>
+#include "Shared/Containers/DateTime.h"
+#include "Shared/Containers/Pair.h"
+#include "Shared/Containers/StringUtils.h"
+#include "Shared/IO/FileSystem.h"
+#include "Shared/IO/PakFile.h"
+#include "Shared/IO/WebRequest.h"
 
 #if defined(WITH_THREADS)
 #	include <mutex>
@@ -74,7 +72,11 @@ using namespace Jazz2::Multiplayer;
 /** @brief @ref Death::Containers::StringView from @ref NCINE_VERSION */
 #define NCINE_VERSION_s DEATH_PASTE(NCINE_VERSION, _s)
 
+#if defined(WITH_ZLIB) || defined(WITH_MINIZ)
 using namespace Death::IO::Compression;
+#endif
+using namespace Death::Containers;
+using namespace Death::Containers::Literals;
 using namespace nCine;
 using namespace Jazz2;
 using namespace Jazz2::UI;
@@ -308,7 +310,8 @@ void GameEventHandler::OnInitialize()
 			StringUtils::lowercaseInPlace(ext);
 			if (ext == ".j2l"_s) {
 				auto fileName = fs::GetFileNameWithoutExtension(arg);
-				String levelName = "unknown/"_s + fileName;
+				String levelName = "unknown/"_s;
+				levelName += fileName;
 				StringUtils::lowercaseInPlace(levelName);
 
 				WaitForVerify();
@@ -326,7 +329,9 @@ void GameEventHandler::OnInitialize()
 			String levelName = config.argv(i + 1);
 			StringUtils::lowercaseInPlace(levelName);
 			if (!levelName.contains('/')) {
-				levelName = "unknown/"_s + levelName;
+				String tmp = "unknown/"_s;
+				tmp += levelName;
+				levelName = std::move(tmp);
 			}
 			if (!levelName.contains("/:"_s)) { // Don't allow special targets starting with ':'
 				LevelInitialization levelInit(levelName, (GameDifficulty)((std::int32_t)GameDifficulty::Normal),
@@ -655,7 +660,9 @@ void GameEventHandler::ChangeLevel(LevelInitialization&& levelInit)
 			if (lastEpisode) {
 				// Redirect to next episode
 				if (std::optional<Episode> nextEpisode = resolver.GetEpisode(lastEpisode->NextEpisode)) {
-					levelInit.LevelName = lastEpisode->NextEpisode + '/' + nextEpisode->FirstLevel;
+					levelInit.LevelName = lastEpisode->NextEpisode;
+					levelInit.LevelName += "/"_s;
+					levelInit.LevelName += nextEpisode->FirstLevel;
 
 					p = levelInit.LevelName.partition('/');
 					levelName = (!p[2].empty() ? p[2] : p[0]);
@@ -1478,8 +1485,10 @@ void GameEventHandler::OnAfterInitialize()
 	if (PreferencesCache::Language[0] != '\0') {
 		auto& resolver = ContentResolver::Get();
 		auto& i18n = I18n::Get();
-		if (!i18n.LoadFromFile(fs::CombinePath({ resolver.GetCachePath(), "Translations"_s, String(PreferencesCache::Language + ".mo"_s) }))) {
-			i18n.LoadFromFile(fs::CombinePath({ resolver.GetContentPath(), "Translations"_s, String(PreferencesCache::Language + ".mo"_s) }));
+		String moName = String(PreferencesCache::Language);
+		moName += ".mo"_s;
+		if (!i18n.LoadFromFile(fs::CombinePath({ resolver.GetCachePath(), "Translations"_s, moName }))) {
+			i18n.LoadFromFile(fs::CombinePath({ resolver.GetContentPath(), "Translations"_s, moName }));
 		}
 	}
 
@@ -1783,7 +1792,13 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 			if (it->second.second().empty()) {
 				return { it->second.first(), levelToken };
 			}
-			return { it->second.first(), (it->second.second()[0] == ':' ? it->second.second() : (it->second.second() + "_"_s + levelToken)) };
+			if (it->second.second()[0] == ':') {
+				return { it->second.first(), it->second.second() };
+			}
+			String combined = it->second.second();
+			combined += "_"_s;
+			combined += levelToken;
+			return { it->second.first(), combined };
 		}
 		return { {}, levelToken };
 	};
@@ -1838,7 +1853,9 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 			if (!recreateAll) {
 				String episodeName = fs::GetFileNameWithoutExtension(item);
 				StringUtils::lowercaseInPlace(episodeName);
-				String fullPath = fs::CombinePath(episodesPath, String((episodeName == "xmas98"_s ? "xmas99"_s : StringView(episodeName)) + ".j2e"_s));
+				String fileName = String(episodeName == "xmas98"_s ? "xmas99"_s : StringView(episodeName));
+				fileName += ".j2e"_s;
+				String fullPath = fs::CombinePath(episodesPath, fileName);
 				if (fs::FileExists(fullPath)) {
 					continue;
 				}
@@ -1856,7 +1873,9 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 					episode.Position = UINT16_MAX - 1;
 				}
 
-				String fullPath = fs::CombinePath(episodesPath, String((episode.Name == "xmas98"_s ? "xmas99"_s : StringView(episode.Name)) + ".j2e"_s));
+				String fileName = String(episode.Name == "xmas98"_s ? "xmas99"_s : StringView(episode.Name));
+				fileName += ".j2e"_s;
+				String fullPath = fs::CombinePath(episodesPath, fileName);
 				episode.Convert(fullPath, std::move(LevelTokenConversion), std::move(EpisodeNameConversion), std::move(EpisodePrevNext));
 			}
 		} else if (extension == "j2l"_s) {
@@ -1870,12 +1889,20 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 					auto it = knownLevels.find(levelName);
 					if (it != knownLevels.end()) {
 						if (it->second.second().empty()) {
-							fullPath = fs::CombinePath({ episodesPath, it->second.first(), String(levelName + ".j2l"_s) });
+							String fileName = levelName;
+							fileName += ".j2l"_s;
+							fullPath = fs::CombinePath({ episodesPath, it->second.first(), fileName });
 						} else {
-							fullPath = fs::CombinePath({ episodesPath, it->second.first(), String(it->second.second() + '_' + levelName + ".j2l"_s) });
+							String fileName = it->second.second();
+							fileName += "_"_s;
+							fileName += levelName;
+							fileName += ".j2l"_s;
+							fullPath = fs::CombinePath({ episodesPath, it->second.first(), fileName });
 						}
 					} else {
-						fullPath = fs::CombinePath({ episodesPath, "unknown"_s, String(levelName + ".j2l"_s) });
+						String fileName = levelName;
+						fileName += ".j2l"_s;
+						fullPath = fs::CombinePath({ episodesPath, "unknown"_s, fileName });
 					}
 
 					if (fs::FileExists(fullPath)) {
@@ -1889,12 +1916,20 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 					auto it = knownLevels.find(level.LevelName);
 					if (it != knownLevels.end()) {
 						if (it->second.second().empty()) {
-							fullPath = fs::CombinePath({ episodesPath, it->second.first(), String(level.LevelName + ".j2l"_s) });
+							String fileName = level.LevelName;
+							fileName += ".j2l"_s;
+							fullPath = fs::CombinePath({ episodesPath, it->second.first(), fileName });
 						} else {
-							fullPath = fs::CombinePath({ episodesPath, it->second.first(), String(it->second.second() + '_' + level.LevelName + ".j2l"_s) });
+							String fileName = it->second.second();
+							fileName += "_"_s;
+							fileName += level.LevelName;
+							fileName += ".j2l"_s;
+							fullPath = fs::CombinePath({ episodesPath, it->second.first(), fileName });
 						}
 					} else {
-						fullPath = fs::CombinePath({ episodesPath, "unknown"_s, String(level.LevelName + ".j2l"_s) });
+						String fileName = level.LevelName;
+						fileName += ".j2l"_s;
+						fullPath = fs::CombinePath({ episodesPath, "unknown"_s, fileName });
 					}
 
 					fs::CreateDirectories(fs::GetDirectoryName(fullPath));
@@ -1907,11 +1942,14 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 
 					// Also copy level script file if exists
 					StringView foundDot = item.findLastOr('.', item.end());
-					String scriptPath = item.prefix(foundDot.begin()) + ".j2as"_s;
+					String scriptPath = item.prefix(foundDot.begin());
+					scriptPath += ".j2as"_s;
 					auto adjustedPath = fs::FindPathCaseInsensitive(scriptPath);
 					if (fs::IsReadableFile(adjustedPath)) {
 						foundDot = fullPath.findLastOr('.', fullPath.end());
-						fs::Copy(adjustedPath, String(fullPath.prefix(foundDot.begin()) + ".j2as"_s));
+						String outScriptPath = fullPath.prefix(foundDot.begin());
+						outScriptPath += ".j2as"_s;
+						fs::Copy(adjustedPath, outScriptPath);
 					}
 				}
 			}
@@ -1922,7 +1960,9 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 			Compatibility::JJ2Strings strings;
 			strings.Open(item);
 
-			String fullPath = fs::CombinePath({ resolver.GetCachePath(), "ExtractedTranslations"_s, String(strings.Name + ".h"_s) });
+			String trName = String(strings.Name);
+			trName += ".h"_s;
+			String fullPath = fs::CombinePath({ resolver.GetCachePath(), "ExtractedTranslations"_s, trName });
 			fs::CreateDirectories(fs::GetDirectoryName(fullPath));
 			strings.Convert(fullPath, LevelTokenConversion);
 		}*/
@@ -1939,12 +1979,16 @@ void GameEventHandler::RefreshCacheLevels(bool recreateAll)
 		}
 
 		for (auto& pair : usedTilesets) {
-			String tilesetPath = fs::CombinePath(resolver.GetSourcePath(), String(pair.first + ".j2t"_s));
+			String inName = pair.first;
+			inName += ".j2t"_s;
+			String tilesetPath = fs::CombinePath(resolver.GetSourcePath(), inName);
 			auto adjustedPath = fs::FindPathCaseInsensitive(tilesetPath);
 			if (fs::IsReadableFile(adjustedPath)) {
 				Compatibility::JJ2Tileset tileset;
 				if (tileset.Open(adjustedPath, false)) {
-					tileset.Convert(fs::CombinePath({ tilesetsPath, String(pair.first + ".j2t"_s) }));
+					String outName = pair.first;
+					outName += ".j2t"_s;
+					tileset.Convert(fs::CombinePath({ tilesetsPath, outName }));
 				}
 			}
 		}
@@ -2158,12 +2202,15 @@ void GameEventHandler::ExtractPakFile(StringView pakFile, StringView targetPath)
 	LOGI("{} files extracted successfully, {} files failed with error", successCount, errorCount);
 }
 
-#if defined(DEATH_TARGET_ANDROID)
+#if defined(DEATH_TARGET_ANDROID) || defined(DEATH_TARGET_IOS)
 std::unique_ptr<IAppEventHandler> CreateAppEventHandler()
 {
 	return std::make_unique<GameEventHandler>();
 }
-#elif defined(DEATH_TARGET_WINDOWS_RT)
+#endif
+
+#if !defined(DEATH_TARGET_ANDROID) && !defined(DEATH_TARGET_IOS)
+#if defined(DEATH_TARGET_WINDOWS_RT)
 int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow)
 {
 	return UwpApplication::Run([]() -> std::unique_ptr<IAppEventHandler> {
@@ -2248,4 +2295,5 @@ int main(int argc, char** argv)
 		return std::make_unique<GameEventHandler>();
 	}, argc, argv);
 }
+#endif
 #endif

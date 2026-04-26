@@ -2,8 +2,21 @@
 
 #include "Primitives/Vector2.h"
 
-#include <Containers/Array.h>
-#include <Containers/String.h>
+#if defined(__has_include)
+#	if __has_include("Shared/Containers/Array.h")
+#		include "Shared/Containers/Array.h"
+#		include "Shared/Containers/String.h"
+#	elif __has_include("../Shared/Containers/Array.h")
+#		include "../Shared/Containers/Array.h"
+#		include "../Shared/Containers/String.h"
+#	else
+#		include <Containers/Array.h>
+#		include <Containers/String.h>
+#	endif
+#else
+#	include <Containers/Array.h>
+#	include <Containers/String.h>
+#endif
 
 using namespace Death::Containers;
 

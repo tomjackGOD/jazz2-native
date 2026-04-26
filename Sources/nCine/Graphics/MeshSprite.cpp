@@ -211,7 +211,7 @@ namespace nCine
 
 	void MeshSprite::copyIndices(std::uint32_t numIndices, const std::uint16_t* indices)
 	{
-		indices_.reserve(numIndices);
+		indices_.resize(numIndices);
 		std::memcpy(indices_.data(), indices, numIndices * sizeof(std::uint16_t));
 
 		indexDataPointer_ = indices_.data();
@@ -281,7 +281,7 @@ namespace nCine
 		renderCommand_.GetMaterial().SetShaderProgramType(shaderProgramType);
 
 		shaderHasChanged();
-		renderCommand_.GetGeometry().SetPrimitiveType(GL_TRIANGLE_STRIP);
+		renderCommand_.GetGeometry().SetPrimitiveType(PrimitiveType::TriangleStrip);
 		renderCommand_.GetGeometry().SetElementsPerVertex(texture_ ? VertexFloats : VertexNoTextureFloats);
 		renderCommand_.GetGeometry().SetHostVertexPointer(vertexDataPointer_);
 

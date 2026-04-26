@@ -6,6 +6,9 @@
 #include "../Containers/SmallVector.h"
 #include "../Containers/String.h"
 
+#include <memory>
+#include <optional>
+
 namespace Death { namespace IO {
 //###==##====#=====--==~--~=~- --- -- -  -  -   -
 

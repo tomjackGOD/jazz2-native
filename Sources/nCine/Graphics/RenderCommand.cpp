@@ -1,10 +1,13 @@
 #include "RenderCommand.h"
-#include "GL/GLShaderProgram.h"
-#include "GL/GLScissorTest.h"
+#if !defined(DEATH_TARGET_IOS)
+#	include "GL/GLShaderProgram.h"
+#endif
 #include "RenderResources.h"
 #include "Camera.h"
 #include "DrawableNode.h"
 #include "../tracy.h"
+#include "Backend/BackendRenderState.h"
+#include <cstring>
 
 namespace nCine
 {
@@ -32,6 +35,141 @@ namespace nCine
 	{
 		ZoneScopedC(0x81A861);
 
+#if defined(DEATH_TARGET_IOS)
+		if (geometry_.numVertices_ == 0 && geometry_.numIndices_ == 0) {
+			return;
+		}
+
+		id<MTLRenderCommandEncoder> encoder = (__bridge id<MTLRenderCommandEncoder>)Backends::MetalRenderState::currentEncoder();
+		if (encoder == nil) {
+			return;
+		}
+
+		BackendShaderProgram* program = material_.shaderProgram_;
+		if (program == nullptr || !program->IsLinked()) {
+			return;
+		}
+
+		// Validation: catch mismatched uniform buffer sizing early
+		const std::uint32_t expectedUniformBytes = program->GetUniformsSize() + program->GetUniformBlocksSize();
+		if (material_.uniformsDataPointer_ != nullptr && expectedUniformBytes > 0 && material_.uniformsDataSize_ != expectedUniformBytes) {
+			LOGW("Metal uniforms size mismatch (material={}, program={}): material={} bytes, program={} bytes",
+				(void*)material_.uniformsDataPointer_, (void*)program, material_.uniformsDataSize_, expectedUniformBytes);
+		}
+
+		// Set pipeline state
+		id<MTLRenderPipelineState> pipelineState = (__bridge id<MTLRenderPipelineState>)program->GetPipelineState(
+			material_.IsBlendingEnabled(), material_.GetSrcBlendingFactor(), material_.GetDestBlendingFactor());
+		if (pipelineState != nil) {
+			[encoder setRenderPipelineState:pipelineState];
+		}
+
+		// Set depth stencil state
+		id<MTLDepthStencilState> depthStencilState = (__bridge id<MTLDepthStencilState>)Backends::MetalRenderState::getDepthStencilState();
+		if (depthStencilState != nil) {
+			[encoder setDepthStencilState:depthStencilState];
+		}
+
+		// Set viewport and scissor
+		Backend::ViewportState viewportState = Backend::GetViewportState();
+		MTLViewport mtlViewport = {
+			static_cast<double>(viewportState.x),
+			static_cast<double>(viewportState.y),
+			static_cast<double>(viewportState.w),
+			static_cast<double>(viewportState.h),
+			0.0, 1.0
+		};
+		[encoder setViewport:mtlViewport];
+
+		if (scissorRect_.W > 0 && scissorRect_.H > 0) {
+			MTLScissorRect mtlScissor = {
+				static_cast<NSUInteger>(scissorRect_.X),
+				static_cast<NSUInteger>(scissorRect_.Y),
+				static_cast<NSUInteger>(scissorRect_.W),
+				static_cast<NSUInteger>(scissorRect_.H)
+			};
+			[encoder setScissorRect:mtlScissor];
+		} else {
+			MTLScissorRect mtlScissor = {
+				static_cast<NSUInteger>(viewportState.x),
+				static_cast<NSUInteger>(viewportState.y),
+				static_cast<NSUInteger>(viewportState.w),
+				static_cast<NSUInteger>(viewportState.h)
+			};
+			[encoder setScissorRect:mtlScissor];
+		}
+
+		// Bind textures
+		for (std::uint32_t i = 0; i < BackendTexture::MaxTextureUnits; i++) {
+			const BackendTexture* texture = material_.GetTexture(i);
+			if (texture != nullptr) {
+				[encoder setFragmentTexture:(__bridge id<MTLTexture>)texture->GetMetalHandle() atIndex:i];
+				[encoder setFragmentSamplerState:(__bridge id<MTLSamplerState>)texture->GetSamplerHandle() atIndex:i];
+			}
+		}
+
+		// Resource binding layout (shared by default Metal shaders):
+		// - vertex buffer: index 0
+		// - camera constants (uProjectionMatrix/uViewMatrix): index 1
+		// - instance constants (InstanceBlock/InstancesBlock): index 2
+
+		// Bind vertex buffer (if any). Sprite shaders can use `vertex_id` and not require a buffer.
+		const BackendBufferObject* vbo = geometry_.GetVboParams().object;
+		if (vbo != nullptr) {
+			[encoder setVertexBuffer:(__bridge id<MTLBuffer>)vbo->GetMetalHandle() offset:geometry_.GetVboParams().offset atIndex:0];
+		}
+
+		// Camera uniforms (2 mat4)
+		[encoder setVertexBytes:RenderResources::GetCameraUniformsBuffer() length:128 atIndex:1];
+		[encoder setFragmentBytes:RenderResources::GetCameraUniformsBuffer() length:128 atIndex:1];
+
+		// Instance uniforms (InstanceBlock / InstancesBlock data pointer from Material)
+		if (material_.uniformsDataPointer_ != nullptr && material_.uniformsDataSize_ > 0) {
+			if (material_.uniformsDataSize_ <= 4096) {
+				[encoder setVertexBytes:material_.uniformsDataPointer_ length:material_.uniformsDataSize_ atIndex:2];
+				[encoder setFragmentBytes:material_.uniformsDataPointer_ length:material_.uniformsDataSize_ atIndex:2];
+			} else {
+				std::uint32_t offset = 0;
+				id<MTLBuffer> buffer = (__bridge id<MTLBuffer>)Backends::MetalRenderState::acquireTransientBuffer(material_.uniformsDataSize_, offset);
+				if (buffer != nil) {
+					std::memcpy((std::uint8_t*)[buffer contents] + offset, material_.uniformsDataPointer_, material_.uniformsDataSize_);
+					[encoder setVertexBuffer:buffer offset:offset atIndex:2];
+					[encoder setFragmentBuffer:buffer offset:offset atIndex:2];
+				}
+			}
+		}
+
+		// Draw
+		MTLPrimitiveType primitiveType = MTLPrimitiveTypeTriangle;
+		switch (geometry_.primitiveType_) {
+			case PrimitiveType::Points: primitiveType = MTLPrimitiveTypePoint; break;
+			case PrimitiveType::Lines: primitiveType = MTLPrimitiveTypeLine; break;
+			case PrimitiveType::LineStrip: primitiveType = MTLPrimitiveTypeLineStrip; break;
+			case PrimitiveType::Triangles: primitiveType = MTLPrimitiveTypeTriangle; break;
+			case PrimitiveType::TriangleStrip: primitiveType = MTLPrimitiveTypeTriangleStrip; break;
+			default: break;
+		}
+
+		if (geometry_.numIndices_ > 0) {
+			const BackendBufferObject* ibo = geometry_.GetIboParams().object;
+			if (ibo != nullptr) {
+				[encoder drawIndexedPrimitives:primitiveType
+									indexCount:geometry_.numIndices_
+									 indexType:MTLIndexTypeUInt16
+								   indexBuffer:(__bridge id<MTLBuffer>)ibo->GetMetalHandle()
+							 indexBufferOffset:geometry_.GetIboParams().offset + geometry_.firstIndex_ * sizeof(std::uint16_t)
+								 instanceCount:numInstances_ > 0 ? numInstances_ : 1];
+			}
+		} else {
+			[encoder drawPrimitives:primitiveType
+						vertexStart:geometry_.firstVertex_
+						vertexCount:geometry_.numVertices_
+					  instanceCount:numInstances_ > 0 ? numInstances_ : 1];
+		}
+
+		return;
+#endif
+
 		if (geometry_.numVertices_ == 0 && geometry_.numIndices_ == 0) {
 			return;
 		}
@@ -39,9 +177,9 @@ namespace nCine
 		material_.Bind();
 		material_.CommitUniforms();
 
-		GLScissorTest::State scissorTestState = GLScissorTest::GetState();
+		Backend::ScissorState scissorTestState = Backend::GetScissorState();
 		if (scissorRect_.W > 0 && scissorRect_.H > 0) {
-			GLScissorTest::Enable(scissorRect_);
+			Backend::EnableScissor(scissorRect_.X, scissorRect_.Y, scissorRect_.W, scissorRect_.H);
 		}
 
 		std::uint32_t offset = 0;
@@ -55,7 +193,7 @@ namespace nCine
 		geometry_.Bind();
 		geometry_.Draw(numInstances_);
 
-		GLScissorTest::SetState(scissorTestState);
+		Backend::SetScissorState(scissorTestState);
 	}
 
 	void RenderCommand::SetScissor(GLint x, GLint y, GLsizei width, GLsizei height)
@@ -80,9 +218,9 @@ namespace nCine
 		const Camera::ProjectionValues cameraValues = RenderResources::GetCurrentCamera()->GetProjectionValues();
 		modelMatrix_[3][2] = CalculateDepth(layer_, cameraValues.nearClip, cameraValues.farClip);
 
-		if (material_.shaderProgram_ && material_.shaderProgram_->GetStatus() == GLShaderProgram::Status::LinkedWithIntrospection) {
-			GLUniformBlockCache* instanceBlock = material_.UniformBlock(Material::InstanceBlockName);
-			GLUniformCache* matrixUniform = instanceBlock
+		if (material_.shaderProgram_ && material_.shaderProgram_->IsLinked()) {
+			BackendUniformBlockCache* instanceBlock = material_.UniformBlock(Material::InstanceBlockName);
+			BackendUniformCache* matrixUniform = instanceBlock
 				? instanceBlock->GetUniform(Material::ModelMatrixUniformName)
 				: material_.Uniform(Material::ModelMatrixUniformName);
 			if (matrixUniform) {
