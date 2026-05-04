@@ -1,9 +1,7 @@
 #include "Geometry.h"
 #include "RenderResources.h"
 #include "RenderStatistics.h"
-#if !defined(DEATH_TARGET_IOS)
 #include "GL/GLMapping.h"
-#endif
 
 #include <cstring> // for memcpy()
 
@@ -39,15 +37,14 @@ namespace nCine
 	{
 #if defined(DEATH_TARGET_IOS)
 		vbo_ = std::make_unique<BackendBufferObject>(BackendBufferObject::Target::Array);
-		vbo_->BufferData(numFloats * sizeof(float), nullptr, 0);
 #else
 		vbo_ = std::make_unique<BackendBufferObject>(GL_ARRAY_BUFFER);
-		vbo_->BufferData(numFloats * sizeof(float), nullptr, GLMapping::BufferUsage(usage));
 #endif
+		vbo_->BufferData(numFloats * sizeof(float), nullptr, GLMapping::BufferUsage(usage));
 
 		vboUsageFlags_ = usage;
 		vboParams_.object = vbo_.get();
-		vboParams_.size = static_cast<std::uint32_t>(vbo_->GetSize());
+		vboParams_.size = vbo_->GetSize();
 		vboParams_.offset = 0;
 		vboParams_.mapBase = nullptr;
 
@@ -61,12 +58,6 @@ namespace nCine
 		DEATH_ASSERT(vbo_ == nullptr);
 		hasDirtyVertices_ = true;
 
-#if defined(DEATH_TARGET_IOS)
-		// Metal backend: allocate a dedicated buffer and map it for CPU writes
-		CreateCustomVbo(numFloats, BufferUsage::StreamDraw);
-		vboParams_.mapBase = static_cast<std::uint8_t*>(vbo_->MapBufferRange(0, vboParams_.size, 0));
-		return reinterpret_cast<float*>(vboParams_.mapBase);
-#else
 		if (sharedVboParams_ != nullptr) {
 			vboParams_ = *sharedVboParams_;
 		} else {
@@ -77,7 +68,6 @@ namespace nCine
 		}
 
 		return reinterpret_cast<float*>(vboParams_.mapBase + vboParams_.offset);
-#endif
 	}
 
 	/*! This method can only be used when mapping of OpenGL buffers is available */
@@ -86,12 +76,6 @@ namespace nCine
 		DEATH_ASSERT(vbo_ != nullptr);
 		hasDirtyVertices_ = true;
 
-#if defined(DEATH_TARGET_IOS)
-		if (vboParams_.mapBase == nullptr) {
-			vboParams_.mapBase = static_cast<std::uint8_t*>(vbo_->MapBufferRange(0, vbo_->GetSize(), 0));
-		}
-		return reinterpret_cast<float*>(vboParams_.mapBase);
-#else
 		if (vboParams_.mapBase == nullptr) {
 			const GLenum mapFlags = RenderResources::GetBuffersManager().Specs(RenderBuffersManager::BufferTypes::Array).mapFlags;
 			FATAL_ASSERT_MSG(mapFlags, "Mapping of OpenGL buffers is not available");
@@ -99,7 +83,6 @@ namespace nCine
 		}
 
 		return reinterpret_cast<float*>(vboParams_.mapBase);
-#endif
 	}
 
 	void Geometry::ReleaseVertexPointer()
@@ -132,15 +115,14 @@ namespace nCine
 	{
 #if defined(DEATH_TARGET_IOS)
 		ibo_ = std::make_unique<BackendBufferObject>(BackendBufferObject::Target::ElementArray);
-		ibo_->BufferData(numIndices * sizeof(std::uint16_t), nullptr, 0);
 #else
 		ibo_ = std::make_unique<BackendBufferObject>(GL_ELEMENT_ARRAY_BUFFER);
-		ibo_->BufferData(numIndices * sizeof(std::uint16_t), nullptr, GLMapping::BufferUsage(usage));
 #endif
+		ibo_->BufferData(numIndices * sizeof(std::uint16_t), nullptr, GLMapping::BufferUsage(usage));
 
 		iboUsageFlags_ = usage;
 		iboParams_.object = ibo_.get();
-		iboParams_.size = static_cast<std::uint32_t>(ibo_->GetSize());
+		iboParams_.size = ibo_->GetSize();
 		iboParams_.offset = 0;
 		iboParams_.mapBase = nullptr;
 
@@ -154,11 +136,6 @@ namespace nCine
 		DEATH_ASSERT(ibo_ == nullptr);
 		hasDirtyIndices_ = true;
 
-#if defined(DEATH_TARGET_IOS)
-		CreateCustomIbo(numIndices, BufferUsage::StreamDraw);
-		iboParams_.mapBase = static_cast<std::uint8_t*>(ibo_->MapBufferRange(0, iboParams_.size, 0));
-		return reinterpret_cast<std::uint16_t*>(iboParams_.mapBase);
-#else
 		if (sharedIboParams_ != nullptr) {
 			iboParams_ = *sharedIboParams_;
 		} else {
@@ -169,7 +146,6 @@ namespace nCine
 		}
 
 		return reinterpret_cast<std::uint16_t*>(iboParams_.mapBase + iboParams_.offset);
-#endif
 	}
 
 	/*! This method can only be used when mapping of OpenGL buffers is available */
@@ -178,12 +154,6 @@ namespace nCine
 		DEATH_ASSERT(ibo_ != nullptr);
 		hasDirtyIndices_ = true;
 
-#if defined(DEATH_TARGET_IOS)
-		if (iboParams_.mapBase == nullptr) {
-			iboParams_.mapBase = static_cast<std::uint8_t*>(ibo_->MapBufferRange(0, ibo_->GetSize(), 0));
-		}
-		return reinterpret_cast<std::uint16_t*>(iboParams_.mapBase);
-#else
 		if (iboParams_.mapBase == nullptr) {
 			const GLenum mapFlags = RenderResources::GetBuffersManager().Specs(RenderBuffersManager::BufferTypes::ElementArray).mapFlags;
 			FATAL_ASSERT_MSG(mapFlags, "Mapping of OpenGL buffers is not available");
@@ -191,7 +161,6 @@ namespace nCine
 		}
 
 		return reinterpret_cast<std::uint16_t*>(iboParams_.mapBase);
-#endif
 	}
 
 	void Geometry::ReleaseIndexPointer()
@@ -222,23 +191,13 @@ namespace nCine
 
 	void Geometry::Bind()
 	{
-#if defined(DEATH_TARGET_IOS)
-		// No global bind state on Metal
-		(void)0;
-#else
 		if (vboParams_.object != nullptr) {
 			vboParams_.object->Bind();
 		}
-#endif
 	}
 
 	void Geometry::Draw(std::int32_t numInstances)
 	{
-#if defined(DEATH_TARGET_IOS)
-		// Metal rendering is handled in RenderCommand::Issue()
-		(void)numInstances;
-		return;
-#else
 		const std::int32_t vboOffset = static_cast<std::int32_t>(GetVboParams().offset / numElementsPerVertex_ / sizeof(float)) + firstVertex_;
 
 		void* iboOffsetPtr = nullptr;
@@ -267,26 +226,15 @@ namespace nCine
 				glDrawArraysInstanced(GLMapping::PrimitiveType(primitiveType_), vboOffset, numVertices_, numInstances);
 			}
 		}
-#endif
 	}
 
 	void Geometry::CommitVertices()
 	{
 		if (hostVertexPointer_ != nullptr && hasDirtyVertices_) {
-			const std::uint32_t numFloats = numVertices_ * numElementsPerVertex_;
-
-#if defined(DEATH_TARGET_IOS)
-			// Always use a dedicated Metal buffer for now
-			if (vbo_ == nullptr) {
-				CreateCustomVbo(numFloats, BufferUsage::DynamicDraw);
-			}
-			vbo_->BufferData(numFloats * sizeof(float), hostVertexPointer_, 0);
-			vboParams_.object = vbo_.get();
-			vboParams_.size = static_cast<std::uint32_t>(vbo_->GetSize());
-			vboParams_.offset = 0;
-#else
 			// Checking if the common VBO is allowed to use mapping and do the same for the custom one
 			const GLenum mapFlags = RenderResources::GetBuffersManager().Specs(RenderBuffersManager::BufferTypes::Array).mapFlags;
+			const std::uint32_t numFloats = numVertices_ * numElementsPerVertex_;
+
 			if (mapFlags == 0 && vbo_ != nullptr) {
 				// Using buffer orphaning + `glBufferSubData()` when having a custom VBO with no mapping available
 				vbo_->BufferData(vboParams_.size, nullptr, GLMapping::BufferUsage(vboUsageFlags_));
@@ -296,7 +244,6 @@ namespace nCine
 				memcpy(vertices, hostVertexPointer_, numFloats * sizeof(float));
 				ReleaseVertexPointer();
 			}
-#endif
 
 			// The dirty flag is only useful with a custom VBO. If the render command uses the common one, it must always copy vertices.
 			if (vbo_ != nullptr) {
@@ -308,15 +255,6 @@ namespace nCine
 	void Geometry::CommitIndices()
 	{
 		if (hostIndexPointer_ != nullptr && hasDirtyIndices_) {
-#if defined(DEATH_TARGET_IOS)
-			if (ibo_ == nullptr) {
-				CreateCustomIbo(numIndices_, BufferUsage::DynamicDraw);
-			}
-			ibo_->BufferData(numIndices_ * sizeof(std::uint16_t), hostIndexPointer_, 0);
-			iboParams_.object = ibo_.get();
-			iboParams_.size = static_cast<std::uint32_t>(ibo_->GetSize());
-			iboParams_.offset = 0;
-#else
 			// Checking if the common IBO is allowed to use mapping and do the same for the custom one
 			const GLenum mapFlags = RenderResources::GetBuffersManager().Specs(RenderBuffersManager::BufferTypes::ElementArray).mapFlags;
 
@@ -329,7 +267,6 @@ namespace nCine
 				memcpy(indices, hostIndexPointer_, numIndices_ * sizeof(std::uint16_t));
 				ReleaseIndexPointer();
 			}
-#endif
 
 			// The dirty flag is only useful with a custom IBO. If the render command uses the common one, it must always copy indices.
 			if (ibo_ != nullptr) {

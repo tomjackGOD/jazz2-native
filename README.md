@@ -83,6 +83,13 @@ Alternatively, you can install it using <sub><sub>[![Homebrew](https://img.shiel
 
 `‹Storage›` *usually denotes internal storage on your device.* `Content` *directory is included directly in APK file, no action is needed. The game requires **Android 5.0** (or newer) and GPU with **OpenGL ES 3.0** support. Cache is recreated during the intro cinematics on the first startup. Also, the sound effects in the intro cinematics require the cache, so they will be missing the first time the game is started up.*
 
+### iOS
+* Download the game and install provided `.ipa` package (sideloading required)
+* Copy contents of original *Jazz Jackrabbit 2* directory to `Documents/Source/` using **Files** app or iTunes
+* Run the newly installed application
+
+*The game requires **iOS 12.0** (or newer) and GPU with **Metal** support. Cache is recreated during the intro cinematics on the first startup. Also, the sound effects in the intro cinematics require the cache, so they will be missing the first time the game is started up.*
+
 ### Nintendo Switch
 * Download the game
 * Install `Jazz2.nro` package (custom firmware is needed)
@@ -138,6 +145,18 @@ This section contains only a brief explanation of the build process. For a more 
 * Build dependencies will be downloaded automatically by *CMake*
   * Can be disabled with `NCINE_DOWNLOAD_DEPENDENCIES` option, then download [build dependencies](https://github.com/deathkiller/jazz2-libraries/tree/android) manually to `./Libs/`
 * Build the project with *CMake* and `NCINE_BUILD_ANDROID` option
+
+### iOS
+* Building for iOS requires **macOS** with **Xcode** installed
+* Build dependencies will be downloaded automatically by *CMake*
+  * Can be disabled with `NCINE_DOWNLOAD_DEPENDENCIES` option
+* Generate the Xcode project with *CMake*:
+```bash
+cmake -G Xcode -S . -B build_ios -DCMAKE_SYSTEM_NAME=iOS -DNCINE_BUILD_IOS=ON
+```
+* Open the generated `build_ios/Jazz2.xcodeproj` in Xcode
+* Select your development team for code signing in the project settings
+* Build and run the project on a device or simulator
 
 ### Nintendo Switch
 * Install [devkitPro toolchain](https://devkitpro.org/wiki/devkitPro_pacman)

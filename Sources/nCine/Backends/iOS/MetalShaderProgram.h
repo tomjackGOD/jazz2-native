@@ -2,9 +2,11 @@
 
 #include <cstdint>
 #include <string>
-#include <Containers/StringView.h>
-#include <Containers/SmallVector.h>
-#include <Containers/String.h>
+#include <Shared/Containers/StringView.h>
+#include <Shared/Containers/SmallVector.h>
+#include <Shared/Containers/String.h>
+#include <Shared/Containers/StringConcatenable.h>
+#include "BackendEnums.h"
 #include "../../Base/StaticHashMap.h"
 
 namespace nCine
@@ -110,7 +112,7 @@ namespace nCine
 		std::uint32_t usedSize_;
 		bool isDirty_;
 		Death::Containers::String name_;
-		Death::Containers::StaticHashMap<Death::Containers::String, MetalUniformCache, 16> uniforms_;
+		StaticHashMap<Death::Containers::String, MetalUniformCache, 16> uniforms_;
 		MockUniformBlock mockBlock_;
 	};
 
@@ -118,17 +120,22 @@ namespace nCine
 	class MetalShaderUniforms
 	{
 	public:
-		using UniformHashMapType = Death::Containers::StaticHashMap<Death::Containers::String, MetalUniformCache, 16>;
+		using UniformHashMapType = StaticHashMap<Death::Containers::String, MetalUniformCache, 16>;
 
 		MetalShaderUniforms() : shaderProgram_(nullptr) {}
-		void SetProgram(class MetalShaderProgram* shaderProgram, const char* includeOnly, const char* exclude) { shaderProgram_ = shaderProgram; }
-		void SetUniformsDataPointer(std::uint8_t* dataPointer) {}
-		void SetDirty(bool isDirty) {}
-		bool HasUniform(const char* name) const { return false; }
-		MetalUniformCache* GetUniform(const char* name) { return nullptr; }
+		void SetProgram(class MetalShaderProgram* shaderProgram, const char* includeOnly, const char* exclude);
+		void SetUniformsDataPointer(std::uint8_t* dataPointer);
+		void SetDirty(bool isDirty);
+		bool HasUniform(const char* name) const {
+			return (uniformCaches_.find(Death::Containers::String::nullTerminatedView(name)) != uniformCaches_.end());
+		}
+		MetalUniformCache* GetUniform(const char* name) {
+			auto it = uniformCaches_.find(Death::Containers::String::nullTerminatedView(name));
+			return (it != uniformCaches_.end()) ? &it->second : nullptr;
+		}
 		const UniformHashMapType& GetAllUniforms() const { return uniformCaches_; }
-		void CommitUniforms() {}
-		std::uint32_t GetUniformCount() const { return 0; }
+		void CommitUniforms();
+		std::uint32_t GetUniformCount() const { return static_cast<std::uint32_t>(uniformCaches_.size()); }
 
 	private:
 		class MetalShaderProgram* shaderProgram_;
@@ -139,7 +146,7 @@ namespace nCine
 	class MetalShaderUniformBlocks
 	{
 	public:
-		using UniformHashMapType = Death::Containers::StaticHashMap<Death::Containers::String, MetalUniformBlockCache, 4>;
+		using UniformHashMapType = StaticHashMap<Death::Containers::String, MetalUniformBlockCache, 4>;
 		MetalShaderUniformBlocks() : shaderProgram_(nullptr) {}
 		void SetProgram(class MetalShaderProgram* shaderProgram);
 		void SetUniformsDataPointer(std::uint8_t* dataPointer);
@@ -215,6 +222,8 @@ namespace nCine
 		void* vertexFunction_;
 		void* fragmentFunction_;
 		void* vertexDescriptor_;
+
+		Death::Containers::String label_;
 		
 		struct PipelineStateKey {
 			bool blendingEnabled;
@@ -230,7 +239,7 @@ namespace nCine
 				return (static_cast<std::size_t>(key.blendingEnabled) << 16) | (static_cast<std::size_t>(key.srcFactor) << 8) | static_cast<std::size_t>(key.destFactor);
 			}
 		};
-		Death::Containers::StaticHashMap<PipelineStateKey, void*, 8> pipelineStates_;
+		StaticHashMap<PipelineStateKey, void*, 8> pipelineStates_;
 
 		Status status_;
 		std::uint32_t batchSize_;

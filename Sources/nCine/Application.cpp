@@ -52,7 +52,9 @@ extern "C"
 #include "Graphics/RenderResources.h"
 #include "Graphics/RenderQueue.h"
 #include "Graphics/ScreenViewport.h"
-#include "Graphics/GL/GLDebug.h"
+#if !defined(DEATH_TARGET_IOS)
+#	include "Graphics/GL/GLDebug.h"
+#endif
 #include "Base/FrameTimer.h"
 #include "Graphics/SceneNode.h"
 #include "Input/IInputManager.h"
@@ -60,7 +62,9 @@ extern "C"
 #include "Threading/Thread.h"
 #include "ServiceLocator.h"
 #include "tracy.h"
-#include "tracy_opengl.h"
+#if !defined(DEATH_TARGET_IOS)
+#	include "tracy_opengl.h"
+#endif
 
 #include <Environment.h>
 #include <Containers/DateTime.h>
@@ -718,7 +722,9 @@ namespace nCine
 
 	void Application::InitCommon()
 	{
+#if !defined(DEATH_TARGET_IOS)
 		TracyGpuContext;
+#endif
 		ZoneScopedC(0x81A861);
 		// This timestamp is needed to initialize random number generator
 		profileStartTime_ = TimeStamp::now();
@@ -835,7 +841,9 @@ namespace nCine
 			// Swapping frame now for a cleaner API trace capture when debugging
 			gfxDevice_->update();
 			FrameMark;
+#if !defined(DEATH_TARGET_IOS)
 			TracyGpuCollect;
+#endif
 		}
 	}
 
@@ -981,7 +989,9 @@ namespace nCine
 		if (appCfg_.withGraphics) {
 			gfxDevice_->update();
 			FrameMark;
+#if !defined(DEATH_TARGET_IOS)
 			TracyGpuCollect;
+#endif
 		}
 
 		if (appCfg_.frameLimit > 0) {

@@ -122,10 +122,37 @@ namespace nCine::Backends
 
 		touchSpinlock_.unlock();
 	}
+
+	void IosInputManager::HandleKey(int keyCode, bool isDown)
+	{
+		// keyCode is expected to be a value from the nCine::Keys enum
+		if (keyCode < 0 || keyCode >= static_cast<int>(Keys::Count) || keyCode == static_cast<int>(Keys::Unknown)) {
+			return;
+		}
+
+		keyboardState_.keys_[keyCode] = (isDown ? 1 : 0);
+
+		if (inputEventHandler_ != nullptr) {
+			KeyboardEvent event;
+			event.sym = static_cast<Keys>(keyCode);
+			// On iOS, we map the enum index as a fake scancode for simulated keys
+			event.scancode = keyCode;
+			event.mod = 0;
+			if (isDown) {
+				inputEventHandler_->OnKeyPressed(event);
+			} else {
+				inputEventHandler_->OnKeyReleased(event);
+			}
+		}
+	}
 }
 
 extern "C" {
 	void ios_bridge_handle_touch(int type, int x, int y, int pointerId, float pressure, float majorRadius) {
 		nCine::Backends::IosInputManager::HandleTouch(type, x, y, pointerId, pressure, majorRadius);
+	}
+
+	void ios_bridge_handle_key(int keyCode, bool isDown) {
+		nCine::Backends::IosInputManager::HandleKey(keyCode, isDown);
 	}
 }

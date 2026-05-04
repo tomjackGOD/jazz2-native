@@ -1,6 +1,6 @@
 #pragma once
 
-#include <CommonBase.h>
+#include <Shared/CommonBase.h>
 
 #ifndef DOXYGEN_GENERATING_OUTPUT
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../Application.h"
+#include <Shared/Asserts.h>
 
 namespace nCine
 {

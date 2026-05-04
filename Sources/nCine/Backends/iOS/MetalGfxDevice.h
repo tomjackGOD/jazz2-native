@@ -18,6 +18,8 @@ namespace nCine::Backends
 
 		void update() override;
 
+		void BeginFrame();
+
 		void setWindowTitle(StringView windowTitle) override {}
 		void setWindowIcon(StringView windowIconFilename) override {}
 
@@ -37,6 +39,10 @@ namespace nCine::Backends
 	private:
 		void initDevice();
 		void updateMonitors() override;
+		void clearTransientResources();
+
+		void* _drawable;
+		void* _commandBuffer;
 
 		static constexpr float DefaultRefreshRate = 60.0f;
 		static char monitorName_[MaxMonitorNameLength];

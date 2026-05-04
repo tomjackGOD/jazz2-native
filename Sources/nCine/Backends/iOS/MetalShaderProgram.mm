@@ -1,11 +1,8 @@
 #include "MetalShaderProgram.h"
 #include "MetalGfxDevice.h"
-#include "../../Graphics/Material.h"
-#include "../../Graphics/RenderResources.h"
 #include "../../tracy.h"
 
 #import <Metal/Metal.h>
-#include <cstddef>
 
 namespace nCine
 {
@@ -44,15 +41,7 @@ namespace nCine
 		
 		MetalUniformBlockCache instanceBlock;
 		instanceBlock.SetName(Material::InstanceBlockName);
-		// std140 layout:
-		// - mat4 modelMatrix @ 0 (64 bytes)
-		// - vec4 color      @ 64 (16 bytes)
-		// - vec4 texRect    @ 80 (16 bytes)
-		// - vec2 spriteSize @ 96 (8 bytes) + padding to 112
 		instanceBlock.AddUniform(Material::ModelMatrixUniformName, 0);
-		instanceBlock.AddUniform(Material::ColorUniformName, 64);
-		instanceBlock.AddUniform(Material::TexRectUniformName, 80);
-		instanceBlock.AddUniform(Material::SpriteSizeUniformName, 96);
 		uniformBlocks_[Material::InstanceBlockName] = instanceBlock;
 
 		MetalUniformBlockCache instancesBlock;
@@ -79,16 +68,69 @@ namespace nCine
 		auto it = uniformBlocks_.find(Death::Containers::String::nullTerminatedView(Material::InstanceBlockName));
 		if (it != uniformBlocks_.end()) {
 			it->second.SetDataPointer(dataPointer, 112);
-			// Refresh cached uniform data pointers for this block
-			it->second.AddUniform(Material::ModelMatrixUniformName, 0);
-			it->second.AddUniform(Material::ColorUniformName, 64);
-			it->second.AddUniform(Material::TexRectUniformName, 80);
-			it->second.AddUniform(Material::SpriteSizeUniformName, 96);
 		}
 		
 		it = uniformBlocks_.find(Death::Containers::String::nullTerminatedView(Material::InstancesBlockName));
 		if (it != uniformBlocks_.end()) {
 			it->second.SetDataPointer(dataPointer, shaderProgram_->GetUniformBlocksSize());
+		}
+	}
+
+	void MetalShaderUniforms::SetProgram(MetalShaderProgram* shaderProgram, const char* includeOnly, const char* exclude)
+	{
+		shaderProgram_ = shaderProgram;
+		uniformCaches_.clear();
+
+		// For now, we only support a few common uniforms that aren't in blocks
+		// (e.g. uGuiProjection, uDepth for ImGui)
+		
+		// Note: uTexture is usually handled separately via textures_[0]
+		
+		// We'll hardcode ImGui uniforms for now if the program seems to be ImGui
+		// In a real implementation, we would use introspection on the MSL source
+		
+		// ImGui uniforms
+		const std::uint32_t guiProjectionOffset = 0;
+		const std::uint32_t depthOffset = 64;
+		const std::uint32_t imguiUniformsSize = 68;
+
+		// Check if it's ImGui (heuristic)
+		// We don't have the shader name easily here, but we can check the exclude list
+		// or just always add them if they don't clash.
+		
+		MetalUniformCache guiProjCache;
+		uniformCaches_[Material::GuiProjectionMatrixUniformName] = guiProjCache;
+		
+		MetalUniformCache depthCache;
+		uniformCaches_[Material::DepthUniformName] = depthCache;
+
+		shaderProgram_->SetUniformsSize(imguiUniformsSize);
+	}
+
+	void MetalShaderUniforms::SetUniformsDataPointer(std::uint8_t* dataPointer)
+	{
+		auto it = uniformCaches_.find(Death::Containers::String::nullTerminatedView(Material::GuiProjectionMatrixUniformName));
+		if (it != uniformCaches_.end()) {
+			it->second.SetDataPointer(dataPointer + 0);
+		}
+		
+		it = uniformCaches_.find(Death::Containers::String::nullTerminatedView(Material::DepthUniformName));
+		if (it != uniformCaches_.end()) {
+			it->second.SetDataPointer(dataPointer + 64);
+		}
+	}
+
+	void MetalShaderUniforms::SetDirty(bool isDirty)
+	{
+		for (auto& it : uniformCaches_) {
+			it.second.SetDirty(isDirty);
+		}
+	}
+
+	void MetalShaderUniforms::CommitUniforms()
+	{
+		for (auto& it : uniformCaches_) {
+			it.second.CommitValue();
 		}
 	}
 
@@ -176,9 +218,6 @@ namespace nCine
 			
 			if (it->first == Material::MeshIndexAttributeName) {
 				format = MTLVertexFormatUInt;
-			} else if (it->first == Material::ColorAttributeName) {
-				// ImGui uses packed RGBA8 colors
-				format = MTLVertexFormatUChar4Normalized;
 			} else {
 				if (info.components == 1) format = MTLVertexFormatFloat;
 				else if (info.components == 2) format = MTLVertexFormatFloat2;
@@ -314,6 +353,7 @@ namespace nCine
 
 	void MetalShaderProgram::SetObjectLabel(Death::Containers::StringView label)
 	{
+		label_ = label;
 		if (metalHandle_ != nullptr) {
 			id<MTLLibrary> library = (__bridge id<MTLLibrary>)metalHandle_;
 			library.label = [NSString stringWithUTF8String:label.data()];

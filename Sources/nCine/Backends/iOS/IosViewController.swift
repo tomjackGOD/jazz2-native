@@ -23,14 +23,24 @@ class ViewController: UIViewController {
 
     private var metalLayer: CAMetalLayer?
     private var displayLink: CADisplayLink?
+    private var touchOverlay: TouchOverlayView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupMetalLayer()
+        setupTouchOverlay()
         
         // Start the game loop after the view has loaded
         startDisplayLink()
+    }
+    
+    private func setupTouchOverlay() {
+        touchOverlay = TouchOverlayView(frame: view.bounds)
+        if let overlay = touchOverlay {
+            overlay.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.addSubview(overlay)
+        }
     }
     
     private func setupMetalLayer() {

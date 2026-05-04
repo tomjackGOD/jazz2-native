@@ -5,14 +5,12 @@
 #include "../IAppEventHandler.h"
 #include "DrawableNode.h"
 #include "Camera.h"
+#include "GL/GLFramebuffer.h"
 #include "Texture.h"
-#if !defined(DEATH_TARGET_IOS)
-#	include "GL/GLFramebuffer.h"
-#	include "GL/GLClearColor.h"
-#	include "GL/GLViewport.h"
-#	include "GL/GLScissorTest.h"
-#	include "GL/GLDebug.h"
-#endif
+#include "GL/GLClearColor.h"
+#include "GL/GLViewport.h"
+#include "GL/GLScissorTest.h"
+#include "GL/GLDebug.h"
 #include "Backend/BackendRenderState.h"
 #include "../ServiceLocator.h"
 #include "../tracy.h"
@@ -24,7 +22,6 @@
 
 namespace nCine
 {
-#if !defined(DEATH_TARGET_IOS)
 	static GLenum DepthStencilFormatToGLFormat(Viewport::DepthStencilFormat format)
 	{
 		switch (format) {
@@ -49,7 +46,6 @@ namespace nCine
 				return GL_DEPTH_STENCIL_ATTACHMENT;
 		}
 	}
-#endif
 
 	SmallVector<Viewport*> Viewport::chain_;
 
@@ -102,12 +98,6 @@ namespace nCine
 	/*! \note Adding more textures enables the use of multiple render targets (MRTs) */
 	bool Viewport::SetTexture(std::uint32_t index, Texture* texture)
 	{
-#if defined(DEATH_TARGET_IOS)
-		// TODO(Metal): render-to-texture path (MRT/FBO equivalents).
-		(void)index;
-		(void)texture;
-		return false;
-#else
 		if (type_ == Type::Screen) {
 			return false;
 		}
@@ -165,16 +155,11 @@ namespace nCine
 		}
 
 		return result;
-#endif
 	}
 
 	/*! \note It can remove the depth and stencil render buffer of the viewport's FBO by specifying `DepthStencilFormat::NONE` */
 	bool Viewport::SetDepthStencilFormat(DepthStencilFormat depthStencilFormat)
 	{
-#if defined(DEATH_TARGET_IOS)
-		(void)depthStencilFormat;
-		return false;
-#else
 		if (depthStencilFormat_ == depthStencilFormat || type_ == Type::NoTexture)
 			return false;
 
@@ -205,14 +190,10 @@ namespace nCine
 		}
 
 		return result;
-#endif
 	}
 
 	bool Viewport::RemoveAllTextures()
 	{
-#if defined(DEATH_TARGET_IOS)
-		return false;
-#else
 		if (type_ == Type::Screen) {
 			return false;
 		}
@@ -236,7 +217,6 @@ namespace nCine
 		width_ = 0;
 		height_ = 0;
 		return true;
-#endif
 	}
 
 	Texture* Viewport::GetTexture(std::uint32_t index)
@@ -253,13 +233,9 @@ namespace nCine
 
 	void Viewport::SetGLFramebufferLabel(const char* label)
 	{
-#if defined(DEATH_TARGET_IOS)
-		(void)label;
-#else
 		if (fbo_ != nullptr) {
 			fbo_->SetObjectLabel(label);
 		}
-#endif
 	}
 
 	void Viewport::CalculateCullingRect()

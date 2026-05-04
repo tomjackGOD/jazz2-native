@@ -6,12 +6,12 @@
 
 #include <cstring>	// for memcpy()
 
-#include <Containers/SmallVector.h>
-#include <Containers/StaticArray.h>
-#include <Containers/StringConcatenable.h>
-#include <Containers/StringUtils.h>
-#include <Containers/StringView.h>
-#include <IO/FileSystem.h>
+#include <Shared/Containers/SmallVector.h>
+#include <Shared/Containers/StaticArray.h>
+#include <Shared/Containers/StringConcatenable.h>
+#include <Shared/Containers/StringUtils.h>
+#include <Shared/Containers/StringView.h>
+#include <Shared/IO/FileSystem.h>
 
 #if defined(DEATH_TARGET_WINDOWS)
 #	include <CommonWindows.h>

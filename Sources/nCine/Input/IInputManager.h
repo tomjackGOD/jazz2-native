@@ -3,8 +3,8 @@
 #include "InputEvents.h"
 #include "../Primitives/Vector2.h"
 
-#include <Containers/String.h>
-#include <Containers/StringView.h>
+#include <Shared/Containers/String.h>
+#include <Shared/Containers/StringView.h>
 
 using namespace Death::Containers;
 

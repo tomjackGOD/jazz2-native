@@ -2,6 +2,7 @@
 #include "IosBridge.h"
 #include "IosInputManager.h"
 #include "MetalGfxDevice.h"
+#include <Shared/Asserts.h>
 
 namespace nCine
 {
@@ -46,6 +47,10 @@ namespace nCine
 			deltaTime = DEFAULT_FRAME_RATE;
 		} else if (deltaTime > MAX_DELTA_TIME) {
 			deltaTime = MAX_DELTA_TIME;
+		}
+
+		if (isInitialized_) {
+			static_cast<Backends::MetalGfxDevice&>(*gfxDevice_).BeginFrame();
 		}
 
 		Step(deltaTime);

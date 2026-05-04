@@ -1,11 +1,9 @@
 #include "Material.h"
 #include "RenderResources.h"
-#if !defined(DEATH_TARGET_IOS)
 #include "GL/GLShaderProgram.h"
 #include "GL/GLUniform.h"
 #include "GL/GLTexture.h"
 #include "GL/GLMapping.h"
-#endif
 #include "Texture.h"
 
 #include <cstddef> // for offsetof()
@@ -19,8 +17,7 @@ namespace nCine
 
 	Material::Material(BackendShaderProgram* program, BackendTexture* texture)
 		: isBlendingEnabled_(false), srcBlendingFactor_(BlendingFactor::SrcAlpha), destBlendingFactor_(BlendingFactor::OneMinusSrcAlpha),
-			shaderProgramType_(ShaderProgramType::Custom), shaderProgram_(program),
-			uniformsDataPointer_(nullptr), uniformsDataSize_(0), uniformsHostBufferSize_(0)
+			shaderProgramType_(ShaderProgramType::Custom), shaderProgram_(program), uniformsHostBufferSize_(0)
 	{
 		for (std::uint32_t i = 0; i < BackendTexture::MaxTextureUnits; i++) {
 			textures_[i] = nullptr;
@@ -91,9 +88,9 @@ namespace nCine
 			uniformsHostBuffer_ = std::make_unique<std::uint8_t[]>(uniformsSize);
 			uniformsHostBufferSize_ = uniformsSize;
 		}
-		uniformsDataPointer_ = uniformsHostBuffer_.get();
+		std::uint8_t* dataPointer = uniformsHostBuffer_.get();
+		uniformsDataPointer_ = dataPointer;
 		uniformsDataSize_ = uniformsSize;
-		std::uint8_t* dataPointer = uniformsDataPointer_;
 		shaderUniforms_.SetUniformsDataPointer(dataPointer);
 		shaderUniformBlocks_.SetUniformsDataPointer(&dataPointer[shaderProgram_->GetUniformsSize()]);
 	}
@@ -132,7 +129,7 @@ namespace nCine
 
 	bool Material::SetTexture(std::uint32_t unit, const Texture& texture)
 	{
-		return SetTexture(unit, texture.GetBackendTexture());
+		return SetTexture(unit, texture.glTexture_.get());
 	}
 
 	bool Material::SetTexture(std::uint32_t unit, std::nullptr_t)

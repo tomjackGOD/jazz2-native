@@ -8,14 +8,11 @@ namespace nCine::Backends
 {
 	static id<MTLDevice> _device = nil;
 	static id<MTLCommandQueue> _commandQueue = nil;
-	static id<MTLCommandBuffer> _currentCommandBuffer = nil;
-	static id<CAMetalDrawable> _currentDrawable = nil;
-	static id<MTLRenderCommandEncoder> _currentEncoder = nil;
 
 	char MetalGfxDevice::monitorName_[MaxMonitorNameLength];
 
 	MetalGfxDevice::MetalGfxDevice(const WindowMode& windowMode, const DisplayMode& displayMode)
-		: IGfxDevice(windowMode, GLContextInfo(), displayMode)
+		: IGfxDevice(windowMode, GLContextInfo(), displayMode), _drawable(nullptr), _commandBuffer(nullptr)
 	{
 		updateMonitors();
 		initDevice();
@@ -23,58 +20,91 @@ namespace nCine::Backends
 
 	MetalGfxDevice::~MetalGfxDevice()
 	{
+		clearTransientResources();
 		_commandQueue = nil;
 		_device = nil;
 	}
 
-	void MetalGfxDevice::update()
+	void MetalGfxDevice::clearTransientResources()
 	{
+		if (_commandBuffer != nullptr) {
+			id<MTLCommandBuffer> commandBuffer = (__bridge_transfer id<MTLCommandBuffer>)_commandBuffer;
+			_commandBuffer = nullptr;
+			commandBuffer = nil;
+		}
+		if (_drawable != nullptr) {
+			id<CAMetalDrawable> drawable = (__bridge_transfer id<CAMetalDrawable>)_drawable;
+			_drawable = nullptr;
+			drawable = nil;
+		}
+	}
+
+	void MetalGfxDevice::BeginFrame()
+	{
+		clearTransientResources();
 		Backends::MetalRenderState::resetTransientBuffers();
 
-		// Finalize the previous frame (if any)
-		if (_currentEncoder != nil) {
-			[_currentEncoder endEncoding];
-			_currentEncoder = nil;
-			MetalRenderState::setCurrentEncoder(nullptr);
-		}
-		if (_currentCommandBuffer != nil && _currentDrawable != nil) {
-			[_currentCommandBuffer presentDrawable:_currentDrawable];
-			[_currentCommandBuffer commit];
-			_currentCommandBuffer = nil;
-			_currentDrawable = nil;
-		}
-
-		// Begin encoding for the next frame so engine draws can use it between update() calls.
 		CAMetalLayer* metalLayer = (__bridge CAMetalLayer*)IosBridge::GetMetalLayer();
 		if (metalLayer == nil) {
 			return;
 		}
 
-		_currentDrawable = [metalLayer nextDrawable];
-		if (_currentDrawable == nil) {
+		id<CAMetalDrawable> drawable = [metalLayer nextDrawable];
+		if (drawable == nil) {
 			return;
 		}
+		_drawable = (__bridge_retained void*)drawable;
 
-		// Ensure we have a command queue before creating a command buffer
 		if (_commandQueue == nil) {
 			initDevice();
 		}
-		_currentCommandBuffer = (_commandQueue != nil) ? [_commandQueue commandBuffer] : nil;
-		if (_currentCommandBuffer == nil) {
-			_currentDrawable = nil;
+
+		id<MTLCommandBuffer> commandBuffer = (_commandQueue != nil) ? [_commandQueue commandBuffer] : nil;
+		if (commandBuffer == nil) {
+			clearTransientResources();
 			return;
 		}
+		_commandBuffer = (__bridge_retained void*)commandBuffer;
 
-		Colorf clear = MetalRenderState::clearColor();
 		MTLRenderPassDescriptor* renderPassDescriptor = [MTLRenderPassDescriptor renderPassDescriptor];
 		MTLRenderPassColorAttachmentDescriptor* colorAttachment = renderPassDescriptor.colorAttachments[0];
-		colorAttachment.texture = _currentDrawable.texture;
+		colorAttachment.texture = drawable.texture;
 		colorAttachment.loadAction = MTLLoadActionClear;
 		colorAttachment.storeAction = MTLStoreActionStore;
-		colorAttachment.clearColor = MTLClearColorMake(clear.R, clear.G, clear.B, clear.A);
+		
+		Colorf clearColor = Backends::MetalRenderState::clearColor();
+		colorAttachment.clearColor = MTLClearColorMake(clearColor.R(), clearColor.G(), clearColor.B(), clearColor.A());
+		
+		id<MTLRenderCommandEncoder> encoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
+		if (encoder == nil) {
+			clearTransientResources();
+			return;
+		}
+		Backends::MetalRenderState::setCurrentEncoder((__bridge void*)encoder);
+	}
 
-		_currentEncoder = [_currentCommandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
-		MetalRenderState::setCurrentEncoder((__bridge void*)_currentEncoder);
+	void MetalGfxDevice::update()
+	{
+		id<MTLRenderCommandEncoder> encoder = (__bridge id<MTLRenderCommandEncoder>)Backends::MetalRenderState::currentEncoder();
+		if (encoder != nil) {
+			[encoder endEncoding];
+			Backends::MetalRenderState::setCurrentEncoder(nullptr);
+		}
+
+		if (_commandBuffer != nullptr) {
+			id<MTLCommandBuffer> commandBuffer = (__bridge_transfer id<MTLCommandBuffer>)_commandBuffer;
+			_commandBuffer = nullptr;
+
+			if (_drawable != nullptr) {
+				id<CAMetalDrawable> drawable = (__bridge_transfer id<CAMetalDrawable>)_drawable;
+				_drawable = nullptr;
+				[commandBuffer presentDrawable:drawable];
+				drawable = nil;
+			}
+
+			[commandBuffer commit];
+			commandBuffer = nil;
+		}
 	}
 
 	const IGfxDevice::VideoMode& MetalGfxDevice::currentVideoMode(unsigned int monitorIndex) const

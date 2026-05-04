@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../Input/IInputManager.h"
+#include <Shared/Containers/String.h>
 #include <Shared/Threading/Spinlock.h>
 
 namespace nCine::Backends
@@ -81,6 +82,7 @@ namespace nCine::Backends
 		int joyNumAxes(int joyId) const override { return -1; }
 		const JoystickState& joystickState(int joyId) const override { return nullJoystickState_; }
 		bool joystickRumble(int joyId, float lowFreqIntensity, float highFreqIntensity, uint32_t durationMs) override { return false; }
+		bool joystickRumbleTriggers(int joyId, float left, float right, uint32_t durationMs) override { return false; }
 
 		const KeyboardState& keyboardState() const override { return keyboardState_; }
 		const MouseState& mouseState() const override { return mouseState_; }
@@ -89,6 +91,9 @@ namespace nCine::Backends
 
 		/// Handles a touch event
 		static void HandleTouch(int type, int x, int y, int pointerId, float pressure, float majorRadius);
+
+		/// Handles a key event
+		static void HandleKey(int keyCode, bool isDown);
 
 	private:
 		static const int MaxPointers = 10;
