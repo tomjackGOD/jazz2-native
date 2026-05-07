@@ -50,28 +50,6 @@ list(APPEND SOURCES
 	${NCINE_SOURCE_DIR}/nCine/Graphics/DrawableNode.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/Geometry.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/GfxCapabilities.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLAttribute.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLBlending.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLBufferObject.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLClearColor.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLCullFace.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLDebug.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLDepthTest.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLFramebuffer.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLRenderbuffer.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLScissorTest.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShader.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShaderProgram.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShaderUniformBlocks.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShaderUniforms.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLTexture.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniform.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniformBlock.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniformBlockCache.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniformCache.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLVertexArrayObject.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLVertexFormat.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLViewport.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/IGfxDevice.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/ITextureLoader.cpp
 	#${NCINE_SOURCE_DIR}/nCine/Graphics/ITextureSaver.cpp
@@ -84,7 +62,7 @@ list(APPEND SOURCES
 	${NCINE_SOURCE_DIR}/nCine/Graphics/RectAnimation.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderBatcher.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderBuffersManager.cpp
-	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderCommand.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderCommand.mm
 	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderCommandPool.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderQueue.cpp
 	${NCINE_SOURCE_DIR}/nCine/Graphics/RenderResources.cpp
@@ -110,6 +88,31 @@ list(APPEND SOURCES
 	${NCINE_SOURCE_DIR}/nCine/Primitives/Colorf.cpp
 	${NCINE_SOURCE_DIR}/nCine/Primitives/Half.cpp
 	${NCINE_SOURCE_DIR}/nCine/Threading/Thread.cpp
+)
+
+list(APPEND SOURCES
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLAttribute.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLBlending.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLBufferObject.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLClearColor.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLCullFace.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLDebug.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLDepthTest.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLFramebuffer.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLRenderbuffer.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLScissorTest.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShader.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShaderProgram.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShaderUniformBlocks.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLShaderUniforms.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLTexture.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniform.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniformBlock.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniformBlockCache.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLUniformCache.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLVertexArrayObject.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLVertexFormat.cpp
+	${NCINE_SOURCE_DIR}/nCine/Graphics/GL/GLViewport.cpp
 )
 
 list(APPEND SOURCES

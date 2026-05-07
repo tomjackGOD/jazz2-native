@@ -73,7 +73,7 @@ namespace nCine::Backends
 		colorAttachment.storeAction = MTLStoreActionStore;
 		
 		Colorf clearColor = Backends::MetalRenderState::clearColor();
-		colorAttachment.clearColor = MTLClearColorMake(clearColor.R(), clearColor.G(), clearColor.B(), clearColor.A());
+		colorAttachment.clearColor = MTLClearColorMake(clearColor.R, clearColor.G, clearColor.B, clearColor.A);
 		
 		id<MTLRenderCommandEncoder> encoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
 		if (encoder == nil) {

@@ -69,10 +69,17 @@ class TouchOverlayView: UIView {
     private func createButton(title: String, systemImage: String? = nil, key: Keys) -> UIButton {
         let button = UIButton(type: .custom)
         if let systemImage = systemImage {
-            let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold)
-            let image = UIImage(systemName: systemImage, withConfiguration: config)
-            button.setImage(image, for: .normal)
-            button.tintColor = .white
+            if #available(iOS 13.0, *) {
+                let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold)
+                let image = UIImage(systemName: systemImage, withConfiguration: config)
+                button.setImage(image, for: .normal)
+                button.tintColor = .white
+            } else {
+                // SF Symbols are iOS 13+. Fall back to a plain title on iOS 12.
+                button.setTitle(title, for: .normal)
+                button.setTitleColor(.white, for: .normal)
+                button.titleLabel?.font = .boldSystemFont(ofSize: 18)
+            }
         } else {
             button.setTitle(title, for: .normal)
             button.setTitleColor(.white, for: .normal)

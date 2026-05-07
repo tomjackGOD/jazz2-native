@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/download-libopenmptgit-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/verify-libopenmptgit-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/extract-libopenmptgit-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-download
+fi
+

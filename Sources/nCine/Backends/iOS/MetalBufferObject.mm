@@ -78,6 +78,22 @@ namespace nCine
 		// No need to call didModifyRange: unless we were using MTLResourceStorageModeManaged (macOS only).
 	}
 
+	void MetalBufferObject::BindBufferBase(std::uint32_t index)
+	{
+		// Metal has no global GL-style indexed buffer binding.
+		// Uniform buffers are bound directly on the render encoder.
+		(void)index;
+	}
+
+	void MetalBufferObject::BindBufferRange(std::uint32_t index, std::size_t offset, std::size_t ptrsize)
+	{
+		// Keep API parity with GLBufferObject so shared code compiles on iOS.
+		// Actual per-draw uniform binding is handled by the Metal backend command path.
+		(void)index;
+		(void)offset;
+		(void)ptrsize;
+	}
+
 	void* MetalBufferObject::MapBufferRange(std::size_t offset, std::size_t length, int access)
 	{
 		if (metalHandle_ == nullptr || offset + length > size_) {

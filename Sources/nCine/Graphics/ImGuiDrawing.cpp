@@ -461,8 +461,8 @@ namespace nCine
 					continue;
 
 				// Apply scissor/clipping rectangle (Y is inverted in OpenGL)
-				currCmd.SetScissor(static_cast<GLint>(clipMin.x), static_cast<GLint>(static_cast<float>(fbHeight) - clipMax.y),
-								   static_cast<GLsizei>(clipMax.x - clipMin.x), static_cast<GLsizei>(clipMax.y - clipMin.y));
+				currCmd.SetScissor(static_cast<std::int32_t>(clipMin.x), static_cast<std::int32_t>(static_cast<float>(fbHeight) - clipMax.y),
+								   static_cast<std::int32_t>(clipMax.x - clipMin.x), static_cast<std::int32_t>(clipMax.y - clipMin.y));
 
 				if (cmdIdx > 0) {
 					currCmd.GetGeometry().ShareVbo(&firstCmd.GetGeometry());

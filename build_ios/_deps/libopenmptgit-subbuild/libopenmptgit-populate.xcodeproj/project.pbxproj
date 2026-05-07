@@ -1,0 +1,634 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		8D607D43596A8E0A1922C122 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 71C074FB40AD4FAAADC1D98F /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				0A38B3064282455DE600E3C9 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				A02D3190ACF34CE4A5E10B52 /* PBXTargetDependency */,
+				0E93EA619B6B44E988D66C84 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		EA45158784CABF8BC8AB8C84 /* libopenmptgit-populate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 3D22A230EBED40919DE698C8 /* Build configuration list for PBXAggregateTarget "libopenmptgit-populate" */;
+			buildPhases = (
+				A0C5F4606CE4F109EDF1D81E /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-mkdir */,
+				99B33C994F9057E51D90773F /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-download */,
+				A8F588059143BDEB28B1768B /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-update */,
+				97F599244DBEDDCF3570D121 /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-patch */,
+				6EC71E570C993C8AE8AA5FFF /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-configure */,
+				B580EF86B0DCAFBDC6F98C3B /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-build */,
+				7178D425B822475508A18E63 /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-install */,
+				FA32315D8D989D1B65230D56 /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-test */,
+				8991B67F0B508A593181AB3F /* Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-complete */,
+				0569CD26D8880B9A9ED8DE05 /* Generate CMakeFiles/libopenmptgit-populate */,
+			);
+			dependencies = (
+				124970EFDBC340E99FA290AA /* PBXTargetDependency */,
+			);
+			name = "libopenmptgit-populate";
+			productName = "libopenmptgit-populate";
+		};
+		FB8B233AC62C368326156C30 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1329AD5CFD8744A99B3374E6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				51F2E1594E4CB29EF78F5DF5 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildStyle section */
+		45C0F9C9947140D7AFF215BB /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		605FFB58DBA548B8A362FFCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5388FB9BA6D4EC59D59BA46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8B233AC62C368326156C30;
+			remoteInfo = ZERO_CHECK;
+		};
+		C68ECB4D284B42F881F6FA73 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5388FB9BA6D4EC59D59BA46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA45158784CABF8BC8AB8C84;
+			remoteInfo = "libopenmptgit-populate";
+		};
+		DD27EE7CD89842389607417F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5388FB9BA6D4EC59D59BA46 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB8B233AC62C368326156C30;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF11AB90FFB241C2868BD488 /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D62C5C451A51406BACACB902 /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0E98A50184BB4170848C0BC6 = {
+			isa = PBXGroup;
+			children = (
+				4429CE748D06465BAEBF548F /* ALL_BUILD */,
+				F20664EB022C48069403C6A4 /* ExternalProjectTargets */,
+				FA80840AA1074427824AE15C /* Products */,
+				DB1FAFD318444400945C2433 /* Frameworks */,
+				566089F324444ADFA4230640 /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		3A0BB5BEF1A44C41B0E9A0E2 /* libopenmptgit-populate */ = {
+			isa = PBXGroup;
+			children = (
+				D3825B3F4CC345F1B6BD7BD3 /* CMake Rules */,
+				D62C5C451A51406BACACB902 /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeLists.txt */,
+			);
+			name = "libopenmptgit-populate";
+			sourceTree = "<group>";
+		};
+		4429CE748D06465BAEBF548F /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				6D3D7708F19C414A956247C5 /* CMake Rules */,
+				AF11AB90FFB241C2868BD488 /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		566089F324444ADFA4230640 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D3D7708F19C414A956247C5 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		D3825B3F4CC345F1B6BD7BD3 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		DB1FAFD318444400945C2433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3FF66C1256C4F7CA9C51417 /* libopenmptgit-populate */ = {
+			isa = PBXGroup;
+			children = (
+				3A0BB5BEF1A44C41B0E9A0E2 /* libopenmptgit-populate */,
+			);
+			name = "libopenmptgit-populate";
+			sourceTree = "<group>";
+		};
+		F20664EB022C48069403C6A4 /* ExternalProjectTargets */ = {
+			isa = PBXGroup;
+			children = (
+				E3FF66C1256C4F7CA9C51417 /* libopenmptgit-populate */,
+			);
+			name = ExternalProjectTargets;
+			sourceTree = "<group>";
+		};
+		FA80840AA1074427824AE15C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		A5388FB9BA6D4EC59D59BA46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1640;
+			};
+			buildConfigurationList = 710DC6E1AD604D4CBCBD2543 /* Build configuration list for PBXProject "libopenmptgit-populate" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				45C0F9C9947140D7AFF215BB /* Debug */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 0E98A50184BB4170848C0BC6;
+			projectDirPath = .;
+			projectRoot = "";
+			targets = (
+				8D607D43596A8E0A1922C122 /* ALL_BUILD */,
+				EA45158784CABF8BC8AB8C84 /* libopenmptgit-populate */,
+				FB8B233AC62C368326156C30 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0569CD26D8880B9A9ED8DE05 /* Generate CMakeFiles/libopenmptgit-populate */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-complete"			);
+			name = "Generate CMakeFiles/libopenmptgit-populate";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/libopenmptgit-populate"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		0A38B3064282455DE600E3C9 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		51F2E1594E4CB29EF78F5DF5 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  make -f /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		522B231A462739D77498A929 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		6EC71E570C993C8AE8AA5FFF /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-configure */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-patch","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/tmp/libopenmptgit-populate-cfgcmd.txt"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-configure";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-configure"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-configure
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		7178D425B822475508A18E63 /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-install */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-build"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-install";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-install"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-install
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		8991B67F0B508A593181AB3F /* Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-complete */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-build","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-configure","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-download","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-install","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-mkdir","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-patch","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-test","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-update"			);
+			name = "Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-complete";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-complete"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E make_directory /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-complete
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-done
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		97F599244DBEDDCF3570D121 /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-patch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-update","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/libopenmptgit-populate-patch-info.txt"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-patch";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-patch"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-patch
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		99B33C994F9057E51D90773F /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-download */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-mkdir","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/download-libopenmptgit-populate.cmake","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/libopenmptgit-populate-urlinfo.txt"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-download";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-download"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/download-libopenmptgit-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/verify-libopenmptgit-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/extract-libopenmptgit-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-download
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		A0C5F4606CE4F109EDF1D81E /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-mkdir */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-mkdir";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-mkdir"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -Dcfgdir=/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/tmp/libopenmptgit-populate-mkdirs.cmake
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-mkdir
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		A8F588059143BDEB28B1768B /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-update */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-download","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/libopenmptgit-populate-update-info.txt"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-update";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-update"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-update
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		B580EF86B0DCAFBDC6F98C3B /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-configure"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-build";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-build"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-build
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		FA32315D8D989D1B65230D56 /* Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-test */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-install"			);
+			name = "Generate libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-test";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/libopenmptgit-populate-test"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-test
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0E93EA619B6B44E988D66C84 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8B233AC62C368326156C30 /* ZERO_CHECK */;
+			targetProxy = DD27EE7CD89842389607417F /* PBXContainerItemProxy */;
+		};
+		124970EFDBC340E99FA290AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB8B233AC62C368326156C30 /* ZERO_CHECK */;
+			targetProxy = 605FFB58DBA548B8A362FFCA /* PBXContainerItemProxy */;
+		};
+		A02D3190ACF34CE4A5E10B52 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA45158784CABF8BC8AB8C84 /* libopenmptgit-populate */;
+			targetProxy = C68ECB4D284B42F881F6FA73 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		68DEAA67CC854D7090AEF859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		6AF5D3E64ED54EB3A221AFF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "";
+				SYMROOT = "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/build";
+			};
+			name = Debug;
+		};
+		9B545339CB0C42C7A0AEFAE5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		ECDF91D5AE4446CAA374BB97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "libopenmptgit-populate";
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1329AD5CFD8744A99B3374E6 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B545339CB0C42C7A0AEFAE5 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3D22A230EBED40919DE698C8 /* Build configuration list for PBXAggregateTarget "libopenmptgit-populate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECDF91D5AE4446CAA374BB97 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		710DC6E1AD604D4CBCBD2543 /* Build configuration list for PBXProject "libopenmptgit-populate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6AF5D3E64ED54EB3A221AFF5 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		71C074FB40AD4FAAADC1D98F /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68DEAA67CC854D7090AEF859 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A5388FB9BA6D4EC59D59BA46 /* Project object */;
+}

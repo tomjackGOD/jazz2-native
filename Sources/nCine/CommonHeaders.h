@@ -3,8 +3,14 @@
 #if defined(NCINE_INCLUDE_OPENGL)
 #	if defined(WITH_OPENGLES)
 #		define GL_GLEXT_PROTOTYPES
-#		include <GLES3/gl3.h>
-#		include <GLES2/gl2ext.h>
+#		if defined(DEATH_TARGET_IOS)
+#			include <OpenGLES/ES3/gl.h>
+#			include <OpenGLES/ES3/glext.h>
+#			include <OpenGLES/ES2/glext.h>
+#		else
+#			include <GLES3/gl3.h>
+#			include <GLES2/gl2ext.h>
+#		endif
 #	elif defined(WITH_GLEW)
 #		define GLEW_NO_GLU
 #		include <GL/glew.h>

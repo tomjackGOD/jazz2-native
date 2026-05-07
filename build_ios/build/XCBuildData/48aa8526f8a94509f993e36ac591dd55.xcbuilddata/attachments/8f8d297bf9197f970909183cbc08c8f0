@@ -1,0 +1,48 @@
+{
+  "" : {
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/jazz2-master.dia",
+    "emit-module-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/jazz2-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/jazz2-master-emit-module.dia",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/jazz2-master.swiftdeps"
+  },
+  "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/Sources/nCine/Backends/iOS/IosAppDelegate.swift" : {
+    "const-values" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.d",
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.dia",
+    "index-unit-output-path" : "/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.o",
+    "llvm-bc" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.bc",
+    "object" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.o",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosAppDelegate~partial.swiftmodule"
+  },
+  "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/Sources/nCine/Backends/iOS/IosBridge.swift" : {
+    "const-values" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.swiftconstvalues",
+    "dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.d",
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.dia",
+    "index-unit-output-path" : "/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.o",
+    "llvm-bc" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.bc",
+    "object" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.o",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1.swiftdeps",
+    "swiftmodule" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosBridge-b328e94f1c8259d3f51e70b6b3b31af1~partial.swiftmodule"
+  },
+  "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/Sources/nCine/Backends/iOS/IosTouchControls.swift" : {
+    "const-values" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.swiftconstvalues",
+    "dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.d",
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.dia",
+    "index-unit-output-path" : "/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.o",
+    "llvm-bc" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.bc",
+    "object" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.o",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls.swiftdeps",
+    "swiftmodule" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosTouchControls~partial.swiftmodule"
+  },
+  "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/Sources/nCine/Backends/iOS/IosViewController.swift" : {
+    "const-values" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.swiftconstvalues",
+    "dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.d",
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.dia",
+    "index-unit-output-path" : "/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.o",
+    "llvm-bc" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.bc",
+    "object" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.o",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController.swiftdeps",
+    "swiftmodule" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/build/jazz2.build/Debug-iphoneos/Objects-normal/arm64/IosViewController~partial.swiftmodule"
+  }
+}

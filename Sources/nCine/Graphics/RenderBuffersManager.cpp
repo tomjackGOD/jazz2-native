@@ -1,6 +1,8 @@
 #include "RenderBuffersManager.h"
 #include "RenderStatistics.h"
+#if !defined(DEATH_TARGET_IOS)
 #include "GL/GLDebug.h"
+#endif
 #include "../ServiceLocator.h"
 #include "IGfxCapabilities.h"
 #include "../../Main.h"
@@ -15,6 +17,35 @@ namespace nCine
 	{
 		buffers_.reserve(4);
 
+#if defined(DEATH_TARGET_IOS)
+		BufferSpecifications& vboSpecs = specs_[std::int32_t(BufferTypes::Array)];
+		vboSpecs.type = BufferTypes::Array;
+		vboSpecs.target = static_cast<std::uint32_t>(MetalBufferObject::Target::Array);
+		vboSpecs.mapFlags = 0;
+		vboSpecs.usageFlags = 0;
+		vboSpecs.maxSize = vboMaxSize;
+		vboSpecs.alignment = sizeof(float);
+
+		BufferSpecifications& iboSpecs = specs_[std::int32_t(BufferTypes::ElementArray)];
+		iboSpecs.type = BufferTypes::ElementArray;
+		iboSpecs.target = static_cast<std::uint32_t>(MetalBufferObject::Target::ElementArray);
+		iboSpecs.mapFlags = 0;
+		iboSpecs.usageFlags = 0;
+		iboSpecs.maxSize = iboMaxSize;
+		iboSpecs.alignment = sizeof(std::uint16_t);
+
+		const IGfxCapabilities& gfxCaps = theServiceLocator().GetGfxCapabilities();
+		const std::int32_t offsetAlignment = gfxCaps.GetValue(IGfxCapabilities::GLIntValues::UNIFORM_BUFFER_OFFSET_ALIGNMENT);
+		const std::int32_t uboMaxSize = gfxCaps.GetValue(IGfxCapabilities::GLIntValues::MAX_UNIFORM_BLOCK_SIZE_NORMALIZED);
+
+		BufferSpecifications& uboSpecs = specs_[std::int32_t(BufferTypes::Uniform)];
+		uboSpecs.type = BufferTypes::Uniform;
+		uboSpecs.target = static_cast<std::uint32_t>(MetalBufferObject::Target::Uniform);
+		uboSpecs.mapFlags = 0;
+		uboSpecs.usageFlags = 0;
+		uboSpecs.maxSize = std::uint32_t(uboMaxSize);
+		uboSpecs.alignment = std::uint32_t(offsetAlignment);
+#else
 		BufferSpecifications& vboSpecs = specs_[std::int32_t(BufferTypes::Array)];
 		vboSpecs.type = BufferTypes::Array;
 		vboSpecs.target = GL_ARRAY_BUFFER;
@@ -42,6 +73,7 @@ namespace nCine
 		uboSpecs.usageFlags = GL_STREAM_DRAW;
 		uboSpecs.maxSize = std::uint32_t(uboMaxSize);
 		uboSpecs.alignment = std::uint32_t(offsetAlignment);
+#endif
 
 		// Create the first buffer for each type right away
 		for (std::uint32_t i = 0; i < std::uint32_t(BufferTypes::Count); i++) {
@@ -105,16 +137,23 @@ namespace nCine
 	void RenderBuffersManager::FlushUnmap()
 	{
 		ZoneScopedC(0x81A861);
+#if !defined(DEATH_TARGET_IOS)
 		GLDebug::ScopedGroup scoped("RenderBuffersManager::flushUnmap()"_s);
+#endif
 
 		for (ManagedBuffer& buffer : buffers_) {
-#if defined(NCINE_PROFILING)
+#if defined(NCINE_PROFILING) && !defined(DEATH_TARGET_IOS)
 			RenderStatistics::GatherStatistics(buffer);
 #endif
 			const std::uint32_t usedSize = buffer.size - buffer.freeSpace;
 			FATAL_ASSERT(usedSize <= specs_[std::int32_t(buffer.type)].maxSize);
 			buffer.freeSpace = buffer.size;
 
+#if defined(DEATH_TARGET_IOS)
+			if (usedSize > 0) {
+				buffer.object->BufferSubData(0, usedSize, buffer.hostBuffer.get());
+			}
+#else
 			if (specs_[std::int32_t(buffer.type)].mapFlags == 0) {
 				if (usedSize > 0) {
 					buffer.object->BufferSubData(0, usedSize, buffer.hostBuffer.get());
@@ -125,6 +164,7 @@ namespace nCine
 				}
 				buffer.object->Unmap();
 			}
+#endif
 
 			buffer.mapBase = nullptr;
 		}
@@ -133,18 +173,25 @@ namespace nCine
 	void RenderBuffersManager::Remap()
 	{
 		ZoneScopedC(0x81A861);
+#if !defined(DEATH_TARGET_IOS)
 		GLDebug::ScopedGroup scoped("RenderBuffersManager::remap()"_s);
+#endif
 
 		for (ManagedBuffer& buffer : buffers_) {
 			DEATH_ASSERT(buffer.freeSpace == buffer.size);
 			DEATH_ASSERT(buffer.mapBase == nullptr);
 
+#if defined(DEATH_TARGET_IOS)
+			// For Metal, just set mapBase to host buffer, nothing to remap on GPU
+			buffer.mapBase = buffer.hostBuffer.get();
+#else
 			if (specs_[std::int32_t(buffer.type)].mapFlags == 0) {
 				buffer.object->BufferData(buffer.size, nullptr, specs_[std::int32_t(buffer.type)].usageFlags);
 				buffer.mapBase = buffer.hostBuffer.get();
 			} else {
-				buffer.mapBase = static_cast<GLubyte*>(buffer.object->MapBufferRange(0, buffer.size, specs_[std::int32_t(buffer.type)].mapFlags));
+				buffer.mapBase = static_cast<std::uint8_t*>(buffer.object->MapBufferRange(0, buffer.size, specs_[std::int32_t(buffer.type)].mapFlags));
 			}
+#endif
 			FATAL_ASSERT(buffer.mapBase != nullptr);
 		}
 	}
@@ -155,7 +202,11 @@ namespace nCine
 		ManagedBuffer& managedBuffer = buffers_.emplace_back();
 		managedBuffer.type = specs.type;
 		managedBuffer.size = specs.maxSize;
-		managedBuffer.object = std::make_unique<GLBufferObject>(specs.target);
+#if defined(DEATH_TARGET_IOS)
+		managedBuffer.object = std::make_unique<BackendBufferObject>(static_cast<BackendBufferObject::Target>(specs.target));
+#else
+		managedBuffer.object = std::make_unique<BackendBufferObject>(specs.target);
+#endif
 		managedBuffer.object->BufferData(managedBuffer.size, nullptr, specs.usageFlags);
 		managedBuffer.freeSpace = managedBuffer.size;
 
@@ -172,14 +223,16 @@ namespace nCine
 				break;
 		}
 
-		if (specs.mapFlags == 0) {
-			managedBuffer.hostBuffer = std::make_unique<GLubyte[]>(specs.maxSize);
-			managedBuffer.mapBase = managedBuffer.hostBuffer.get();
-		} else {
-			managedBuffer.mapBase = static_cast<GLubyte*>(managedBuffer.object->MapBufferRange(0, managedBuffer.size, specs.mapFlags));
-		}
+		// For Metal, always use host buffer (mapFlags = 0)
+		managedBuffer.hostBuffer = std::make_unique<std::uint8_t[]>(specs.maxSize);
+		managedBuffer.mapBase = managedBuffer.hostBuffer.get();
 
 		FATAL_ASSERT(managedBuffer.mapBase != nullptr);
+
+#if !defined(DEATH_TARGET_IOS)
+		if (specs.mapFlags != 0) {
+			managedBuffer.mapBase = static_cast<std::uint8_t*>(managedBuffer.object->MapBufferRange(0, managedBuffer.size, specs.mapFlags));
+		}
 
 #if defined(DEATH_DEBUG)
 		if (GLDebug::IsAvailable()) {
@@ -187,6 +240,7 @@ namespace nCine
 			std::size_t length = formatInto(debugString, "Create {} buffer 0x{:x}", bufferTypeToString(specs.type), std::uintptr_t(buffers_.back().object.get()));
 			GLDebug::MessageInsert({ debugString, length });
 		}
+#endif
 #endif
 	}
 }

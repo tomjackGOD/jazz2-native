@@ -44,7 +44,8 @@
 #	endif
 #	if defined(DEATH_TARGET_APPLE)
 #		include <copyfile.h>
-#		include <objc/objc-runtime.h>
+#		include <objc/runtime.h>
+#		include <objc/message.h>
 #		include <mach-o/dyld.h>
 #	elif defined(DEATH_TARGET_EMSCRIPTEN)
 #		include <emscripten/emscripten.h>
@@ -61,6 +62,7 @@ using namespace Death::Containers::Literals;
 
 namespace Death { namespace IO {
 //###==##====#=====--==~--~=~- --- -- -  -  -   -
+
 
 #if defined(DEATH_TARGET_WINDOWS)
 	const char* __GetWin32ErrorSuffix(DWORD error);

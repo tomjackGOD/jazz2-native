@@ -63,8 +63,9 @@ namespace nCine
 		}
 
 		glDeleteProgram(glHandle_);
-
+#if !defined(DEATH_TARGET_IOS)
 		RenderResources::RemoveCameraUniformData(this);
+#endif
 	}
 
 	bool GLShaderProgram::IsLinked() const
@@ -223,9 +224,10 @@ namespace nCine
 
 			attachedShaders_.clear();
 			glDeleteProgram(glHandle_);
-
+#if !defined(DEATH_TARGET_IOS)
 			RenderResources::RemoveCameraUniformData(this);
 			RenderResources::UnregisterBatchedShader(this);
+#endif
 
 			glHandle_ = glCreateProgram();
 		}

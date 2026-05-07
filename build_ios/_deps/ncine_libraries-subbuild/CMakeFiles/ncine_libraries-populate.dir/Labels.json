@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/ncine_libraries-populate"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/ncine_libraries-populate.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/CMakeFiles/ncine_libraries-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-build.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-download.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-install.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-test.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/CMakeFiles/ncine_libraries-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"ncine_libraries-populate"
+		],
+		"name" : "ncine_libraries-populate"
+	}
+}

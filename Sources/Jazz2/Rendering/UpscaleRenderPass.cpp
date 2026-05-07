@@ -1,10 +1,14 @@
-﻿#include "UpscaleRenderPass.h"
+#include "UpscaleRenderPass.h"
 #include "../ContentResolver.h"
 #include "../PreferencesCache.h"
 
 #include "../../nCine/Application.h"
 #include "../../nCine/Graphics/RenderQueue.h"
 #include "../../nCine/Graphics/Viewport.h"
+
+#if defined(DEATH_TARGET_IOS)
+#	include <OpenGLES/ES3/gl.h>
+#endif
 
 namespace Jazz2::Rendering
 {
@@ -81,7 +85,7 @@ namespace Jazz2::Rendering
 
 			if (_antialiasing._renderCommand.GetMaterial().SetShader(ContentResolver::Get().GetShader(PrecompiledShader::Antialiasing))) {
 				_antialiasing._renderCommand.GetMaterial().ReserveUniformsDataMemory();
-				_antialiasing._renderCommand.GetGeometry().SetDrawParameters(GL_TRIANGLE_STRIP, 0, 4);
+				_antialiasing._renderCommand.GetGeometry().SetDrawParameters(PrimitiveType::TriangleStrip, 0, 4);
 				// Required to reset render command properly
 				_antialiasing._renderCommand.SetTransformation(_antialiasing._renderCommand.GetTransformation());
 
@@ -121,7 +125,7 @@ namespace Jazz2::Rendering
 #endif
 		if (shaderChanged) {
 			_renderCommand.GetMaterial().ReserveUniformsDataMemory();
-			_renderCommand.GetGeometry().SetDrawParameters(GL_TRIANGLE_STRIP, 0, 4);
+			_renderCommand.GetGeometry().SetDrawParameters(PrimitiveType::TriangleStrip, 0, 4);
 			// Required to reset render command properly
 			_renderCommand.SetTransformation(_renderCommand.GetTransformation());
 

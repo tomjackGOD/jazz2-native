@@ -1,4 +1,4 @@
-﻿#include "Font.h"
+#include "Font.h"
 
 #include "../ContentResolver.h"
 
@@ -552,7 +552,7 @@ namespace Jazz2::UI
 						}
 					}
 
-					command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+					command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 					auto* instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 					instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatVector(texCoords.Data());

@@ -1,0 +1,18 @@
+{
+  "" : {
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/CompilerIdSwift-master.dia",
+    "emit-module-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/CompilerIdSwift-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/CompilerIdSwift-master-emit-module.dia",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/CompilerIdSwift-master.swiftdeps"
+  },
+  "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerId/main.swift" : {
+    "const-values" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.swiftconstvalues",
+    "dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.d",
+    "diagnostics" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.dia",
+    "index-unit-output-path" : "/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.o",
+    "llvm-bc" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.bc",
+    "object" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.o",
+    "swift-dependencies" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main.swiftdeps",
+    "swiftmodule" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/4.3.2/CompilerIdSwift/CompilerIdSwift.build/Debug-iphoneos/CompilerIdSwift.build/Objects-normal/arm64/main~partial.swiftmodule"
+  }
+}

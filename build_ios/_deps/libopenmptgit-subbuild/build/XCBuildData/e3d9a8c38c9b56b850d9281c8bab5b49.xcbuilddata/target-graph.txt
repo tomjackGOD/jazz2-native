@@ -1,0 +1,7 @@
+Target dependency graph (3 targets)
+Target 'ALL_BUILD' in project 'libopenmptgit-populate'
+➜ Explicit dependency on target 'libopenmptgit-populate' in project 'libopenmptgit-populate'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'libopenmptgit-populate'
+Target 'libopenmptgit-populate' in project 'libopenmptgit-populate'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'libopenmptgit-populate'
+Target 'ZERO_CHECK' in project 'libopenmptgit-populate' (no dependencies)

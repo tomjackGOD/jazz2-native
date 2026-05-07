@@ -429,11 +429,11 @@ function(ncine_apply_compiler_options target)
 		endif()
 	else() # GCC and LLVM
 		if(ARGS_ALLOW_EXCEPTIONS)
-			target_compile_options(${target} PRIVATE "-fexceptions")
+			target_compile_options(${target} PRIVATE $<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-fexceptions>)
 		else()
-			target_compile_options(${target} PRIVATE "-fno-exceptions")
+			target_compile_options(${target} PRIVATE $<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-fno-exceptions>)
 		endif()
-		target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-ffast-math>)
+		target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-ffast-math>)
 
 		#if(NCINE_DYNAMIC_LIBRARY)
 		#	target_compile_options(${target} PRIVATE "-fvisibility=hidden" "-fvisibility-inlines-hidden")
@@ -452,11 +452,11 @@ function(ncine_apply_compiler_options target)
 	
 		# Preserve debug information
 		if(DEATH_DEBUG_SYMBOLS)
-			target_compile_options(${target} PRIVATE "-g")
+			target_compile_options(${target} PRIVATE $<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-g>)
 			target_link_options(${target} PRIVATE "-g")
 		elseif(EMSCRIPTEN)
 			# It's probably added automatically on other platforms
-			target_compile_options(${target} PRIVATE $<$<CONFIG:Debug>:-g>)
+			target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-g>)
 			target_link_options(${target} PRIVATE $<$<CONFIG:Debug>:-g>)
 		endif()
 
@@ -509,33 +509,44 @@ function(ncine_apply_compiler_options target)
 		endif()
 
 		if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-			target_compile_options(${target} PRIVATE "-fdiagnostics-color=auto")
-			target_compile_options(${target} PRIVATE "-Wall" "-Wno-old-style-cast" "-Wno-long-long" "-Wno-unused-parameter" "-Wno-ignored-qualifiers"
-				"-Wno-variadic-macros" "-Wcast-align" "-Wno-multichar" "-Wno-switch" "-Wno-unknown-pragmas" "-Wno-reorder" "-Wno-sign-compare")
+			target_compile_options(${target} PRIVATE $<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-fdiagnostics-color=auto>)
+			target_compile_options(${target} PRIVATE
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wall>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-old-style-cast>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-long-long>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-unused-parameter>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-ignored-qualifiers>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-variadic-macros>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wcast-align>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-multichar>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-switch>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-unknown-pragmas>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-reorder>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-sign-compare>)
 
 			target_link_options(${target} PRIVATE "-Wno-free-nonheap-object")
 			#if(NCINE_DYNAMIC_LIBRARY)
 			#	target_link_options(${target} PRIVATE -Wl,--no-undefined)
 			#endif()
 
-			target_compile_options(${target} PRIVATE $<$<CONFIG:Debug>:-fvar-tracking-assignments>)
+			target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-fvar-tracking-assignments>)
 
 			# Extra optimizations in Release
 			if(NINTENDO_SWITCH)
 				# -Ofast is crashing on Nintendo Switch for some reason, use -O2 instead
-				target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-O2>)
+				target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-O2>)
 			else()
-				target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-Ofast>)
+				target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-Ofast>)
 			endif()
-			target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-funsafe-loop-optimizations -ftree-loop-if-convert-stores>)
+			target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-funsafe-loop-optimizations> $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-ftree-loop-if-convert-stores>)
 
 			if(NCINE_LINKTIME_OPTIMIZATION AND NOT (MINGW OR MSYS OR ANDROID))
-				target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-flto=auto>)
+				target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-flto=auto>)
 				target_link_options(${target} PRIVATE $<$<CONFIG:Release>:-flto=auto>)
 			endif()
 
 			if(NCINE_AUTOVECTORIZATION_REPORT)
-				target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-fopt-info-vec-optimized>)
+				target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-fopt-info-vec-optimized>)
 			endif()
 
 			# Enabling strong stack protector of GCC 4.9
@@ -545,10 +556,20 @@ function(ncine_apply_compiler_options target)
 				target_link_options(${target} PUBLIC $<$<CONFIG:Release>:-Wl,-z,relro -Wl,-z,now -pie>)
 			endif()
 		elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
-			target_compile_options(${target} PRIVATE "-fcolor-diagnostics")
-			target_compile_options(${target} PRIVATE "-Wall" "-Wno-old-style-cast" "-Wno-gnu-zero-variadic-macro-arguments" "-Wno-unused-parameter"
-				"-Wno-variadic-macros" "-Wno-c++11-long-long" "-Wno-missing-braces" "-Wno-multichar" "-Wno-switch" "-Wno-unknown-pragmas"
-				"-Wno-reorder-ctor" "-Wno-braced-scalar-init")
+			target_compile_options(${target} PRIVATE $<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-fcolor-diagnostics>)
+			target_compile_options(${target} PRIVATE
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wall>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-old-style-cast>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-gnu-zero-variadic-macro-arguments>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-unused-parameter>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-variadic-macros>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-c++11-long-long>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-missing-braces>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-multichar>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-switch>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-unknown-pragmas>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-reorder-ctor>
+				$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-Wno-braced-scalar-init>)
 
 			#if(NCINE_DYNAMIC_LIBRARY)
 			#	target_link_options(${target} PRIVATE -Wl,-undefined,error)
@@ -556,22 +577,24 @@ function(ncine_apply_compiler_options target)
 
 			if(NOT EMSCRIPTEN)
 				# Extra optimizations in Release
-				target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-Ofast>)
+				target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-Ofast>)
 			endif()
 
 			# Enable ThinLTO of Clang 4
 			if(NCINE_LINKTIME_OPTIMIZATION)
 				if(EMSCRIPTEN)
-					target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-flto>)
+					target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-flto>)
 					target_link_options(${target} PRIVATE $<$<CONFIG:Release>:-flto>)
 				elseif(NOT (MINGW OR MSYS OR ANDROID))
-					target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-flto=thin>)
+					target_compile_options(${target} PRIVATE $<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-flto=thin>)
 					target_link_options(${target} PRIVATE $<$<CONFIG:Release>:-flto=thin>)
 				endif()
 			endif()
 
 			if(NCINE_AUTOVECTORIZATION_REPORT)
-				target_compile_options(${target} PRIVATE $<$<CONFIG:Release>:-Rpass=loop-vectorize -Rpass-analysis=loop-vectorize>)
+				target_compile_options(${target} PRIVATE
+					$<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-Rpass=loop-vectorize>
+					$<$<AND:$<CONFIG:Release>,$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>>:-Rpass-analysis=loop-vectorize>)
 			endif()
 		endif()
 	endif()

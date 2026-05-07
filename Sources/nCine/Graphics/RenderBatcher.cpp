@@ -158,7 +158,12 @@ namespace nCine
 		// Determine how much memory is needed by uniform blocks that are not for instances
 		std::uint32_t nonInstancesBlocksSize = 0;
 		const BackendShaderUniformBlocks::UniformHashMapType allUniformBlocks = refCommand->GetMaterial().GetAllUniformBlocks();
-		for (const BackendUniformBlockCache& uniformBlockCache : allUniformBlocks) {
+		for (const auto& item : allUniformBlocks) {
+#if defined(DEATH_TARGET_IOS)
+			const BackendUniformBlockCache& uniformBlockCache = item.second;
+#else
+			const BackendUniformBlockCache& uniformBlockCache = item;
+#endif
 			const char* uniformBlockName = uniformBlockCache.uniformBlock()->GetName();
 			if (strcmp(uniformBlockName, Material::InstanceBlockName) == 0) {
 				continue;
@@ -193,7 +198,12 @@ namespace nCine
 
 		batchCommand->GetMaterial().SetUniformsDataPointer(AcquireMemory(nonBlockUniformsSize + nonInstancesBlocksSize + instancesBlockSize));
 		// Copying data for non-instances uniform blocks from the first command in the batch
-		for (const BackendUniformBlockCache& uniformBlockCache : allUniformBlocks) {
+		for (const auto& item : allUniformBlocks) {
+#if defined(DEATH_TARGET_IOS)
+			const BackendUniformBlockCache& uniformBlockCache = item.second;
+#else
+			const BackendUniformBlockCache& uniformBlockCache = item;
+#endif
 			const char* uniformBlockName = uniformBlockCache.uniformBlock()->GetName();
 			if (strcmp(uniformBlockName, Material::InstanceBlockName) == 0) {
 				continue;

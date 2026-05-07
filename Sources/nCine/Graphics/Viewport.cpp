@@ -102,6 +102,7 @@ namespace nCine
 			return false;
 		}
 
+#if !defined(DEATH_TARGET_IOS)
 		if (type_ != Type::NoTexture) {
 			static const std::int32_t MaxColorAttachments = theServiceLocator().GetGfxCapabilities().GetValue(IGfxCapabilities::GLIntValues::MAX_COLOR_ATTACHMENTS);
 			const bool indexOutOfRange = (index >= std::uint32_t(MaxColorAttachments) || index >= MaxNumTextures);
@@ -155,11 +156,18 @@ namespace nCine
 		}
 
 		return result;
+#else
+		// Metal backend doesn't support GL FBOs used by `Viewport`.
+		(void)index;
+		(void)texture;
+		return false;
+#endif
 	}
 
 	/*! \note It can remove the depth and stencil render buffer of the viewport's FBO by specifying `DepthStencilFormat::NONE` */
 	bool Viewport::SetDepthStencilFormat(DepthStencilFormat depthStencilFormat)
 	{
+#if !defined(DEATH_TARGET_IOS)
 		if (depthStencilFormat_ == depthStencilFormat || type_ == Type::NoTexture)
 			return false;
 
@@ -190,6 +198,10 @@ namespace nCine
 		}
 
 		return result;
+#else
+		(void)depthStencilFormat;
+		return false;
+#endif
 	}
 
 	bool Viewport::RemoveAllTextures()
@@ -198,6 +210,7 @@ namespace nCine
 			return false;
 		}
 
+#if !defined(DEATH_TARGET_IOS)
 		if (fbo_ != nullptr) {
 			for (std::uint32_t i = 0; i < MaxNumTextures; i++) {
 				if (textures_[i] != nullptr) {
@@ -217,6 +230,9 @@ namespace nCine
 		width_ = 0;
 		height_ = 0;
 		return true;
+#else
+		return false;
+#endif
 	}
 
 	Texture* Viewport::GetTexture(std::uint32_t index)

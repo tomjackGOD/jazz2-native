@@ -57,18 +57,38 @@ namespace nCine
 			// Parsing the pixel format
 			switch (pixelFormat) {
 				case FMT_DXT1:
+#if defined(GL_COMPRESSED_RGB_S3TC_DXT1_EXT)
 					internalFormat = GL_COMPRESSED_RGB_S3TC_DXT1_EXT;
+#else
+					LOGF("No support for DXT1 compression");
+					return false;
+#endif
 					break;
 				case FMT_DXT3:
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT)
 					internalFormat = GL_COMPRESSED_RGBA_S3TC_DXT3_EXT;
+#else
+					LOGF("No support for DXT3 compression");
+					return false;
+#endif
 					break;
 				case FMT_DXT5:
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)
 					internalFormat = GL_COMPRESSED_RGBA_S3TC_DXT5_EXT;
+#else
+					LOGF("No support for DXT5 compression");
+					return false;
+#endif
 					break;
 #if defined(WITH_OPENGLES)
 				case FMT_ETC1:
+#if defined(GL_ETC1_RGB8_OES)
 					internalFormat = GL_ETC1_RGB8_OES;
 					break;
+#else
+					LOGF("No support for ETC1 compression");
+					return false;
+#endif
 				case FMT_PVRTC_2BPP_RGB:
 					internalFormat = GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG;
 					break;

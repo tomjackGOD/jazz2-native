@@ -22,15 +22,15 @@ namespace nCine
 		// Adds a new command to the used pool and returns its pointer
 		/*! \note It is usually called after checking that the retrieve method fails */
 		RenderCommand* Add();
-		/// Adds a new command with the specified OpenGL shader program to the used pool and returns its pointer
+		/// Adds a new command with the specified shader program to the used pool and returns its pointer
 		/*! \note It is usually called after checking that the retrieve method fails */
-		RenderCommand* Add(GLShaderProgram* shaderProgram);
+		RenderCommand* Add(BackendShaderProgram* shaderProgram);
 
-		/// Retrieves a command with the specified OpenGL shader program
-		RenderCommand* Retrieve(GLShaderProgram* shaderProgram);
+		/// Retrieves a command with the specified shader program
+		RenderCommand* Retrieve(BackendShaderProgram* shaderProgram);
 
-		/// Retrieves (or adds) a command with the specified OpenGL shader program
-		RenderCommand* RetrieveOrAdd(GLShaderProgram* shaderProgram, bool& commandAdded);
+		/// Retrieves (or adds) a command with the specified shader program
+		RenderCommand* RetrieveOrAdd(BackendShaderProgram* shaderProgram, bool& commandAdded);
 
 		/// Releases all used commands and returnsi them in the free array
 		void Reset();

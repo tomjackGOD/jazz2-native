@@ -130,7 +130,7 @@ namespace nCine
 
 		CheckGLExtensions(ExtensionNames, glExtensions_, (std::int32_t)GLExtensions::Count);
 
-#if defined(WITH_OPENGLES) && !defined(DEATH_TARGET_EMSCRIPTEN) && !defined(DEATH_TARGET_SWITCH) && !defined(DEATH_TARGET_UNIX)
+#if defined(WITH_OPENGLES) && !defined(DEATH_TARGET_EMSCRIPTEN) && !defined(DEATH_TARGET_SWITCH) && !defined(DEATH_TARGET_UNIX) && defined(GL_NUM_PROGRAM_BINARY_FORMATS_OES) && defined(GL_PROGRAM_BINARY_FORMATS_OES)
 		if (HasExtension(GLExtensions::OES_GET_PROGRAM_BINARY)) {
 			glGetIntegerv(GL_NUM_PROGRAM_BINARY_FORMATS_OES, &glIntValues_[(std::int32_t)GLIntValues::NUM_PROGRAM_BINARY_FORMATS]);
 			DEATH_ASSERT(glIntValues_[(std::int32_t)GLIntValues::NUM_PROGRAM_BINARY_FORMATS] <= MaxProgramBinaryFormats);

@@ -88,7 +88,7 @@ Alternatively, you can install it using <sub><sub>[![Homebrew](https://img.shiel
 * Copy contents of original *Jazz Jackrabbit 2* directory to `Documents/Source/` using **Files** app or iTunes
 * Run the newly installed application
 
-*The game requires **iOS 12.0** (or newer) and GPU with **Metal** support. Cache is recreated during the intro cinematics on the first startup. Also, the sound effects in the intro cinematics require the cache, so they will be missing the first time the game is started up.*
+*The game requires **iOS 13.0** (or newer) and GPU with **Metal** support. Cache is recreated during the intro cinematics on the first startup. Also, the sound effects in the intro cinematics require the cache, so they will be missing the first time the game is started up.*
 
 ### Nintendo Switch
 * Download the game
@@ -150,13 +150,31 @@ This section contains only a brief explanation of the build process. For a more 
 * Building for iOS requires **macOS** with **Xcode** installed
 * Build dependencies will be downloaded automatically by *CMake*
   * Can be disabled with `NCINE_DOWNLOAD_DEPENDENCIES` option
-* Generate the Xcode project with *CMake*:
+* Generate the Xcode project for a physical iOS device:
 ```bash
-cmake -G Xcode -S . -B build_ios -DCMAKE_SYSTEM_NAME=iOS -DNCINE_BUILD_IOS=ON
+cmake -G Xcode -S . -B build_ios \
+  -DCMAKE_SYSTEM_NAME=iOS \
+  -DCMAKE_OSX_SYSROOT=iphoneos \
+  -DCMAKE_OSX_ARCHITECTURES=arm64 \
+  -DNCINE_BUILD_IOS=ON
 ```
-* Open the generated `build_ios/Jazz2.xcodeproj` in Xcode
-* Select your development team for code signing in the project settings
-* Build and run the project on a device or simulator
+* Generate an iOS Simulator project (no signing required to run in Simulator):
+```bash
+cmake -G Xcode -S . -B build_ios_sim \
+  -DCMAKE_SYSTEM_NAME=iOS \
+  -DCMAKE_OSX_SYSROOT=iphonesimulator \
+  -DCMAKE_OSX_ARCHITECTURES=arm64 \
+  -DNCINE_BUILD_IOS=ON
+```
+* Optional: enable Metal shader generation with `-DNCINE_IOS_GENERATE_METAL_SHADERS=ON`
+  * Requires `glslangValidator` and `spirv-cross` (for example: `brew install glslang spirv-cross`)
+* Build from terminal or open in Xcode:
+```bash
+cmake --build build_ios --config Release
+cmake --build build_ios_sim --config Release
+```
+* Open `build_ios/Jazz2.xcodeproj` (or `build_ios_sim/Jazz2.xcodeproj`) in Xcode to run/debug
+* For device deployment, select your development team and enable signing in Xcode project settings
 
 ### Nintendo Switch
 * Install [devkitPro toolchain](https://devkitpro.org/wiki/devkitPro_pacman)

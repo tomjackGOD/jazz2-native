@@ -158,14 +158,14 @@ namespace nCine
 	{
 #if defined(WITH_EMBEDDED_SHADERS)
 		switch (vertex) {
-			case Shader::DefaultVertex::SPRITE: return ShaderStrings::sprite_vs_metal + 1;
-			case Shader::DefaultVertex::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_vs_metal + 1;
-			case Shader::DefaultVertex::MESHSPRITE: return ShaderStrings::meshsprite_vs_metal + 1;
-			case Shader::DefaultVertex::MESHSPRITE_NOTEXTURE: return ShaderStrings::meshsprite_notexture_vs_metal + 1;
-			case Shader::DefaultVertex::BATCHED_SPRITES: return ShaderStrings::batched_sprites_vs_metal + 1;
-			case Shader::DefaultVertex::BATCHED_SPRITES_NOTEXTURE: return ShaderStrings::batched_sprites_notexture_vs_metal + 1;
-			case Shader::DefaultVertex::BATCHED_MESHSPRITES: return ShaderStrings::batched_meshsprites_vs_metal + 1;
-			case Shader::DefaultVertex::BATCHED_MESHSPRITES_NOTEXTURE: return ShaderStrings::batched_meshsprites_notexture_vs_metal + 1;
+			case Shader::DefaultVertex::SPRITE: return ShaderStrings::sprite_vs + 1;
+			case Shader::DefaultVertex::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_vs + 1;
+			case Shader::DefaultVertex::MESHSPRITE: return ShaderStrings::meshsprite_vs + 1;
+			case Shader::DefaultVertex::MESHSPRITE_NOTEXTURE: return ShaderStrings::meshsprite_notexture_vs + 1;
+			case Shader::DefaultVertex::BATCHED_SPRITES: return ShaderStrings::batched_sprites_vs + 1;
+			case Shader::DefaultVertex::BATCHED_SPRITES_NOTEXTURE: return ShaderStrings::batched_sprites_notexture_vs + 1;
+			case Shader::DefaultVertex::BATCHED_MESHSPRITES: return ShaderStrings::batched_meshsprites_vs + 1;
+			case Shader::DefaultVertex::BATCHED_MESHSPRITES_NOTEXTURE: return ShaderStrings::batched_meshsprites_notexture_vs + 1;
 			default: return nullptr;
 		}
 #else
@@ -177,8 +177,8 @@ namespace nCine
 	{
 #if defined(WITH_EMBEDDED_SHADERS)
 		switch (fragment) {
-			case Shader::DefaultFragment::SPRITE: return ShaderStrings::sprite_fs_metal + 1;
-			case Shader::DefaultFragment::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_fs_metal + 1;
+			case Shader::DefaultFragment::SPRITE: return ShaderStrings::sprite_fs + 1;
+			case Shader::DefaultFragment::SPRITE_NOTEXTURE: return ShaderStrings::sprite_notexture_fs + 1;
 			default: return nullptr;
 		}
 #else
@@ -232,8 +232,8 @@ namespace nCine
 	
 		const AppConfiguration& appCfg = theApplication().GetAppConfiguration();
 		binaryShaderCache_ = std::make_unique<BinaryShaderCache>(appCfg.shaderCachePath);
-#if !defined(DEATH_TARGET_IOS)
 		buffersManager_ = std::make_unique<RenderBuffersManager>(appCfg.useBufferMapping, appCfg.vboSize, appCfg.iboSize);
+#if !defined(DEATH_TARGET_IOS)
 		vaoPool_ = std::make_unique<RenderVaoPool>(appCfg.vaoPoolSize);
 #endif
 	}

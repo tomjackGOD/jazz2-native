@@ -1,9 +1,5 @@
 #include "MetalGfxCapabilities.h"
 
-#if defined(DEATH_TARGET_IOS)
-#import <Metal/Metal.h>
-#endif
-
 namespace nCine::Backends
 {
 	const char MetalGfxCapabilities::VendorString_[16] = "Apple";
@@ -31,16 +27,6 @@ namespace nCine::Backends
 		intValues_[static_cast<std::int32_t>(GLIntValues::MAX_COLOR_ATTACHMENTS)] = 1;
 		intValues_[static_cast<std::int32_t>(GLIntValues::NUM_PROGRAM_BINARY_FORMATS)] = -1;
 
-#if defined(DEATH_TARGET_IOS)
-		// Use real device values when possible.
-		id<MTLDevice> device = MTLCreateSystemDefaultDevice();
-		if (device != nil) {
-			// best-effort: max texture size
-			intValues_[static_cast<std::int32_t>(GLIntValues::MAX_TEXTURE_SIZE)] =
-				static_cast<std::int32_t>(device.maxTextureDimension2D);
-		}
-#endif
-
 		glInfoStrings_.vendor = VendorString_;
 		glInfoStrings_.renderer = RendererString_;
 		glInfoStrings_.glVersion = GlVersionString_;
@@ -53,7 +39,7 @@ namespace nCine::Backends
 		return 0;
 	}
 
-	const GLInfoStrings& MetalGfxCapabilities::GetGLInfoStrings() const
+	const IGfxCapabilities::GLInfoStrings& MetalGfxCapabilities::GetGLInfoStrings() const
 	{
 		return glInfoStrings_;
 	}

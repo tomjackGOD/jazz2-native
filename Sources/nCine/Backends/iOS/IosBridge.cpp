@@ -2,6 +2,8 @@
 #include "IosApplication.h"
 #include <nCine/IAppEventHandler.h>
 
+std::unique_ptr<nCine::IAppEventHandler> CreateAppEventHandler();
+
 extern "C" {
     const char* ios_bridge_get_preferred_language();
     bool ios_bridge_is_screen_round();
@@ -16,8 +18,6 @@ extern "C" {
 	void ios_bridge_set_metal_layer(void* layer) {
 		nCine::Backends::IosBridge::SetMetalLayer(layer);
 	}
-
-	std::unique_ptr<nCine::IAppEventHandler> CreateAppEventHandler();
 
 	void ios_bridge_run() {
 		nCine::IosApplication::Run(CreateAppEventHandler);
@@ -48,10 +48,10 @@ namespace nCine::Backends
     {
     }
 
-    String IosBridge::GetPreferredLanguage()
+    Death::Containers::String IosBridge::GetPreferredLanguage()
     {
         const char* lang = ios_bridge_get_preferred_language();
-        return (lang != nullptr ? String(lang) : String());
+        return (lang != nullptr ? Death::Containers::String(lang) : Death::Containers::String());
     }
 
     bool IosBridge::IsScreenRound()
@@ -69,11 +69,11 @@ namespace nCine::Backends
         ios_bridge_request_external_storage_permission();
     }
 
-    bool IosBridge::OpenUrl(StringView url)
+    bool IosBridge::OpenUrl(Death::Containers::StringView url)
     {
         // `StringView::data()` is not guaranteed to be null-terminated.
         // Convert to a null-terminated `String` before passing to Swift.
-        String nullTerminatedUrl = String::nullTerminatedView(url);
+        Death::Containers::String nullTerminatedUrl = Death::Containers::String::nullTerminatedView(url);
         return ios_bridge_open_url(nullTerminatedUrl.data());
     }
 

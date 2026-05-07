@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/libopenmptgit-populate-patch
+fi
+

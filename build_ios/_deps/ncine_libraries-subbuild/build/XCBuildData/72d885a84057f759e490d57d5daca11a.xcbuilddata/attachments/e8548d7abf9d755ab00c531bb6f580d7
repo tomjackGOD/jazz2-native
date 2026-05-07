@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/download-ncine_libraries-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/verify-ncine_libraries-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/extract-ncine_libraries-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-download
+fi
+

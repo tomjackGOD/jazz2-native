@@ -1,4 +1,4 @@
-﻿#include "BeginSection.h"
+#include "BeginSection.h"
 #include "MenuResources.h"
 #include "EpisodeSelectSection.h"
 #include "StartGameOptionsSection.h"
@@ -300,7 +300,7 @@ namespace Jazz2::UI::Menu
 				command->GetGeometry().SetDrawParameters(GL_TRIANGLE_STRIP, 0, 4);
 			}
 
-			command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 			auto* instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 			instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatVector(Vector4f(1.0f, 0.0f, 1.0f, 0.0f).Data());

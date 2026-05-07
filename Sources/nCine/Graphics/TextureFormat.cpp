@@ -84,6 +84,7 @@ namespace nCine
 			case GL_R8:
 				bpp = 8;
 				break;
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) && defined(GL_COMPRESSED_RGB_S3TC_DXT1_EXT)
 			case GL_COMPRESSED_RGBA_S3TC_DXT1_EXT:
 			case GL_COMPRESSED_RGB_S3TC_DXT1_EXT:
 				// max(1, width / 4) x max(1, height / 4) x 8(DXT1)
@@ -92,6 +93,8 @@ namespace nCine
 				bpp = 4;
 				minDataSize = 8;
 				break;
+#endif
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT) && defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)
 			case GL_COMPRESSED_RGBA_S3TC_DXT3_EXT:
 			case GL_COMPRESSED_RGBA_S3TC_DXT5_EXT:
 				// max(1, width / 4) x max(1, height / 4) x 16(DXT2-5)
@@ -100,8 +103,11 @@ namespace nCine
 				bpp = 8;
 				minDataSize = 16;
 				break;
+#endif
 #if defined(WITH_OPENGLES)
+#	if defined(GL_ETC1_RGB8_OES)
 			case GL_ETC1_RGB8_OES:
+#	endif
 			case GL_COMPRESSED_RGB8_ETC2:
 			case GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2:
 			case GL_COMPRESSED_R11_EAC:
@@ -117,6 +123,7 @@ namespace nCine
 				bpp = 8;
 				minDataSize = 16;
 				break;
+#	if defined(GL_ATC_RGBA_EXPLICIT_ALPHA_AMD) && defined(GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD)
 			case GL_ATC_RGBA_EXPLICIT_ALPHA_AMD:
 			case GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD:
 				// ((width_in_texels+3)/4) * ((height_in_texels+3)/4) * 16
@@ -125,6 +132,8 @@ namespace nCine
 				bpp = 8;
 				minDataSize = 16;
 				break;
+#	endif
+#	if defined(GL_ATC_RGB_AMD)
 			case GL_ATC_RGB_AMD:
 				// ((width_in_texels+3)/4) * ((height_in_texels+3)/4) * 8
 				blockWidth = 4;
@@ -132,6 +141,7 @@ namespace nCine
 				bpp = 4;
 				minDataSize = 8;
 				break;
+#	endif
 			case GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG:
 			case GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG:
 				blockWidth = 8;
@@ -381,14 +391,24 @@ namespace nCine
 		bool found = true;
 
 		switch (internalFormat_) {
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT1_EXT)
 			case GL_COMPRESSED_RGBA_S3TC_DXT1_EXT:
+#endif
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT)
 			case GL_COMPRESSED_RGBA_S3TC_DXT3_EXT:
+#endif
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)
 			case GL_COMPRESSED_RGBA_S3TC_DXT5_EXT:
+#endif
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT1_EXT) || defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT) || defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)
 				format_ = GL_RGBA;
 				break;
+#endif
+#if defined(GL_COMPRESSED_RGB_S3TC_DXT1_EXT)
 			case GL_COMPRESSED_RGB_S3TC_DXT1_EXT:
 				format_ = GL_RGB;
 				break;
+#endif
 			default:
 				found = false;
 				break;
@@ -408,8 +428,12 @@ namespace nCine
 		bool found = true;
 
 		switch (internalFormat_) {
+#if defined(GL_ATC_RGBA_EXPLICIT_ALPHA_AMD)
 			case GL_ATC_RGBA_EXPLICIT_ALPHA_AMD:
+#endif
+#if defined(GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD)
 			case GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD:
+#endif
 			case GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG:
 			case GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG:
 			case GL_COMPRESSED_RGBA8_ETC2_EAC:
@@ -432,9 +456,13 @@ namespace nCine
 #	endif
 				format_ = GL_RGBA;
 				break;
+#if defined(GL_ETC1_RGB8_OES)
 			case GL_ETC1_RGB8_OES:
+#endif
 			case GL_COMPRESSED_RGB8_ETC2:
+#if defined(GL_ATC_RGB_AMD)
 			case GL_ATC_RGB_AMD:
+#endif
 			case GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG:
 			case GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG:
 				format_ = GL_RGB;
@@ -464,6 +492,7 @@ namespace nCine
 		const IGfxCapabilities& gfxCaps = theServiceLocator().GetGfxCapabilities();
 
 		switch (internalFormat_) {
+#if defined(GL_COMPRESSED_RGB_S3TC_DXT1_EXT) && defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT) && defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)
 			case GL_COMPRESSED_RGB_S3TC_DXT1_EXT:
 			case GL_COMPRESSED_RGBA_S3TC_DXT3_EXT:
 			case GL_COMPRESSED_RGBA_S3TC_DXT5_EXT:
@@ -472,13 +501,17 @@ namespace nCine
 				FATAL_ASSERT_MSG(hasS3tc, "GL_EXT_texture_compression_s3tc not available");
 				break;
 			}
+#endif
 #if defined(WITH_OPENGLES)
+#	if defined(GL_ETC1_RGB8_OES)
 			case GL_ETC1_RGB8_OES:
 			{
 				const bool hasEct1 = gfxCaps.HasExtension(IGfxCapabilities::GLExtensions::OES_COMPRESSED_ETC1_RGB8_TEXTURE);
 				FATAL_ASSERT_MSG(hasEct1, "GL_OES_compressed_etc1_rgb8_texture not available");
 				break;
 			}
+#	endif
+#	if defined(GL_ATC_RGB_AMD) && defined(GL_ATC_RGBA_EXPLICIT_ALPHA_AMD) && defined(GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD)
 			case GL_ATC_RGB_AMD:
 			case GL_ATC_RGBA_EXPLICIT_ALPHA_AMD:
 			case GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD:
@@ -487,6 +520,7 @@ namespace nCine
 				FATAL_ASSERT_MSG(hasAtc, "GL_AMD_compressed_ATC_texture not available");
 				break;
 			}
+#	endif
 			case GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG:
 			case GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG:
 			case GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG:

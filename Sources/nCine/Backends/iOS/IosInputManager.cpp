@@ -90,16 +90,16 @@ namespace nCine::Backends
 
 		switch (type) {
 			case TOUCHES_BEGAN:
-				touchEvent_.type = (touchEvent_.count == 1 ? TouchEventType::Down : TouchEventType::PointerDown);
+				touchEvent_.type = (touchEvent_.count == 1 ? nCine::TouchEventType::Down : nCine::TouchEventType::PointerDown);
 				inputEventHandler_->OnTouchEvent(touchEvent_);
 				break;
 			case TOUCHES_MOVED:
-				touchEvent_.type = TouchEventType::Move;
+				touchEvent_.type = nCine::TouchEventType::Move;
 				inputEventHandler_->OnTouchEvent(touchEvent_);
 				break;
 			case TOUCHES_ENDED:
 			case TOUCHES_CANCELLED:
-				touchEvent_.type = (touchEvent_.count == 1 ? TouchEventType::Up : TouchEventType::PointerUp);
+				touchEvent_.type = (touchEvent_.count == 1 ? nCine::TouchEventType::Up : nCine::TouchEventType::PointerUp);
 				inputEventHandler_->OnTouchEvent(touchEvent_);
 
 				// Remove the released pointer after dispatch, mirroring Android semantics

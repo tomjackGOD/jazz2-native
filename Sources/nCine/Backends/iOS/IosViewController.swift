@@ -1,5 +1,7 @@
 import UIKit
 import Metal
+import MetalKit
+import QuartzCore
 
 @_silgen_name("ios_bridge_process_frame")
 func ios_bridge_process_frame(_ deltaTime: Float)
@@ -13,7 +15,7 @@ func ios_bridge_handle_touch(_ type: Int32, _ x: Int32, _ y: Int32, _ pointerId:
 @_silgen_name("ios_bridge_set_metal_layer")
 func ios_bridge_set_metal_layer(_ layer: UnsafeMutableRawPointer)
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MTKViewDelegate {
     private enum TouchEventType: Int32 {
         case began = 0
         case moved = 1
@@ -21,18 +23,16 @@ class ViewController: UIViewController {
         case cancelled = 3
     }
 
-    private var metalLayer: CAMetalLayer?
-    private var displayLink: CADisplayLink?
+    private var metalView: MTKView?
     private var touchOverlay: TouchOverlayView?
+    private var lastRenderTime: CFTimeInterval = 0
+    private var hasSetMetalLayer: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupMetalLayer()
+        setupMetalView()
         setupTouchOverlay()
-        
-        // Start the game loop after the view has loaded
-        startDisplayLink()
     }
     
     private func setupTouchOverlay() {
@@ -43,41 +43,50 @@ class ViewController: UIViewController {
         }
     }
     
-    private func setupMetalLayer() {
-        metalLayer = CAMetalLayer()
-        metalLayer?.frame = view.bounds
-        metalLayer?.isOpaque = true
-        metalLayer?.device = MTLCreateSystemDefaultDevice()
-        metalLayer?.pixelFormat = .bgra8Unorm
-		
-        let scale = UIScreen.main.scale
-        metalLayer?.contentsScale = scale
-        metalLayer?.drawableSize = CGSize(width: view.bounds.width * scale, height: view.bounds.height * scale)
+    private func setupMetalView() {
+        metalView = MTKView(frame: view.bounds)
+        metalView?.device = MTLCreateSystemDefaultDevice()
+        metalView?.colorPixelFormat = .bgra8Unorm
+        metalView?.isOpaque = true
+        metalView?.enableSetNeedsDisplay = false
+        metalView?.preferredFramesPerSecond = 60
+        metalView?.delegate = self
         
-        if let layer = metalLayer {
-            view.layer.addSublayer(layer)
-            
-            // Pass the metal layer to C++ side
-            let layerPointer = Unmanaged.passUnretained(layer).toOpaque()
-            ios_bridge_set_metal_layer(layerPointer)
+        let scale = UIScreen.main.scale
+        metalView?.contentScaleFactor = scale
+        
+        if let mtkView = metalView {
+            mtkView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.addSubview(mtkView)
         }
     }
     
-    private func startDisplayLink() {
-        displayLink = CADisplayLink(target: self, selector: #selector(renderLoop))
-        displayLink?.add(to: .main, forMode: .common)
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+        let width = Int32(size.width)
+        let height = Int32(size.height)
+        ios_bridge_handle_resize(width, height)
     }
     
-    @objc private func renderLoop() {
-        let duration = displayLink?.duration ?? 0
-        let deltaTime = max(duration > 0 ? Float(duration) : Float(1.0/60.0), Float(0.001))
-        ios_bridge_process_frame(deltaTime)
+    func draw(in view: MTKView) {
+        // Pass the metal layer to C++ side on first draw
+        if !hasSetMetalLayer, let drawable = view.currentDrawable {
+            let layer = drawable.layer
+            let layerPointer = Unmanaged.passUnretained(layer).toOpaque()
+            ios_bridge_set_metal_layer(layerPointer)
+            hasSetMetalLayer = true
+        }
+        
+        let currentTime = CACurrentMediaTime()
+        let deltaTime = lastRenderTime > 0 ? Float(currentTime - lastRenderTime) : Float(1.0 / 60.0)
+        lastRenderTime = currentTime
+        
+        ios_bridge_process_frame(max(deltaTime, Float(0.001)))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let point = touch.location(in: view)
-            let scale = metalLayer?.contentsScale ?? UIScreen.main.scale
+            let scale = metalView?.contentScaleFactor ?? UIScreen.main.scale
             let normalizedForce: Float
             if touch.maximumPossibleForce > 0.0 {
                 normalizedForce = Float(touch.force / touch.maximumPossibleForce)
@@ -92,7 +101,7 @@ class ViewController: UIViewController {
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let point = touch.location(in: view)
-            let scale = metalLayer?.contentsScale ?? UIScreen.main.scale
+            let scale = metalView?.contentScaleFactor ?? UIScreen.main.scale
             let normalizedForce: Float
             if touch.maximumPossibleForce > 0.0 {
                 normalizedForce = Float(touch.force / touch.maximumPossibleForce)
@@ -107,7 +116,7 @@ class ViewController: UIViewController {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let point = touch.location(in: view)
-            let scale = metalLayer?.contentsScale ?? UIScreen.main.scale
+            let scale = metalView?.contentScaleFactor ?? UIScreen.main.scale
             let radiusPx = Float(touch.majorRadius * scale)
             ios_bridge_handle_touch(TouchEventType.ended.rawValue, Int32(point.x * scale), Int32(point.y * scale), Int32(touch.hash), 0.0, radiusPx)
         }
@@ -116,23 +125,9 @@ class ViewController: UIViewController {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let point = touch.location(in: view)
-            let scale = metalLayer?.contentsScale ?? UIScreen.main.scale
+            let scale = metalView?.contentScaleFactor ?? UIScreen.main.scale
             let radiusPx = Float(touch.majorRadius * scale)
             ios_bridge_handle_touch(TouchEventType.cancelled.rawValue, Int32(point.x * scale), Int32(point.y * scale), Int32(touch.hash), 0.0, radiusPx)
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        metalLayer?.frame = view.bounds
-        
-        // Keep drawable size in sync after layout changes (rotation, split view, etc.)
-        let scale = metalLayer?.contentsScale ?? UIScreen.main.scale
-        metalLayer?.drawableSize = CGSize(width: view.bounds.width * scale, height: view.bounds.height * scale)
-        
-        // Notify C++ side of resize
-        let width = Int32(view.bounds.width * scale)
-        let height = Int32(view.bounds.height * scale)
-        ios_bridge_handle_resize(width, height)
     }
 }

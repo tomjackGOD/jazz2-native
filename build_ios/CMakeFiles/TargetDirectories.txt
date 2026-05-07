@@ -1,0 +1,5 @@
+/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/Backward.dir
+/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/Libopenmpt.dir
+/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/jazz2.dir
+/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/ALL_BUILD.dir
+/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/CMakeFiles/ZERO_CHECK.dir

@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+if test "$CONFIGURATION" = "Debug"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-install
+fi
+

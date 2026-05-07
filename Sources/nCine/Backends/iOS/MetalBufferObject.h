@@ -27,6 +27,8 @@ namespace nCine
 
 		void BufferData(std::size_t size, const void* data, int usage);
 		void BufferSubData(std::size_t offset, std::size_t size, const void* data);
+		void BindBufferBase(std::uint32_t index);
+		void BindBufferRange(std::uint32_t index, std::size_t offset, std::size_t ptrsize);
 
 		void* MapBufferRange(std::size_t offset, std::size_t length, int access);
 		void FlushMappedBufferRange(std::size_t offset, std::size_t length);

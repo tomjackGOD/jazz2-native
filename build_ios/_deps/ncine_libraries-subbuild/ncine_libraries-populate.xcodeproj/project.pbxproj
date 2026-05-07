@@ -1,0 +1,634 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		516313D68C7BCCFE0F4E9B54 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = F641BFAD902E4761A1226437 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				D2D9B1397BA5EAB3B8D70DE5 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		6BB6EB01AEEC7EB68D934E84 /* ncine_libraries-populate */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 43B2CDB0EB5C44A69F85BE52 /* Build configuration list for PBXAggregateTarget "ncine_libraries-populate" */;
+			buildPhases = (
+				CCEDDA63BB74FF737EF5A647 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-mkdir */,
+				493F82BD551CC9BC3788D073 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-download */,
+				8CB7CD7B2D7A59A1E94EBBA8 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-update */,
+				043FC7A4E3FA466DF6FD305E /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-patch */,
+				4D276600F93705A963DDD24B /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-configure */,
+				E22030B45B4579977BC45461 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-build */,
+				604E7464FFDC22AABC974B84 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-install */,
+				72BF625F4A39356983FC006E /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-test */,
+				894C87C59D6B4151DA5B54BD /* Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-complete */,
+				F1DC75323F9BD2CEC217658D /* Generate CMakeFiles/ncine_libraries-populate */,
+			);
+			dependencies = (
+				D2129A8F4C9D4A0199EBD3A0 /* PBXTargetDependency */,
+			);
+			name = "ncine_libraries-populate";
+			productName = "ncine_libraries-populate";
+		};
+		B4037C3931B9B596038A6A84 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 854D5E93E82342C3BD39CE77 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				C893DD07BE786074DDC55705 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				1ED0E64C36BA46C990C5C44C /* PBXTargetDependency */,
+				22CFF828260C4E1CA5D1F078 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildStyle section */
+		8424C4DAD116491E97188019 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		3A3C3146D92C4382AA315AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA3CC3D988D480A874E60DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BB6EB01AEEC7EB68D934E84;
+			remoteInfo = "ncine_libraries-populate";
+		};
+		4ACD70F4FCA9451DA4680847 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA3CC3D988D480A874E60DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 516313D68C7BCCFE0F4E9B54;
+			remoteInfo = ZERO_CHECK;
+		};
+		E650BE0FDC804DA2BFE640F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FA3CC3D988D480A874E60DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 516313D68C7BCCFE0F4E9B54;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		139CA5CAA36741FCB8684997 /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		B81BC462DCFC41AAB58BF15A /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		052C4DA81DD94760A1FEAD06 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		0C1126723E954AF9A47B4618 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		117C14B99BAF4086AD0921AF /* ncine_libraries-populate */ = {
+			isa = PBXGroup;
+			children = (
+				4643E3B4263A4F9FAD0142C0 /* ncine_libraries-populate */,
+			);
+			name = "ncine_libraries-populate";
+			sourceTree = "<group>";
+		};
+		4643E3B4263A4F9FAD0142C0 /* ncine_libraries-populate */ = {
+			isa = PBXGroup;
+			children = (
+				052C4DA81DD94760A1FEAD06 /* CMake Rules */,
+				139CA5CAA36741FCB8684997 /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeLists.txt */,
+			);
+			name = "ncine_libraries-populate";
+			sourceTree = "<group>";
+		};
+		493E8EC4BFAB4BF39FA81F60 = {
+			isa = PBXGroup;
+			children = (
+				57EFD3D15E274A3CAAB37B3C /* ALL_BUILD */,
+				C7DB7B70D3A0494688A868F4 /* ExternalProjectTargets */,
+				AE557B8F98AB4CC4AB2327DC /* Products */,
+				0C1126723E954AF9A47B4618 /* Frameworks */,
+				58BD2DC94B554A479F897DAE /* Resources */,
+			);
+			sourceTree = "<group>";
+		};
+		57EFD3D15E274A3CAAB37B3C /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				B703BAD90F9D4B9EAEB7DCFB /* CMake Rules */,
+				B81BC462DCFC41AAB58BF15A /* /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		58BD2DC94B554A479F897DAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AE557B8F98AB4CC4AB2327DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B703BAD90F9D4B9EAEB7DCFB /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		C7DB7B70D3A0494688A868F4 /* ExternalProjectTargets */ = {
+			isa = PBXGroup;
+			children = (
+				117C14B99BAF4086AD0921AF /* ncine_libraries-populate */,
+			);
+			name = ExternalProjectTargets;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		1FA3CC3D988D480A874E60DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1640;
+			};
+			buildConfigurationList = 4A86E4A64E324B1389AB6411 /* Build configuration list for PBXProject "ncine_libraries-populate" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				8424C4DAD116491E97188019 /* Debug */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 493E8EC4BFAB4BF39FA81F60;
+			projectDirPath = .;
+			projectRoot = "";
+			targets = (
+				B4037C3931B9B596038A6A84 /* ALL_BUILD */,
+				6BB6EB01AEEC7EB68D934E84 /* ncine_libraries-populate */,
+				516313D68C7BCCFE0F4E9B54 /* ZERO_CHECK */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		043FC7A4E3FA466DF6FD305E /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-patch */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-update","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/ncine_libraries-populate-patch-info.txt"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-patch";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-patch"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-patch
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		4334C73978B6E0043D6424DB = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		493F82BD551CC9BC3788D073 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-download */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-mkdir","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/download-ncine_libraries-populate.cmake","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/ncine_libraries-populate-urlinfo.txt"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-download";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-download"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/download-ncine_libraries-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/verify-ncine_libraries-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/extract-ncine_libraries-populate.cmake
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-download
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		4D276600F93705A963DDD24B /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-configure */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-patch","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/tmp/ncine_libraries-populate-cfgcmd.txt"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-configure";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-configure"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-configure
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		604E7464FFDC22AABC974B84 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-install */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-build"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-install";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-install"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-install
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		72BF625F4A39356983FC006E /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-test */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-install"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-test";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-test"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-test
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		894C87C59D6B4151DA5B54BD /* Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-complete */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-build","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-configure","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-download","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-install","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-mkdir","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-patch","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-test","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-update"			);
+			name = "Generate CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-complete";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-complete"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E make_directory /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-complete
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-done
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		8CB7CD7B2D7A59A1E94EBBA8 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-update */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-download","/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/ncine_libraries-populate-update-info.txt"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-update";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-update"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-update
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		C893DD07BE786074DDC55705 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		CCEDDA63BB74FF737EF5A647 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-mkdir */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-mkdir";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-mkdir"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+  /Applications/CMake.app/Contents/bin/cmake -Dcfgdir=/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME -P /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/tmp/ncine_libraries-populate-mkdirs.cmake
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-mkdir
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		D2D9B1397BA5EAB3B8D70DE5 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+  make -f /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		E22030B45B4579977BC45461 /* Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-configure"			);
+			name = "Generate ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-build";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-build"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-build
+  /Applications/CMake.app/Contents/bin/cmake -E echo_append
+  /Applications/CMake.app/Contents/bin/cmake -E touch /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/$CONFIGURATION$EFFECTIVE_PLATFORM_NAME/ncine_libraries-populate-build
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		F1DC75323F9BD2CEC217658D /* Generate CMakeFiles/ncine_libraries-populate */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ncine_libraries-populate-complete"			);
+			name = "Generate CMakeFiles/ncine_libraries-populate";
+			outputPaths = (
+"/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/CMakeFiles/ncine_libraries-populate"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1ED0E64C36BA46C990C5C44C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BB6EB01AEEC7EB68D934E84 /* ncine_libraries-populate */;
+			targetProxy = 3A3C3146D92C4382AA315AAA /* PBXContainerItemProxy */;
+		};
+		22CFF828260C4E1CA5D1F078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 516313D68C7BCCFE0F4E9B54 /* ZERO_CHECK */;
+			targetProxy = E650BE0FDC804DA2BFE640F2 /* PBXContainerItemProxy */;
+		};
+		D2129A8F4C9D4A0199EBD3A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 516313D68C7BCCFE0F4E9B54 /* ZERO_CHECK */;
+			targetProxy = 4ACD70F4FCA9451DA4680847 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6E7103568B604ED49D509A42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		7D11899DE293446E81F07481 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		9A7C2C0304B943BC890E2445 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "ncine_libraries-populate";
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		B02D2587620B45C0BFCBB63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = "";
+				SYMROOT = "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		43B2CDB0EB5C44A69F85BE52 /* Build configuration list for PBXAggregateTarget "ncine_libraries-populate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A7C2C0304B943BC890E2445 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4A86E4A64E324B1389AB6411 /* Build configuration list for PBXProject "ncine_libraries-populate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B02D2587620B45C0BFCBB63D /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		854D5E93E82342C3BD39CE77 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D11899DE293446E81F07481 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F641BFAD902E4761A1226437 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E7103568B604ED49D509A42 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1FA3CC3D988D480A874E60DD /* Project object */;
+}

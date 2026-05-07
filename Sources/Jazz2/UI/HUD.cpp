@@ -1,4 +1,4 @@
-﻿#include "HUD.h"
+#include "HUD.h"
 #include "InGameConsole.h"
 #include "Menu/IMenuContainer.h"
 #include "../ContentResolver.h"
@@ -287,7 +287,7 @@ namespace Jazz2::UI
 				command->GetGeometry().SetDrawParameters(GL_TRIANGLE_STRIP, 0, 4);
 			}
 
-			command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 			auto instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 			instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatVector(Vector4f(1.0f, 0.0f, 1.0f, 0.0f).Data());
@@ -1411,7 +1411,7 @@ namespace Jazz2::UI
 		command->GetGeometry().SetElementsPerVertex(VertexFloats);
 		command->GetGeometry().SetHostVertexPointer((const float*)vertices);
 
-		command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 		auto instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 		instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatValue(1.0f, 0.0f, 1.0f, 0.0f);

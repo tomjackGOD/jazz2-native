@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/Applications/CMake.app/Contents/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/download-ncine_libraries-populate.cmake;COMMAND;/Applications/CMake.app/Contents/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/verify-ncine_libraries-populate.cmake;COMMAND;/Applications/CMake.app/Contents/bin/cmake;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-subbuild/ncine_libraries-populate-prefix/src/ncine_libraries-populate-stamp/extract-ncine_libraries-populate.cmake
+source_dir=/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/ncine_libraries-src
+work_dir=/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps
+url(s)=https://github.com/deathkiller/jazz2-libraries/raw/2.0.1-macos/jazz2-libraries-macos-arm64.tar.gz
+hash=
+      no_extract=
+

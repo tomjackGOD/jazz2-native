@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/libopenmptgit-populate"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/libopenmptgit-populate.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/CMakeFiles/CMakeFiles/libopenmptgit-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-build.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-download.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-install.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-test.rule"
+		},
+		{
+			"file" : "/Users/tomtomjack/Documents/jassy/jazz2-native-master-2/build_ios/_deps/libopenmptgit-subbuild/libopenmptgit-populate-prefix/src/libopenmptgit-populate-stamp/CMakeFiles/libopenmptgit-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"libopenmptgit-populate"
+		],
+		"name" : "libopenmptgit-populate"
+	}
+}

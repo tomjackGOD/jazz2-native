@@ -797,8 +797,8 @@ namespace nCine
 			if (appCfg_.withScenegraph) {
 #if !defined(DEATH_TARGET_IOS)
 				gfxDevice_->setupGL();
-				RenderResources::Create();
 #endif
+				RenderResources::Create();
 				rootNode_ = std::make_unique<SceneNode>();
 				screenViewport_ = std::make_unique<ScreenViewport>();
 				screenViewport_->SetRootNode(rootNode_.get());

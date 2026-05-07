@@ -1,4 +1,4 @@
-﻿#include "MainMenu.h"
+#include "MainMenu.h"
 #include "MenuResources.h"
 #include "../../ContentResolver.h"
 #include "../../PreferencesCache.h"
@@ -770,7 +770,7 @@ namespace Jazz2::UI::Menu
 				}
 			}
 
-			command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 			auto instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 			instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatValue(debris.TexScaleX, debris.TexBiasX, debris.TexScaleY, debris.TexBiasY);
@@ -939,7 +939,7 @@ namespace Jazz2::UI::Menu
 				}
 			}
 
-			command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 			auto instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 			instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatValue(repeats, 0.0f, repeats, 0.0f);
@@ -985,7 +985,7 @@ namespace Jazz2::UI::Menu
 				}
 			}
 
-			command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 			auto instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 			instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatValue(repeats, 0.0f, repeats, 0.0f);
@@ -1031,7 +1031,7 @@ namespace Jazz2::UI::Menu
 				}
 			}
 
-			command->GetMaterial().SetBlendingFactors(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+			command->GetMaterial().SetBlendingFactors(BlendingFactor::SrcAlpha, BlendingFactor::OneMinusSrcAlpha);
 
 			auto instanceBlock = command->GetMaterial().UniformBlock(Material::InstanceBlockName);
 			instanceBlock->GetUniform(Material::TexRectUniformName)->SetFloatValue(repeats, 0.0f, repeats, 0.0f);

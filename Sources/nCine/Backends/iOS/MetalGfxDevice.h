@@ -45,7 +45,7 @@ namespace nCine::Backends
 		void* _commandBuffer;
 
 		static constexpr float DefaultRefreshRate = 60.0f;
-		static char monitorName_[MaxMonitorNameLength];
 		static const unsigned int MaxMonitorNameLength = 64;
+		static char monitorName_[MaxMonitorNameLength];
 	};
 }

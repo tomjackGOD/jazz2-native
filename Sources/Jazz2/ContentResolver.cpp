@@ -29,6 +29,7 @@
 #include <IO/Compression/DeflateStream.h>
 
 #include "../jsoncpp/json.h"
+#include <cstdio>
 
 using namespace Death::IO::Compression;
 using namespace Jazz2::Tiles;
@@ -46,6 +47,7 @@ static Vector2i GetVector2iFromJson(const Json::Value& value, Vector2i defaultVa
 
 namespace Jazz2
 {
+
 	ContentResolver& ContentResolver::Get()
 	{
 		static ContentResolver current;
@@ -1697,6 +1699,7 @@ namespace Jazz2
 
 		shader->LoadFromMemory(shaderName, compileTwice ? Shader::Introspection::Enabled : introspection, vertex, fragment, batchSize, arrayView(defines));
 
+	#if !defined(DEATH_TARGET_IOS)
 		if (compileTwice) {
 			GLShaderUniformBlocks blocks(shader->GetHandle(), Material::InstancesBlockName, nullptr);
 			GLUniformBlockCache* block = blocks.GetUniformBlock(Material::InstancesBlockName);
@@ -1723,6 +1726,7 @@ namespace Jazz2
 				}
 			}
 		}
+	#endif
 
 		shader->SaveToCache(shaderName, Shaders::Version);
 		return shader;
@@ -1755,6 +1759,7 @@ namespace Jazz2
 
 		shader->LoadFromMemory(shaderName, compileTwice ? Shader::Introspection::Enabled : introspection, vertex, fragment, batchSize, arrayView(defines));
 
+	#if !defined(DEATH_TARGET_IOS)
 		if (compileTwice) {
 			GLShaderUniformBlocks blocks(shader->GetHandle(), Material::InstancesBlockName, nullptr);
 			GLUniformBlockCache* block = blocks.GetUniformBlock(Material::InstancesBlockName);
@@ -1781,6 +1786,7 @@ namespace Jazz2
 				}
 			}
 		}
+	#endif
 
 		shader->SaveToCache(shaderName, Shaders::Version);
 		return shader;

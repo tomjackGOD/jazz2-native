@@ -60,27 +60,62 @@ namespace nCine
 			// Parsing the FourCC format
 			switch (fourCC) {
 				case DDS_DXT1:
+#if defined(GL_COMPRESSED_RGB_S3TC_DXT1_EXT)
 					internalFormat = GL_COMPRESSED_RGB_S3TC_DXT1_EXT;
+#else
+					LOGF("No support for DXT1 compression");
+					return false;
+#endif
 					break;
 				case DDS_DXT3:
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT3_EXT)
 					internalFormat = GL_COMPRESSED_RGBA_S3TC_DXT3_EXT;
+#else
+					LOGF("No support for DXT3 compression");
+					return false;
+#endif
 					break;
 				case DDS_DXT5:
+#if defined(GL_COMPRESSED_RGBA_S3TC_DXT5_EXT)
 					internalFormat = GL_COMPRESSED_RGBA_S3TC_DXT5_EXT;
+#else
+					LOGF("No support for DXT5 compression");
+					return false;
+#endif
 					break;
 #if defined(WITH_OPENGLES)
 				case DDS_ETC1:
+#if defined(GL_ETC1_RGB8_OES)
 					internalFormat = GL_ETC1_RGB8_OES;
 					break;
+#else
+					LOGF("No support for ETC1 compression");
+					return false;
+#endif
 				case DDS_ATC:
+#if defined(GL_ATC_RGB_AMD)
 					internalFormat = GL_ATC_RGB_AMD;
 					break;
+#else
+					LOGF("No support for ATC compression");
+					return false;
+#endif
 				case DDS_ATCA:
+#if defined(GL_ATC_RGBA_EXPLICIT_ALPHA_AMD)
 					internalFormat = GL_ATC_RGBA_EXPLICIT_ALPHA_AMD;
 					break;
+#else
+					LOGF("No support for ATC alpha compression");
+					return false;
+#endif
 				case DDS_ATCI:
+#if defined(GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD)
 					internalFormat = GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD;
 					break;
+#else
+					LOGF("No support for ATC interpolated alpha compression");
+					return false;
+#endif
 #endif
 				default:
 					LOGE("Unsupported FourCC compression code: {}", fourCC);

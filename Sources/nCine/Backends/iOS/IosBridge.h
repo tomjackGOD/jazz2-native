@@ -3,8 +3,6 @@
 #include <Shared/Containers/String.h>
 #include <Shared/Containers/StringView.h>
 
-using namespace Death;
-
 namespace nCine::Backends
 {
 	/** @brief A bridge class that provides access to iOS-specific functionality */
@@ -15,7 +13,7 @@ namespace nCine::Backends
 		static void Init();
 
 		/** @brief Returns the preferred language and region code (e.g., "en-US") */
-		static String GetPreferredLanguage();
+		static Death::Containers::String GetPreferredLanguage();
 
 		/** @brief Returns true if the screen is round */
 		static bool IsScreenRound();
@@ -27,7 +25,7 @@ namespace nCine::Backends
 		static void RequestExternalStoragePermission();
 
 		/** @brief Opens the specified URL in the system browser */
-		static bool OpenUrl(StringView url);
+		static bool OpenUrl(Death::Containers::StringView url);
 
 		/** @brief Returns the screen scale */
 		static float GetScreenScale();

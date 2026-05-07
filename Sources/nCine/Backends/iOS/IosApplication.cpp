@@ -2,6 +2,9 @@
 #include "IosBridge.h"
 #include "IosInputManager.h"
 #include "MetalGfxDevice.h"
+#include "../../IAppEventHandler.h"
+#include "../../Graphics/ScreenViewport.h"
+#include "../../Graphics/DisplayMode.h"
 #include <Shared/Asserts.h>
 
 namespace nCine
@@ -63,7 +66,7 @@ namespace nCine
 			Backends::MetalGfxDevice& gfxDevice = static_cast<Backends::MetalGfxDevice&>(*gfxDevice_);
 			gfxDevice.setResolution(false, bounds.W, bounds.H);
 			
-			screenViewport_->setRect(bounds);
+			screenViewport_->Resize(bounds.W, bounds.H);
 		}
 	}
 
@@ -102,7 +105,7 @@ namespace nCine
 		inputManager_ = std::make_unique<Backends::IosInputManager>();
 
 		// Initialize graphics device
-		gfxDevice_ = std::make_unique<Backends::MetalGfxDevice>(WindowMode(), DisplayMode());
+		gfxDevice_ = std::make_unique<Backends::MetalGfxDevice>(Backends::MetalGfxDevice::WindowMode(), DisplayMode());
 
 		// Initialize application
 		appEventHandler_ = createAppEventHandler_();

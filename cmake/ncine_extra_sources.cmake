@@ -1,4 +1,8 @@
 target_include_directories(${NCINE_APP} PRIVATE "${NCINE_SOURCE_DIR}/Shared")
+target_include_directories(${NCINE_APP} PRIVATE "${NCINE_SOURCE_DIR}")
+target_include_directories(${NCINE_APP} PRIVATE "${NCINE_SOURCE_DIR}/nCine")
+target_include_directories(${NCINE_APP} PRIVATE "${NCINE_SOURCE_DIR}/nCine/Graphics/Backend")
+target_include_directories(${NCINE_APP} PRIVATE "${NCINE_SOURCE_DIR}/nCine/Backends")
 
 if(ATOMIC_FOUND)
 	target_link_libraries(${NCINE_APP} PRIVATE Atomic::Atomic)
@@ -456,7 +460,7 @@ endif()
 #	list(APPEND SOURCES ${NCINE_SOURCE_DIR}/nCine/Graphics/RenderDocCapture.cpp)
 #endif()
 
-if(CURL_FOUND)
+if(CURL_FOUND AND NOT NCINE_BUILD_IOS)
 	target_compile_definitions(${NCINE_APP} PRIVATE "WITH_CURL")
 	target_link_libraries(${NCINE_APP} PRIVATE CURL::libcurl)
 endif()
@@ -502,10 +506,31 @@ if(ANDROID)
 		${NCINE_SOURCE_DIR}/nCine/Graphics/TextureLoaderPkm.cpp
 	)
 elseif(NCINE_BUILD_IOS)
+	# Use OpenGL ES enums/types where needed (even though rendering is Metal)
+	target_compile_definitions(${NCINE_APP} PRIVATE "WITH_OPENGLES" "NCINE_INCLUDE_OPENGL=1" "GLES_SILENCE_DEPRECATION")
+	# Force GL enums to be available in all translation units
+	target_compile_options(${NCINE_APP} PRIVATE
+		$<$<COMPILE_LANGUAGE:C,CXX,OBJC,OBJCXX>:-include "${NCINE_SOURCE_DIR}/nCine/CommonHeaders.h">
+	)
+
+	#region agent log
+	file(MAKE_DIRECTORY "${NCINE_ROOT}/.cursor")
+	string(TIMESTAMP _ncine_dbg_ts "%s000")
+	file(APPEND "${NCINE_ROOT}/.cursor/debug-3a4906.log"
+		"{\"sessionId\":\"3a4906\",\"runId\":\"pre-fix\",\"hypothesisId\":\"H_GLOBAL_GL\",\"location\":\"cmake/ncine_extra_sources.cmake:iOS\",\"message\":\"Applied iOS global GL headers/defines\",\"data\":{\"WITH_OPENGLES\":true,\"NCINE_INCLUDE_OPENGL\":\"1\",\"forcedInclude\":\"nCine/CommonHeaders.h\"},\"timestamp\":${_ncine_dbg_ts}}\n"
+	)
+	unset(_ncine_dbg_ts)
+	#endregion agent log
+
 	list(APPEND HEADERS
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosInputManager.h
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalGfxDevice.h
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosBridge.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalRenderState.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalShaderProgram.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalTexture.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalBufferObject.h
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalGfxCapabilities.h
 	)
 	list(APPEND SOURCES
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosApplication.cpp
@@ -515,6 +540,21 @@ elseif(NCINE_BUILD_IOS)
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosBridge.swift
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosAppDelegate.swift
 		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosViewController.swift
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/IosTouchControls.swift
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalRenderState.mm
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalShaderProgram.mm
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalTexture.mm
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalBufferObject.mm
+		${NCINE_SOURCE_DIR}/nCine/Backends/iOS/MetalGfxCapabilities.cpp
+	)
+
+	# Apple frameworks required by iOS backend (Metal + UIKit)
+	target_link_libraries(${NCINE_APP} PRIVATE
+		"-framework Foundation"
+		"-framework UIKit"
+		"-framework QuartzCore"
+		"-framework Metal"
+		"-framework MetalKit"
 	)
 
 	set(IOS_ASSETS
@@ -528,6 +568,12 @@ elseif(NCINE_BUILD_IOS)
 		MACOSX_BUNDLE_INFO_PLIST ${NCINE_SOURCE_DIR}/Info-iOS.plist.in
 		XCODE_ATTRIBUTE_TARGETED_DEVICE_FAMILY "1,2"
 		XCODE_ATTRIBUTE_PRODUCT_BUNDLE_IDENTIFIER "${NCINE_REVERSE_DNS}"
+		XCODE_ATTRIBUTE_IPHONEOS_DEPLOYMENT_TARGET "13.0"
+		XCODE_ATTRIBUTE_SDKROOT "iphoneos"
+		XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC "YES"
+		# Let CMake/Xcode builds succeed without a selected team; user can re-enable in Xcode for device install.
+		XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO"
+		XCODE_ATTRIBUTE_CODE_SIGNING_ALLOWED "NO"
 	)
 	set_source_files_properties(${IOS_ASSETS} PROPERTIES MACOSX_PACKAGE_LOCATION Resources)
 elseif(WINDOWS_PHONE OR WINDOWS_STORE)

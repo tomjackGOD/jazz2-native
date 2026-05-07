@@ -4,6 +4,9 @@
 
 #if defined(DEATH_TARGET_IOS)
 #include "Backends/iOS/MetalRenderState.h"
+#if defined(__OBJC__)
+#include <Metal/Metal.h>
+#endif
 #else
 #include "../GL/GLClearColor.h"
 #include "../GL/GLViewport.h"
@@ -154,20 +157,26 @@ namespace nCine::Backend
 	}
 	inline void PushDebugGroup(const char* label) {
 #if defined(DEATH_TARGET_IOS)
+#	if defined(__OBJC__)
 		id<MTLRenderCommandEncoder> encoder = (__bridge id<MTLRenderCommandEncoder>)Backends::MetalRenderState::currentEncoder();
 		if (encoder != nil) {
 			[encoder pushDebugGroup:[NSString stringWithUTF8String:label]];
 		}
+#	else
+		(void)label;
+#	endif
 #else
 		GLDebug::PushGroup(label);
 #endif
 	}
 	inline void PopDebugGroup() {
 #if defined(DEATH_TARGET_IOS)
+#	if defined(__OBJC__)
 		id<MTLRenderCommandEncoder> encoder = (__bridge id<MTLRenderCommandEncoder>)Backends::MetalRenderState::currentEncoder();
 		if (encoder != nil) {
 			[encoder popDebugGroup];
 		}
+#	endif
 #else
 		GLDebug::PopGroup();
 #endif

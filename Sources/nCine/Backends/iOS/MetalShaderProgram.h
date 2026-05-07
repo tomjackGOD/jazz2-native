@@ -1,13 +1,14 @@
 #pragma once
 
 #include <cstdint>
+#include <cstring>
 #include <string>
+#include <unordered_map>
 #include <Shared/Containers/StringView.h>
 #include <Shared/Containers/SmallVector.h>
 #include <Shared/Containers/String.h>
 #include <Shared/Containers/StringConcatenable.h>
 #include "BackendEnums.h"
-#include "../../Base/StaticHashMap.h"
 
 namespace nCine
 {
@@ -40,6 +41,7 @@ namespace nCine
 		bool SetIntValue(int v0, int v1) { isDirty_ = true; return true; }
 		bool SetIntValue(int v0, int v1, int v2) { isDirty_ = true; return true; }
 		bool SetIntValue(int v0, int v1, int v2, int v3) { isDirty_ = true; return true; }
+		int GetIntValue(int /*index*/) const { return 0; }
 		bool CommitValue() { isDirty_ = false; return true; }
 
 	private:
@@ -72,7 +74,7 @@ namespace nCine
 		void SetName(const char* name) { name_ = name; }
 		
 		MetalUniformCache* GetUniform(const char* name) {
-			auto it = uniforms_.find(Death::Containers::String::nullTerminatedView(name));
+			auto it = uniforms_.find(name);
 			return (it != uniforms_.end()) ? &it->second : nullptr;
 		}
 		
@@ -111,8 +113,8 @@ namespace nCine
 		std::uint32_t size_;
 		std::uint32_t usedSize_;
 		bool isDirty_;
-		Death::Containers::String name_;
-		StaticHashMap<Death::Containers::String, MetalUniformCache, 16> uniforms_;
+		std::string name_;
+		std::unordered_map<std::string, MetalUniformCache> uniforms_;
 		MockUniformBlock mockBlock_;
 	};
 
@@ -120,17 +122,17 @@ namespace nCine
 	class MetalShaderUniforms
 	{
 	public:
-		using UniformHashMapType = StaticHashMap<Death::Containers::String, MetalUniformCache, 16>;
+		using UniformHashMapType = std::unordered_map<std::string, MetalUniformCache>;
 
 		MetalShaderUniforms() : shaderProgram_(nullptr) {}
 		void SetProgram(class MetalShaderProgram* shaderProgram, const char* includeOnly, const char* exclude);
 		void SetUniformsDataPointer(std::uint8_t* dataPointer);
 		void SetDirty(bool isDirty);
 		bool HasUniform(const char* name) const {
-			return (uniformCaches_.find(Death::Containers::String::nullTerminatedView(name)) != uniformCaches_.end());
+			return (uniformCaches_.find(name) != uniformCaches_.end());
 		}
 		MetalUniformCache* GetUniform(const char* name) {
-			auto it = uniformCaches_.find(Death::Containers::String::nullTerminatedView(name));
+			auto it = uniformCaches_.find(name);
 			return (it != uniformCaches_.end()) ? &it->second : nullptr;
 		}
 		const UniformHashMapType& GetAllUniforms() const { return uniformCaches_; }
@@ -146,16 +148,16 @@ namespace nCine
 	class MetalShaderUniformBlocks
 	{
 	public:
-		using UniformHashMapType = StaticHashMap<Death::Containers::String, MetalUniformBlockCache, 4>;
+		using UniformHashMapType = std::unordered_map<std::string, MetalUniformBlockCache>;
 		MetalShaderUniformBlocks() : shaderProgram_(nullptr) {}
 		void SetProgram(class MetalShaderProgram* shaderProgram);
 		void SetUniformsDataPointer(std::uint8_t* dataPointer);
 		void SetDirty(bool isDirty) {}
 		bool HasUniformBlock(const char* name) const {
-			return (uniformBlocks_.find(Death::Containers::String::nullTerminatedView(name)) != uniformBlocks_.end());
+			return (uniformBlocks_.find(name) != uniformBlocks_.end());
 		}
 		MetalUniformBlockCache* GetUniformBlock(const char* name) {
-			auto it = uniformBlocks_.find(Death::Containers::String::nullTerminatedView(name));
+			auto it = uniformBlocks_.find(name);
 			return (it != uniformBlocks_.end()) ? &it->second : nullptr;
 		}
 		const UniformHashMapType& GetAllUniformBlocks() const { return uniformBlocks_; }
@@ -239,7 +241,7 @@ namespace nCine
 				return (static_cast<std::size_t>(key.blendingEnabled) << 16) | (static_cast<std::size_t>(key.srcFactor) << 8) | static_cast<std::size_t>(key.destFactor);
 			}
 		};
-		StaticHashMap<PipelineStateKey, void*, 8> pipelineStates_;
+		std::unordered_map<PipelineStateKey, void*, PipelineStateKeyHash> pipelineStates_;
 
 		Status status_;
 		std::uint32_t batchSize_;
@@ -252,7 +254,7 @@ namespace nCine
 			int stride;
 			int components;
 		};
-		Death::Containers::StaticHashMap<Death::Containers::String, AttributeInfo, 16> attributes_;
+		std::unordered_map<std::string, AttributeInfo> attributes_;
 
 		MetalShaderProgram(const MetalShaderProgram&) = delete;
 		MetalShaderProgram& operator=(const MetalShaderProgram&) = delete;

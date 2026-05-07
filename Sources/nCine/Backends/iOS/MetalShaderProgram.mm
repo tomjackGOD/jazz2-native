@@ -1,5 +1,7 @@
 #include "MetalShaderProgram.h"
 #include "MetalGfxDevice.h"
+#include "../../Graphics/Material.h"
+#include "../../Graphics/RenderResources.h"
 #include "../../tracy.h"
 
 #import <Metal/Metal.h>
@@ -21,10 +23,11 @@ namespace nCine
 				case BlendingFactor::OneMinusSrcAlpha: return MTLBlendFactorOneMinusSourceAlpha;
 				case BlendingFactor::DstAlpha: return MTLBlendFactorDestinationAlpha;
 				case BlendingFactor::OneMinusDstAlpha: return MTLBlendFactorOneMinusDestinationAlpha;
-				case BlendingFactor::ConstantColor: return MTLBlendFactorConstantColor;
-				case BlendingFactor::OneMinusConstantColor: return MTLBlendFactorOneMinusConstantColor;
-				case BlendingFactor::ConstantAlpha: return MTLBlendFactorConstantAlpha;
-				case BlendingFactor::OneMinusConstantAlpha: return MTLBlendFactorOneMinusConstantAlpha;
+				// Metal on iOS does not expose OpenGL constant blend-color factors.
+				case BlendingFactor::ConstantColor: return MTLBlendFactorOne;
+				case BlendingFactor::OneMinusConstantColor: return MTLBlendFactorZero;
+				case BlendingFactor::ConstantAlpha: return MTLBlendFactorOne;
+				case BlendingFactor::OneMinusConstantAlpha: return MTLBlendFactorZero;
 				case BlendingFactor::SrcAlphaSaturate: return MTLBlendFactorSourceAlphaSaturated;
 				default: return MTLBlendFactorOne;
 			}
@@ -65,12 +68,12 @@ namespace nCine
 	void MetalShaderUniformBlocks::SetUniformsDataPointer(std::uint8_t* dataPointer)
 	{
 		// Map the blocks to the data pointer provided by Material
-		auto it = uniformBlocks_.find(Death::Containers::String::nullTerminatedView(Material::InstanceBlockName));
+		auto it = uniformBlocks_.find(Material::InstanceBlockName);
 		if (it != uniformBlocks_.end()) {
 			it->second.SetDataPointer(dataPointer, 112);
 		}
 		
-		it = uniformBlocks_.find(Death::Containers::String::nullTerminatedView(Material::InstancesBlockName));
+		it = uniformBlocks_.find(Material::InstancesBlockName);
 		if (it != uniformBlocks_.end()) {
 			it->second.SetDataPointer(dataPointer, shaderProgram_->GetUniformBlocksSize());
 		}
@@ -109,12 +112,12 @@ namespace nCine
 
 	void MetalShaderUniforms::SetUniformsDataPointer(std::uint8_t* dataPointer)
 	{
-		auto it = uniformCaches_.find(Death::Containers::String::nullTerminatedView(Material::GuiProjectionMatrixUniformName));
+		auto it = uniformCaches_.find(Material::GuiProjectionMatrixUniformName);
 		if (it != uniformCaches_.end()) {
 			it->second.SetDataPointer(dataPointer + 0);
 		}
 		
-		it = uniformCaches_.find(Death::Containers::String::nullTerminatedView(Material::DepthUniformName));
+		it = uniformCaches_.find(Material::DepthUniformName);
 		if (it != uniformCaches_.end()) {
 			it->second.SetDataPointer(dataPointer + 64);
 		}

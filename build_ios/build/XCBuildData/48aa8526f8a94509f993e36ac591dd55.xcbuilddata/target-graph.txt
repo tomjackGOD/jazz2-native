@@ -1,0 +1,10 @@
+Target dependency graph (4 targets)
+Target 'jazz2' in project 'Jazz2'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'Jazz2'
+➜ Explicit dependency on target 'Backward' in project 'Jazz2'
+➜ Explicit dependency on target 'Libopenmpt' in project 'Jazz2'
+Target 'Libopenmpt' in project 'Jazz2'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'Jazz2'
+Target 'Backward' in project 'Jazz2'
+➜ Explicit dependency on target 'ZERO_CHECK' in project 'Jazz2'
+Target 'ZERO_CHECK' in project 'Jazz2' (no dependencies)
